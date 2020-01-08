@@ -1,0 +1,35 @@
+{% extends "now_base_generic.html" %}
+
+{% block title %}
+  <title>NOW - Fossil Mammal Database</title>
+{% endblock %}
+
+{% block content %}
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+	<p><a href="http://pantodon.science.helsinki.fi/now" target="_blank">The NOW (New and Old Worlds) fossil mammal database</a> contains information about Cenozoic land mammal taxa and localities. The emphasis of the database has been on the European Miocene and Pliocene but North American localities, covering the whole Cenozoic, were added to the public database in 2016. African localities are currently being added and updated, and the temporal scale is also becoming wider for both Eurasia and Africa, with Pleistocene and Paleogene localities being added into the database. The NOW database is maintained and coordinated by <a href="mailto:indre-dot-zliobaite-at-helsinki-dot-fi">Indr&#279; Žliobait&#279;</a> in collaboration with associate coordinators, a steering group and an international <a href="">advisory board</a>.</p>
+	<br>
+
+	<h2>NOW data</h2>
+	<p>The nucleus of the database is a locality table and a species table, relationally linked by means of a locality-species correlation table (in essence, a table of localities and their faunal lists). Additions and updates are tied to references. The aim of the database is that each species (including higher taxa such as "Machairodontini indet. large sp." or "Rhinocerotidae indet. indet.") is given certain attributes describing anatomy and inferred diet, locomotion and other properties. Similarly, the geographic location, age, stratigraphy, lithology, taphonomy and environmental interpretation of each locality is described to the extent that these are known. It is also worth noting that not all datasets that have been added to NOW are of equal quality, and users should be aware of this fact. Please also note that in the North American data spatially or temporally close localities have been have been fused to more inclusive spatiotemporal entities prior to entry, whereas in the Old World the localities are in most cases individual sites. This does not affect the analysis on continental or regional levels (see e.g. Jernvall &amp; Fortelius 2002, 2004, available from <a href="">Publications</a>), but might affect locality-to-locality comparisons between North America and the Old World.
+	Revision of the data by NOW advisory board members and all users is an ongoing process and an integral part of the NOW project.
+	</p>
+	<br>
+	<h2>History</h2>
+	<p>A workshop organised by Ray Bernor, Volker Fahlbusch and Siegfried Rietschel in 1992 at Schloss Reisensburg in Bavaria, Germany was the starting point in the development of NOW. Participants in the workshop had been requested to compile revised lists of taxa and localities, to provide a database for later distribution within the group. The purpose of the workshop was to review the evidence for provinciality and diachrony of change between Central Europe and the Eastern Mediterranean realm during the Middle and Late Miocene. A main source of coordinated data input and revision was the European Science Foundation Network on Hominoid Evolution and Environmental Change in the Neogene of Europe (1995–1998).  For most of its existence, the acronym NOW has been derived from the words "Neogene of the Old World" but as NOW has since expanded to cover most of the Eurasian continent for the post-Oligocene (ca 25–0.01 million years ago), and is still expanding in both temporal and geographic scale, the words behind the acronym were officially changed to "New and Old Worlds" in early 2012. In 2016, North American data was added to the database, based on the “Tertiary Mammals of North America” books (Janis et al. 1998 and Janis et al. 2008).</p>
+	<br>
+
+	<h2><a name="Citation"></a>Citation</h2>
+	<h4>Minimum required attribution</h4>
+	<p>Data (http://www.helsinki.fi/science/now/) by The NOW Community / CC BY 4.0.</p>
+	<h4>Suggested citation or attribution</h4>
+	<p>The NOW Community [year]. New and Old Worlds Database of Fossil Mammals (NOW).
+	Licensed under CC BY 4.0. Release [number of release],
+	retrieved [download date] from http://www.helsinki.fi/science/now/.
+	</p>
+	<br
+	<h3>Database software</h3>
+	<p>The PHP-based user interface was planned and developed mainly by Gudrun Evans, who also created the previous one, and finished by Mr. Jouni Vepsäläinen of <a href="http://www.enporia.com/" target="_blank"><strong>Enporia Ltd</strong></a>.</p>
+</article>
+{% endblock %}

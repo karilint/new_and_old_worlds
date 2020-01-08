@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- Write your comments here -->
+{% load static %}
+<html lang="en">
+<head>
+{% block title %}
+{% endblock %}
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="RNames is a stratigraphical database">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://use.fontawesome.com/baa70f3cd3.js"></script>
+{% block script %}
+{% endblock %}
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+body {
+    background-color: rgb(202, 176, 95);
+    margin-top: 1em;
+    margin-left: 1em;
+    text-align: center;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 9pt;
+}
+
+h1 {
+    color: rgb(65, 65, 65);
+    font-family: comic sans ms;
+    font-weight: normal;
+    font-size: 32pt;
+}
+
+h2 {
+    font-family: comic sans ms;
+    font-weight: normal;
+    font-size: 14pt
+}
+
+h3 {
+    font-family: comic sans ms;
+    font-weight: normal;
+    font-size: 10pt
+}
+
+header {
+  background-color: #9933cc;
+  color: #ffffff;
+  padding: 15px;
+}
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: rgb(192, 192, 192);
+  color: #000000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #0099cc;
+}
+
+.aside {
+  background-color: rgb(192, 192, 192);
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.footer {
+  background-color: rgb(202, 176, 95);
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.toppanel {
+    background-color: rgb(250, 250, 210);
+}
+
+.middlepanel {
+    background-color: rgb(240, 240, 240);
+}
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+{% block style %}
+{% endblock %}
+</style>
+</head>
+<body>
+<div class="row">
+  <div class="col-1 col-s-1">
+  </div>
+
+  <div class="col-10 col-s-9">
+    <div class="row toppanel">
+      <div class="col-12 col-s-12 title">
+        <img src="http://www.helsinki.fi/science/now/images/nowlogoTN.png" alt="NOW logo" align="left">
+        <h1>NOW</h1>
+        <h2>New and Old Worlds</h2>
+        <h2>Database of fossil mammals</h2>
+        <p align="left">&copy; Aino Martiskainen</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-3 col-s-3 menu">
+        <ul>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="">Data Conventions</a></li>
+          <li><a href="">View Database</a></li>
+          <li><a href="">Browsing - Lists</a></li>
+          <li><a href="">Browsing - Details</a></li>
+          <li><a href="">Export and Maps</a></li>
+          <li><a href="">Advisory Board</a></li>
+          <li><a href="">Publications</a></li>
+          <li><a href="">Dental ecometrics</a></li>
+          <li><a href="">NOW Field Archives</a></li>
+          <li><a href="">Acknowledgements</a></li>
+          <li><a href="">Contact</a></li>
+          <li><a href="">FAQ</a></li>
+          <li><a href="">Links</a></li>
+          <li><a href="">News</a></li>
+        </ul>
+      </div>
+
+      {% block content %}
+      {% endblock %}
+
+      <div class="col-3 col-s-12">
+        <div class="aside">
+          <h2>NOW 25 years</h2>
+          {% load static %}
+          <p><a href={% static "now/pdf/NOW_25_book_wbs.pdf" %} target="_blank">NOW 25 years anniversary book: call for contributions. Indicate your interest by November 30, 2019.</a></p>
+        </div>
+        {% block aside %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-1 col-s-12">
+  </div>
+</div>
+
+<div class="footer">
+  <h3>License</h3>
+  <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /> Except where otherwise <a rel="note" href="">noted</a>, content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a></p>
+</div>
+
+</body>
+</html>
