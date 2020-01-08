@@ -1,0 +1,126 @@
+{% extends "now_base_generic.html" %}
+
+{% block style %}
+.collapsible {
+    background-color: F0F0F0;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+.active,
+.collapsible:hover {
+    background-color: #c0c0c0;
+}
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript">
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var content = this.nextElementSibling;
+              if (content.style.display === "block") {
+                  content.style.display = "none";
+              } else {
+                  content.style.display = "block";
+              }
+          });
+      }
+  </script>
+{% endblock %}
+
+{% block title %}
+  <title>NOW - Fossil Mammal Database - FAQ</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+	<h1>FAQ</h1>
+  <h2>General questions</h2>
+  <button class="collapsible">Q: What is NOW used for?</button>
+  <div class="content">
+      <p>A: Many users simply look up information about individual localities and species, using NOW as an encyclopedia. You can also use NOW as a time machine to look at how the distribution of species has changed over time. NOW is also widely used as a source for professional <a href="publications.html">publications</a> all around the world.</p>
+  </div>
+  <button class="collapsible">Q: Why are there only mammals in NOW?</button>
+  <div class="content">
+      <p>A: Because NOW is a community working on mammals. The database is not a stand-alone data repository, it summarizes knowledge of the research community, and is curated accordingly as new knowledge accumulates.</p>
+  </div>
+  <button class="collapsible">Q: NOW is compiled from many data sources of different quality, is it inaccurate? How can I trust the data?</button>
+  <div class="content">
+      <p>A: Just like any personal dataset of any researcher, NOW most certainly contains inaccuracies and uncertainties. The data in the NOW database are coordinated with emphasis on consistency, meaning that the final say on presence or absence of species or other characteristics is up to the coordinator responsible for that particular group or region. There is no democracy, this is the price we pay for consistency. In the end, the responsibility for data quality is still up to the user.</p>
+  </div>
+  <button class="collapsible">Q: Why should I use NOW and not any other source I find on the internet?</button>
+  <div class="content">
+      <p>A: You are most welcome to use any source on the internet. What is special about NOW really boils down to two main things: NOW contains information about the traits and properties of the taxa as well as about their occurrence. This is rare. And NOW at least tries to be consistent. That’s why we have coordinators with dictatorial rights to decide issues of taxonomy and stratigraphy, for example. Of course, and even with complete formal consistency, a residual of underlying disorder and inconsistency will always remain.</p>
+  </div>
+  <h2>Data content:</h2>
+  <button class="collapsible">Q: Will NOW ever be complete?</button>
+  <div class="content">
+      <p>A: No. Although NOW has very good coverage of many areas and intervals, it will never be complete. NOW is fundamentally just like a physical fossil collection at a museum and the collection grows and develops in many ways, some of them goal-oriented and others random. NOW summarizes the knowledge of a research community, the database is curated and refined as knowledge of the community accumulates. More than a simple collection of data, NOW is a community.</p>
+  </div>
+  <button class="collapsible">Q: I found an error in the database, what should I do?</button>
+  <div class="content">
+      <p>A: Wonderful! This is one important way in which the database can grow and develop. The first step is to discuss it with the coordinator responsible for the respective group or region. Please get in touch with the database curator <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a> who will guide you to the right person or simply look at the <a href="board.html">NOW Advisory Board</a> listing on the NOW web page and contact the appropriate coordinator directly. If the responsible coordinator agrees, you can make the update yourself or leave it for the responsible coordinator to make the update. To make updates yourself you will need an account, which will be provided for any updates cleared by the coordinator.</p>
+  </div>
+  <button class="collapsible">Q: I found/published a new paper summarizing the fauna a locality X, I want the database to reflect that, what should I do?</button>
+  <div class="content">
+      <p>A: You are most welcome to add data. The first step is to discuss with the responsible coordinator. Please get in touch with the database curator <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a> who will guide you to the right person and through the process.</p>
+  </div>
+  <button class="collapsible">Q: Can I report data based on my own observations of museum specimens?</button>
+  <div class="content">
+      <p>A: Yes, please do! The database is referenced, and each update must have an associated reference. The primary practice is to reference publications, but professional personal communications, observations, Excel sheets are also acceptable as references. All of that must be properly referenced and tractable, for example by DOI.</p>
+  </div>
+  <h2>Localities:</h2>
+  <button class="collapsible">Q: What is a locality?</button>
+  <div class="content">
+      <p>A: It can be any conventional unit, a place where fossils come from. Some places have a finer resolution / finer division into localities than others. NOW follows locality designations of the original publications from which data comes form.</p>
+  </div>
+  <button class="collapsible">Q: What is a General locality?</button>
+  <div class="content">
+      <p>A: General localities, such as Samos, have been established to record data that has no fine-grained locality information.</p>
+  </div>
+  <h2>Locality Age:</h2>
+  <button class="collapsible">Q: What is MN unit?</button>
+  <div class="content">
+      <p>A: MN is a unit system that gives approximate succession for European localities. It is based on comparing sets of faunal communities.</p>
+  </div>
+  <button class="collapsible">Q: Why do you use MN system as a framework?</button>
+  <div class="content">
+      <p>A: NOW does not use MN system as a framework, but MN happens to be the most frequently encountered time reference unit for localities.</p>
+  </div>
+  <h2>Locality Species:</h2>
+  <button class="collapsible">Q: Can species ever be deleted from localities?</button>
+  <div class="content">
+      <p>A: Typically, species which have been entered are not deleted. Taxonomic names are often refined and synonyms added, making old names obsolete. Species names that have no locality occurrence are not seen in routine views or downloads but remain searchable. Merging taxa or localities can only be done by associate coordinators.</p>
+  </div>
+  <button class="collapsible">Q: I have heard that North American localities in NOW are different from Eurasian localities, is that so?</button>
+  <div class="content">
+      <p>A: Yes, American localities have been aggregated during the data development process, the raw data have not been preserved. Therefore, American localities may seem to have more rich faunal lists than European ones. In addition, American and European data have slightly different ways of determining age. Users should be mindful of these differences when doing faunal richness comparisons across continents.</p>
+  </div>
+  <h2>User Account:</h2>
+  <button class="collapsible">Q: NOW is a public database, what are log-ins for?</button>
+  <div class="content">
+      <p>A: Just as in physical fossil collections, a small portion of data might remain private while the researcher or team that collected it is working on it. As a general rule, private data become public after 5 years.</p>
+  </div>
+  <button class="collapsible">Q: Can I get a user account to the database?</button>
+  <div class="content">
+      <p>A: To browse and download data you do not need an account. If you would like to add or edit data an account can be provided. The Steering group makes the decision. To apply for an account please get in touch with the database curator <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a>.</p>
+  </div>
+  <button class="collapsible">Q: I am very interested in fossils and palaeontology, how can I get involved?</button>
+  <div class="content">
+      <p>A: Great! Please contact us and let us know how you think you could contribute. You may contact any NOW member you might know or else database curator <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a>.</p>
+  </div>
+</article>
+
+{% endblock %}

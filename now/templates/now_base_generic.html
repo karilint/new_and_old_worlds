@@ -170,20 +170,20 @@ html {
       <div class="col-3 col-s-3 menu">
         <ul>
           <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="">Data Conventions</a></li>
-          <li><a href="">View Database</a></li>
-          <li><a href="">Browsing - Lists</a></li>
-          <li><a href="">Browsing - Details</a></li>
-          <li><a href="">Export and Maps</a></li>
-          <li><a href="">Advisory Board</a></li>
-          <li><a href="">Publications</a></li>
-          <li><a href="">Dental ecometrics</a></li>
-          <li><a href="">NOW Field Archives</a></li>
-          <li><a href="">Acknowledgements</a></li>
-          <li><a href="">Contact</a></li>
-          <li><a href="">FAQ</a></li>
-          <li><a href="">Links</a></li>
-          <li><a href="">News</a></li>
+          <li><a href="{% url 'conventions' %}">Data Conventions</a></li>
+          <li><a href="{% url 'database' %}">View Database</a></li>
+          <li><a href="{% url 'browsing_lists' %}">Browsing - Lists</a></li>
+          <li><a href="browsingDetails.html">Browsing - Details</a></li>
+          <li><a href="{% url 'export_maps' %}">Export and Maps</a></li>
+          <li><a href="{% url 'board' %}">Advisory Board</a></li>
+          <li><a href="{% url 'publications' %}">Publications</a></li>
+          <li><a href="{% url 'ecometrics' %}">Dental ecometrics</a></li>
+          <li><a href="{% url 'field_archive' %}">NOW Field Archives</a></li>
+          <li><a href="{% url 'acknowledgements' %}">Acknowledgements</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li><a href="{% url 'faq' %}">FAQ</a></li>
+          <li><a href="{% url 'links' %}">Links</a></li>
+          <li><a href="{% url 'news' %}">News</a></li>
         </ul>
       </div>
 
@@ -208,7 +208,7 @@ html {
 
 <div class="footer">
   <h3>License</h3>
-  <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /> Except where otherwise <a rel="note" href="">noted</a>, content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a></p>
+  <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /> Except where otherwise <a rel="note" href="{% url 'note' %}">noted</a>, content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a></p>
 </div>
 
 </body>

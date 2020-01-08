@@ -1,0 +1,80 @@
+{% extends "now_base_generic.html" %}
+
+{% block style %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block title %}
+  <title>NOW - Fossil Mammal Database - Contact</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+	<h1>Contact us</h1>
+  <p>We welcome all of your comments and suggestions.</p>
+
+  <form method="post" action="http://www.helsinki.fi/cgi-bin/postitalomake">{% csrf_token %}
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">Enter your comments here:</span></p>
+      <dl>
+          <dd>
+              <textarea name="Comments" rows="5" cols="50"></textarea>
+          </dd>
+      </dl>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">Tell us how to get in touch with you:</span></p>
+      <dl>
+        <dd>
+          <table cellspacing="5">
+            <tbody>
+              <tr>
+                <td>Name</td>
+                <td><input size="35" maxlength="256" name="Username" type="text"> </td>
+              </tr>
+              <tr>
+                <td>E-mail</td>
+                <td><input size="35" maxlength="256" name="UserEmail" type="text"> </td>
+              </tr>
+              <tr>
+                <td>Tel</td>
+                <td><input size="35" maxlength="256" name="UserTel" type="text"> </td>
+              </tr>
+              <tr>
+                <td>FAX</td>
+                <td><input size="35" maxlength="256" name="UserFAX" type="text"> </td>
+              </tr>
+            </tbody>
+          </table>
+        </dd>
+      </dl>
+      <dl>
+        <input name="RECIPIENT" value="mikael.fortelius@helsinki.fi" type="hidden">
+        <dd><input name="C1" value="ON" type="checkbox"> <span style="font-weight: bold;">Please contact me as soon as possible.</span> </dd>
+      </dl>
+      <p>
+        <input value="Submit Comments" type="submit">
+        <input name="senttext" value="Thank you for your comments!" type="hidden">
+        <input value="Clear Form" type="reset">
+      </p>
+  </form>
+</article>
+
+{% endblock %}
+
+{% block aside %}
+<div class="aside">
+  <p>Prof. <a href="mailto:mikael-dot-fortelius-at-helsinki-dot-fi">Mikael Fortelius</a></p>
+  <p>Department of Geology
+    <br> P.O. Box 64
+    <br> FIN-00014
+    <br> University of Helsinki
+    <br> Finland
+  </p>
+  <p>Phone: +358-9-191-50837
+    <br> Fax: +358-9-191-50826
+  </p>
+</div>
+{% endblock %}

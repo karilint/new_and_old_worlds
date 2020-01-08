@@ -1,0 +1,154 @@
+{% extends "now_base_generic.html" %}
+
+{% block style %}
+{% endblock %}
+
+{% block script %}
+{% endblock %}
+
+{% block title %}
+  <title>NOW - Fossil Mammal Database - Export and Maps</title>
+{% endblock %}
+
+{% block content %}
+
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+	<h1>Export and Maps</h1>
+
+  <p>The 'Export' and 'Show Map' functions in NOW database were updated in March and again in July 2011 to include many added functions. Please read the instructions below to learn how Maps and Export have been improved and how to use them in their new form.</p>
+
+  <p><span class="style1">NOTE:</span> Some browsers (old versions of Internet Explorer and possibly others) have some functional issues with the Export and Border Map functions. If you encounter any problems, please try using a different browser, and/or updating Java and FlashPlayer on your computer. The basic Export function (all localities) and Google Maps should work on all computers and browsers regardless.</p>
+  <br>
+
+  <h1><a name="Export"></a>Export</h1>
+
+  <p>You are very welcome to use data downloaded from the NOW database. Please remember to acknowledge the source using the recommended <a href="index.html/#Citation">citation</a>.</p>
+
+  <p>The <img alt="Export Records button" src="images/ExportBtn.png" style="width: 89px; height: 18px;" align="middle"> button is located on the <a href="#NavBarLists">navigation bar</a>, and is available from both the <a href="#LocalityList">Locality List</a> and the <a href="#SpeciesList">Species List</a>. When you press the 'Export' button, a pop-up window will appear, and you will get three choices: to export all NOW localities (with or without species lists), to export selected (specified by you) localities/species, or to cancel the export. </p>
+
+  <p>
+    <a href="images/ExportDialogue.png" target="_blank"><img title="Export dialogue window" alt="Export dialogue popup window" src="images/ExportDialogueTN.png" style="border: 2px solid ; width: 480px; height: 114px;"></a>
+  </p>
+
+  <h2><a name="ExportAll"></a>Export all NOW localities</h2>
+
+  <p>If you choose &#39;All NOW localities&#39;, a new window will open listing all the localities (over 5000) stored in NOW. Generating this list might take some time, so please be patient. To save this list, please choose &#39;Select All&#39; followed by &#39;Copy&#39; from your browser&#39;s Edit menu. You can then paste the text into an Excel sheet, choosing 'Paste special Ð Unicode text'. This assures the values will stay in the correct columns.</p>
+
+  <h2><a name="ExportSelected"></a>Export selected localities/species</h2>
+
+  <p>If you performed a search in either the Locality List or Species List prior to pressing 'Export' button, choosing &#39;Selected localities/species&#39; will open a new window displaying the results of your search options as a tab delimited list.</p>
+
+  <p>Launching from <b>Locality List</b>, the export list will contain basic locality details for the localities defined by the Locality related fields (Locality, Country, Max/Min age) without the attached species lists.</p>
+
+  <p>
+    <a href="images/ExportWindowLocOnly.png" target="_blank"><img title="Export File - localities only Spain" alt="Export File - localities and time only in Spain" src="images/ExportWindowLocOnlyTN.png" style="border: 2px solid ; width: 480px; height: 132px;"></a>
+  </p>
+
+  <p>To create an export including all locality-species pairs for the selected localities, unselect &#39;Localities only&#39; and hit the &#39;Search&#39; button
+    <img alt="Border Map - Search button" src="images/BorderMapSearchBtn.png" style="width: 32px; height: 18px;" align="middle">. This export will include basic locality details and eco-morphological and taxonomical information for the taxa present in the localities.</p>
+
+  <p>
+    <a href="images/ExportWindowLocSpecies.png" target="_blank"><img title="Export File - localities with species Spain" alt="Export File - localities and species in Spain" src="images/ExportWindowLocSpeciesTN.png" style="border: 2px solid ; width: 480px; height: 129px;"></a>
+  </p>
+
+  <p>Launching from <b>Species List</b>, the export list will contain all locality-species pairs for the species selected (Order, Family, Genus, etc. fields), including basic locality details and species eco-morphological and taxonomical information.</p>
+
+  <p>
+    <a href="images/ExportWindowRhino.png" target="_blank"><img title="Export File - Rhinocer" alt="Export File - Rhinoceroidea" src="images/ExportWindowRhinoTN.png" style="border: 2px solid ; width: 480px; height: 148px;"></a>
+  </p>
+
+  <p>To create an export list of species only without the locality details, choose &#39;Export species list only&#39; and hit the &#39;Search&#39; button
+    <img alt="Border Map - Search button" src="images/BorderMapSearchBtn.png" style="width: 32px; height: 18px;" align="middle">.
+  </p>
+
+  <p>
+    <a href="images/ExportWindowSpeciesOnly.png" target="_blank"><img title="Export File - Species only" alt="Export File - Species list only" src="images/ExportWindowSpeciesOnlyTN.png" style="border: 2px solid ; width: 480px; height: 119px;"></a>
+  </p>
+
+  <p>You can <a href="#ExportTypes">export</a> the generated list in two ways, but you can also modify your search criteria or enter additional criteria in the following ways:</p>
+
+  <p>1. You can continue to add or modify only Locality or only Species information.</p>
+  <p>2. You can narrow your search by defining both Locality and Species information simultaneously within the Export window. This can be done in two ways, illustrated here with the following examples:</p>
+  <p>For exporting all the locality-species pairs for localities that contain primates in Europe, enter 'Europe' into the Country field and '+Primates' into the Order field, and hit 'Search'. The '+' before 'Primates' signifies that you want the export to include also the other species found in these localities, not just the primate records. </p>
+  <p><span class="style1">NOTE:</span> If you wish to narrow down your search further, for example to export all locality-species pairs for localities including only primates of the genus Homo, the '+' needs to be entered before both 'Primates' and 'Homo' in their respective search fields Ð if one of these search terms is entered without the '+', the export will be narrowed to contain only the species specified by the 'non +' search term.</p>
+
+  <p>
+    <a href="images/ExportEurPrimLocAll.png" target="_blank"><img title="Export File - European Primate Localities All species" alt="Export File - European Primate Localities All species" src="images/ExportEurPrimLocAllTN.png" style="border: 2px solid ; width: 480px; height: 136px;"></a>
+  </p>
+
+  <p>For exporting the locality-species pairs for the primates of Europe only, enter 'Europe' into the Country field, and 'Primates' into the order field, and hit 'Search'. No symbol before 'Primates' signifies that you only want the export to include records for primates found in these localities.</p>
+
+  <p>
+    <a href="images/ExportEurPrimLoc.png" target="_blank"><img title="Export File - European Primates and locations" alt="Export File - European Primates and locations" src="images/ExportEurPrimLocTN.png" style="border: 2px solid ; width: 480px; height: 142px;"></a>
+  </p>
+
+  <p>It is now also possible to export geographically and/or temporally restricted species lists. For this option, you need to choose the 'Export species list only' option before hitting 'Search'. This will create an export that contains the members of a certain taxonomic group (e. g. Primates) found within a certain geographical area (and/or time period) defined by your search options. No actual locality data will appear on the export list.</p>
+
+  <p>
+    <a href="images/ExportEurPrimSpecies.png" target="_blank"><img title="Export File - European Primate species" alt="Export File - European Primate species" src="images/ExportEurPrimSpeciesTN.png" style="border: 2px solid ; width: 480px; height: 119px;"></a>
+  </p>
+
+  <p><span class="style1">NOTE:</span> It is not, however, possible to create an export list of localities containing certain taxa without the locality species information/list. This is because when &#39;Localities only&#39; is selected, the Species related search fields (Order, Family, Genus, etc.) become disabled and the search will be performed only according to the Locality related fields.</p>
+
+  <p><a name="ExportTypes">The list you see in the Export window is in a tab delimited format; the values do not fall under the correct headings, and can also display differently in different browsers. You can export a list where the formatting is correct by clicking <img alt="Save Text" src="images/SaveTextBtn.png" style="width: 32px; height: 18px;"align="middle">, which will copy the text to your computer's clipboard. You can then paste the text into an Excel sheet, choosing 'Paste special Ð Unicode text'. This assures the values will stay in the correct columns. You can also save the export on your computer as a tab delimited .csv file by clicking the <img alt="Save as .csv" src="images/SaveCSVbtn.png" style="width: 32px; height: 18px;"align="middle"> button.</p>
+
+  <p>Additionally, you can also now study your Export search results in the Export window as a border map by changing the Display mode from &#39;List&#39; to &#39;Map&#39;. If you wish to save this map or modify it further, please read the Map instructions below. You can always return to your export list by changing the Display mode back to &#39;List&#39;.</p>
+  <br>
+
+  <h1><a name="ShowMap"></a>Show Map</h1>
+
+  <p><img alt="Show Map button" src="images/ShowMapBtn.png" style="width: 89px; height: 18px;" align="middle"> button is located in the Navigation bar, and is available from both the <a href="#LocalityList">Locality List</a> and the <a href="#SpeciesList">Species List</a>.</p>
+  <p>Pressing &#39;Show Map&#39; will open a dialogue box in which you are asked to choose between &#39;Google Map&#39; or &#39;Border Map&#39;. The resulting map will open in a new window.</p>
+
+  <p>
+    <a href="images/ShowMapDialogue.png" target="_blank"><img title="Mapping dialogue" alt="Mapping Criteria dialogue" src="images/ShowMapDialogueTN.png" style="border: 2px solid ; width: 480px; height: 110px;"></a>
+  </p>
+
+  <p>Before pressing the &#39;Show Map&#39; button, however, it is advisable to perform a search in either the Locality list or Species list. This way the new window will display a map of your search results (instead of all of the over 5000 NOW localities). Additionally, you can now also modify, refine or change your search criteria within the Map window itself in the same way as in the Export window. Please see <a href="#ExportRecords">Export instructions</a> to learn how you can refine your Map search.</p>
+
+  <p>The new 'Show Map' function is slightly different depending from which List you launch it from. Below, in the Border Map section, the example Map is launched from the Locality List and in the Google Map section it is launced from the Species List. However, the same rules apply for both map options.</p>
+
+  <h2><a name="BorderMap"></a>Border Map</h2>
+
+  <p> The example figure below shows the results when 'Show Map' has been chosen after searching for 'France' in the <a href="#LocalityList">Locality List</a>.</p>
+
+  <p>
+    <a href="images/BorderMapFrance.png" target="_blank"><img title="Border map France" alt="Border Map France" src="images/BorderMapFranceTN.png" style="border: 2px solid ; width: 480px; height: 267px;"></a>
+  </p>
+
+  <p>In this example, we searched for localities in France in the <a href="#LocalityList"> Locality List</a>, and got a map displaying France and all its recorded localities. When launched through the Locality list, the map default is 'Localities only' to reduce the search time. However, clicking on a locality marker will still open a dialogue box showing all a species listed for that locality (they are recovered separately for each location). However, if you want to refine your search with Species List specific parameters (please see <a href="#Expor">Export instructions</a> to learn more about these options), you need to unselect the 'Localities only' box above the Map and run your search again within the Map window.</p>
+
+  <p>In the Border Map option, each locality is represented by a yellow dot (note: when using Species List parameters, if a taxon has a synonymous name that matches your search criteria, the localities where this taxon is present are represented by blue dots - these can be removed from the map by running the search again with 'Exclude species synonyms' selected). You can zoom in and out with the scale bar at the top, and toggle by dragging the map. The default colours for the map can be changed with the 'Colours' button <img alt="Map - Color button" src="images/MapColorBtn.png" style="width: 32px; height: 18px;" align="middle"> (background = sea, foreground = land), whereas the locality marker shapes/colour, displaying locality/country names, etc. can be changed with the 'Settings' button <img alt="Map - Settings button" src="images/MapSettingsBtn.png" style="width: 32px; height: 18px;" align="middle">. Clicking on a locality marker will open a pop-up window with that shows the Locality Details and the Locality Species List.</p>
+
+  <p><span class="style1">NOTE:</span> If there are two (or more) NOW localities that have the same exact coordinates (latitude/longitude) but represent different time intervals, they will be represented by a single marker on the map. However, when you click on that marker, you will have an option of looking at the faunal lists of the separate localities within the Locality Details window by changing the page at the left upper corner of the window (see the figure below: in this case there are two localities with the same coordinates and thus two pages to look at). This function is currently available in Border Map, whereas Google Maps will only display the information of one of these localities.</p>
+
+  <p>
+    <a href="images/BorderMapLocInfo.png" target="_blank"><img title="Border map Locality Info" alt="Border Map Loc Info" src="images/BorderMapLocInfoTN.png" style="border: 2px solid ; width: 480px; height: 285px;"></a>
+  </p>
+
+  <p>The Border map image can be saved as either JPG or ESP figure, or as a KML cloud (buttons at top left). A KML file can be opened in, for example, Google Earth, where you can modify the file further (delete incorrect localities, highlight certain areas, etc.). For instructions about using KML files in Google Earth, please see: <a href="http://earth.google.com/support/bin/static.py?page=guide_toc.cs" target="_blank">Google Earth Help</a></p>
+
+      <p><span class="style1">NOTE:</span> To get the Localities Species Lists included in the KML file, you need to un-check the box 'Localities only' above the map and perform the search again within the map window by pressing the 'Search' button <img alt="Border Map - Search button" src="images/BorderMapSearchBtn.png" style="width: 32px; height: 18px;" align="middle"> and then choosing 'KML'. Additionally, you can choose to display your search results as a list, and export said list, by changing your display mode from &#39;Map&#39; to &#39;List&#39;, and following the instructions outlines in the <a href="#Export">Export instructions</a>.</p>
+
+      <h2><a name="GoogleMap"></a>Google Map</h2>
+
+      <p> The example figure below shows the results when 'Show Map' has been chosen after searching for 'Felidae' in the <a href="#SpeciesList">Species List</a>.
+
+      <p>
+        <a href="images/GoogleMapFelidae.png" target="_blank"><img title="Google map Felidae" alt="Google map Felidae" src="images/GoogleMapFelidaeTN.png" style="border: 2px solid ; width: 480px; height: 238px;"></a>
+      </p>
+
+      <p>In this example, we searched for Felidae in the <a href="#SpeciesList">Species List</a>, and got a map displaying all recorded localities for felids. When a Map is launched through the <a href="#SpeciesList">Species List</a>, the default option will not be 'Localities only' because this option only work with Locality List search options, not when Species List options are chosen. This means all of the Felidae species records will have been loaded along with the map. For this reason, generating the Map takes longer than getting a Map through the Locality List. This also means than when a Map is launched through the Species List, the KML clouds or lists that can be saved will contain the species lists as a default. You cannot choose 'Localities only' option when doing searches with Species list specific parameters in the Map window because this option renders the Species related fields inactive and they will be disregarded in the following searches.</p>
+
+      <p>In the Google map option, each locality is represented by a red marker. However, when using Species List parameters, if a taxon has a synonymous name that matches your search criteria, the localities where this taxon is present are represented by blue markers - these can be removed from the map by running the search again with 'Exclude species synonyms' selected. You can zoom in and out, and pan the map, with the scale bar and arrows on the left. Clicking on a locality marker will display the Locality Details and the Locality Species List (in this example only felids) on the right hand side of the map.</p>
+
+      <p>This map cannot be saved as a picture because of Google regulations but you can take a screen capture to save the image. Additionally, you can save the markers as a KML cloud (blue button at top left 'Save as KML'). A KML file can be opened in, for example, Google Earth, where you can modify the file further (delete incorrect localities, highlight certain areas, change colours, etc.). For instructions about using KML files in Google Earth, please see: <a href="http://earth.google.com/support/bin/static.py?page=guide_toc.cs" target="_blank">Google Earth Help</a></p>
+
+      <p>As with the Border map option, you can choose to display your search results as a list, and export said list, by changing your display mode from &#39;Map&#39; to &#39;List&#39;, and following the instructions outlines in the <a href="#ExportRecords">Export instructions</a>. Remember, you also need to have the 'Localities only' box un-checked to get the Species list of each locality to be included in your list search.</p>
+</article>
+{% endblock %}
+
+{% block aside %}
+{% endblock %}
