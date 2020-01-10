@@ -1,0 +1,48 @@
+{% extends "now_base_generic.html" %}
+
+{% block title %}
+  <title>NOW - Fossil Mammal Database - Data Conventions - Locality description</title>
+{% endblock %}
+
+{% block content %}
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+<h1><a name="Locality"></a>Notes on description of Localities</h1>
+
+<p>Please follow the examples provided by the existing localities in the system, and the <a href="http://www.pantherion.com/dbmanual97/" target="_blank"> ETE database</a> manual. Below is some information about the basic Locality entry fields.</p>
+
+<h2>Obligatory information</h2>
+
+<p>Locality name, country, coordinates, and age are minimum requirements when entering a new locality into NOW.</p>
+<ul>
+    <li><b>Name: </b>The name of a locality and known synonyms. The design of the database allows a locality to be searched for under any of its known names. The primary locality name must be unique, but a synonym may be used for multiple localities.</li>
+    <br>
+
+    <li><b>Coordinates:</b> Latitude and longitude can be given either in degrees, minutes and seconds or in degrees with decimals. Mark coordinates as written in your reference. If no coordinates are mentioned, please use the coordinates of a known landmark (i.e. a city or village) nearby. To find the coordinates of this landmark, please use the 'Coordinate Services' button. The coordinates are important because the database has a map-based user interface, and localities without (or with grossly incorrect) coordinates are lost to the analyses. </li>
+    <br>
+
+    <li><b>Age:</b> The age of the locality with the highest degree of accuracy as possible. Time units (MN, Nalma, etc) can also be used, and can be searched for within the system. Please avoid inappropriate use of time units, e.g. NALMA or MN units for Chinese localities, and instead use actual age or regional mammal stages. If you are uncertain of the best approach for your locality, please contact the appropriate <a href="{% url 'board' %}#Stratigraphy">stratigraphic coordinator</a> or the main coordinator <a href="mailto:indre-dot-zliobaite -at -helsinki-dot-fi">Indr&#279; Žliobait&#279;</a>.
+    </li>
+</ul>
+
+<h2>Additional information</h2>
+
+<ul>
+    <li><span style="font-weight: bold;">Sedimentary Environment 1:</span> Emphasise this level.</li>
+    <br>
+
+    <li><span style="font-weight: bold;">Sedimentary Environment 2:</span> Include if well documented. Probably too fine a classification for most analyses.</li>
+    <br>
+
+    <li><span style="font-weight: bold;">Climate Type:</span> The general inferred climatic regime of the locality. Include especially when not based on the mammal fauna.</li>
+    <br>
+
+    <li><span style="font-weight: bold;">Biome:</span> Use in combination with Climate Type to create entities such as "temperate coniferous forest" or "tropical savanna" (in our usage, the latter spans woodland to grassland).</li>
+    <br>
+
+    <li><span style="font-weight: bold;">Seasonality:</span> Include if based on good evidence (non-mammalian). A very difficult but potentially very important field.</li>
+</ul>
+
+</article>
+{% endblock %}

@@ -18,6 +18,7 @@ function myFunction() {
 {% endblock %}
 
 {% block content %}
+{% load static %}
 
 <!-- Write your comments here -->
 
@@ -25,28 +26,28 @@ function myFunction() {
 	<h1>Data Conventions</h1>
 	NOW began as a clone of the ETE ("Evolution of Terrestrial Ecosystems") database originally developed by John Damuth and the ETE Consortium, and most species and locality data fields follow the definitions described in the <a href="http://www.pantherion.com/dbmanual97/" target="_blank">ETE</a> manual. NOW is limited in scope to Cenozoic land mammals, so naturally uses only part of the complex possibilities embodied in the ETE design. Some fields have been added to suit the purposes of the NOW database, and some existing fields have been adapted.
 
-	As a guideline NOW uses the taxonomy of <a href="#McKenna & Bell" onClick="reloadAndJump('McKenna & Bell'); return false;">McKenna &amp; Bell's</a><i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href="pdf/Muridae_tentative.pdf" target="_blank">Hans de Bruijn</a>.
+	As a guideline NOW uses the taxonomy of McKenna &amp; Bell's <i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href={% static "now/pdf/Muridae_tentative.pdf" %} target="_blank">Hans de Bruijn</a>.
 
 
 	<p>To learn about adding taxa to a locality and about how different occurrences are recorded in NOW, with some examples, please see:</p>
-	<li><a href="SpeciesAtLocalities.html" class="style1">Species at Localities</a></li>
+	<li><a href="{% url 'species_at_localities' %}" class="style1">Species at Localities</a></li>
 
 	<p>To learn about adding new taxa into the database and about how taxonomic information is recorded in NOW, with some examples, please see:</p>
-	<li><a href="taxonomy.html" class="style1">Taxonomic Fields</a></li>
+	<li><a href="{% url 'taxonomy' %}" class="style1">Taxonomic Fields</a></li>
 
 	<p>To learn how different physical and behavioural attributes of taxa can be recorded in NOW, please see:</p>
 
-	<li><a href="SpeciesNotes.html" class="style1">Description of Species</a></li>
+	<li><a href="{% url 'species_notes' %}" class="style1">Description of Species</a></li>
 
 	<p>To learn how different locations are described in NOW, please see:</p>
-	<li> <a href="LocalityNotes.html" class="style1">Description of Localities</a></li>
+	<li> <a href="{% url 'locality_notes' %}" class="style1">Description of Localities</a></li>
 
 	<p>For information about some basic data entry practices, please see:</p>
-	<li><a href="DataEntryPractices.html" class="style1">Data entry practices</a></li>
+	<li><a href="{% url 'data_entry_practices' %}" class="style1">Data entry practices</a></li>
 
-	<p><b>Reference:</b></p>
-  <a name="McKenna & Bell"></a>
-  <b>McKenna, M.C. &amp; Bell, S.K.</b> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.</td>
+	<p><b>References:</b></p>
+  <a id="McKennaBell"></a>
+  <p><b>McKenna, M.C. &amp; Bell, S.K.</b> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.</p>
+  <p><b>de Bruijn, Hans.</b> "A tentative classification of the Eurasian Paleogene and Neogene Muridae above the species level." <i>Neogene of the Old World Database of Fossil Mammals (NOW), http://www. helsinki. fi/science/now/, University of Helsinki (2010).</i></p>
 </article>
-
 {% endblock %}

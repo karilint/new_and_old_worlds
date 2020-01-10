@@ -10,11 +10,9 @@
 <!-- Write your comments here -->
 
 <article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-	<h1>News</h1>
-
   <h1>Browsing the Database - Lists</h1>
   <br>
-  <h2><a name="NavBarLists"></a>Navigation Bar</h2>
+  <h2><a id="NavBarLists"></a>Navigation Bar</h2>
 
   <p>The navigation bar appears in the left window next to the Locality, Species and References list pages.</p>
 
@@ -42,7 +40,7 @@
           </tr>
 
           <tr>
-              <td style="vertical-align: top;"><img alt="Show Map button" src={% static "now/images/ShowMapBigBtn.png" %} style="width: 85px; height: 20px;" align="middle"> will show the selected records on a map: see the <a href="ShowMap">Show Map</a> section for more details.</td>
+              <td style="vertical-align: top;"><img alt="Show Map button" src={% static "now/images/ShowMapBigBtn.png" %} style="width: 85px; height: 20px;" align="middle"> will show the selected records on a map: see the <a href="{% url 'export_maps'%}#ShowMap">Show Map</a> section for more details.</td>
 
           </tr>
       </tbody>
@@ -52,7 +50,7 @@
   <br>
   </p>
 
-  <h2><a name="Arrows"></a>Arrows</h2>
+  <h2><a id="Arrows"></a>Arrows</h2>
 
   <p>The arrow buttons appear above the search options on the Locality, Species and References pages.</p>
   <table style="width: 480px; text-align: left;" border="0" cellpadding="1" cellspacing="2">
@@ -60,14 +58,14 @@
 
           <tr>
               <td colspan="1" rowspan="3" style="width: 80px; vertical-align: top;">
-                  <a href="images/ArrowsLists.png" target="_blank">
-                      <img title="List Arrows" alt="List Arrows" src="images/ArrowsLists.png" style="border: 2px solid ; witht: 152px; height: 99px;" align="left"></a>
+                  <a href="{% static "now/images/ArrowsLists.png" %}" target="_blank">
+                      <img title="List Arrows" alt="List Arrows" src="{% static "now/images/ArrowsLists.png" %}" style="border: 2px solid ; witht: 152px; height: 99px;" align="left"></a>
               </td>
               <td style="vertical-align: top;">Within the different list pages, you can access your search history with the upper arrows. </td>
           </tr>
 
           <tr>
-              <td style="vertical-align: top;">Next to the arrows, <img alt="HistoryList" src="images/HistoryList.png" style="width: 13px; height: 20px;" align="middle"> button lets you see, and choose, all your previous search results.
+              <td style="vertical-align: top;">Next to the arrows, <img alt="HistoryList" src="{% static "now/images/HistoryList.png" %}" style="width: 13px; height: 20px;" align="middle"> button lets you see, and choose, all your previous search results.
               </td>
 
           </tr>
@@ -79,28 +77,28 @@
 
   </table>
 
-  <h2><a name="LocalityList"></a>Locality List</h2>
+  <h2><a id="LocalityList"></a>Locality List</h2>
 
   <p>A list of all localities included in the database.</p>
 
   <p>
-      <a href="images/LocalityList.png" target="_blank"><img title="Locality List" alt="Locality List" src="images/LocalityListTN.png" style="border: 2px solid ; width: 480px; height: 413px;"></a>
+      <a href="{% static "now/images/LocalityList.png" %}" target="_blank"><img title="Locality List" alt="Locality List" src="{% static "now/images/LocalityListTN.png" %}" style="border: 2px solid ; width: 480px; height: 413px;"></a>
   </p>
 
-  <p>You can select a specific locality to view by clicking the <img alt="Select Record button" src="images/SelectRecordBtn.png" style="width: 39px; height: 18px;" align="middle"> button next to the locality name. This will take you to the <a href="browsingDetails.html#Locality">Locality</a> details page.</p>
+  <p>You can select a specific locality to view by clicking the <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 39px; height: 18px;" align="middle"> button next to the locality name. This will take you to the <a href="{% url 'browsing_details' %}#Locality">Locality</a> details page.</p>
 
-  <p>To search for localities, enter terms in the box at the top of each column, then hit <img src="images/SearchBtn.png" alt="Search Button" align="middle" style="width: 63px; height: 18px;">. Hold the mouse over each box for formatting tips.</p>
+  <p>To search for localities, enter terms in the box at the top of each column, then hit <img src="{% static "now/images/SearchBtn.png" %}" alt="Search Button" align="middle" style="width: 63px; height: 18px;">. Hold the mouse over each box for formatting tips.</p>
 
   <p>Click on a column header to sort the records by that field, or to toggle between ascending and descending.</p>
 
-  <p>Clicking <img src="images/ClearBtn.png" alt="Clear button" align="middle" style="width: 63px; height: 18px;"> above 'Search' will clear all the search fields but keeps the previous search results visible. Click 'Locality' on the <a href="images/navbarLists.png" target="_blank">Navigation Bar</a> to clear the search and show all records. </p>
+  <p>Clicking <img src="{% static "now/images/ClearBtn.png" %}" alt="Clear button" align="middle" style="width: 63px; height: 18px;"> above 'Search' will clear all the search fields but keeps the previous search results visible. Click 'Locality' on the <a href="{% static "now/images/navbarLists.png" %}" target="_blank">Navigation Bar</a> to clear the search and show all records. </p>
 
   <p> <span style="text-decoration: underline;">Text Fields (Locality and Country)</span></p>
 
   <p>A wildcard is automatically entered at the end of entries in the Locality and Country columns, so you need only enter the beginning of words. For example, entering 'Kaz' under Country and hitting 'Search' will find all localities in Kazakhstan. If you then enter 'A' under Locality and hit 'Search', you will find all localities starting with A in Kazakhstan. You can insert your own wildcard (%) anywhere else if needed, for example typing '%cave' under Locality will find all localities with the word 'cave' in them.</p>
 
   <p>
-      <a href="images/LocalityListSearchLocality.png" target="_blank"><img title="Locality List: example search using locality" alt="Locality List: example search using locality" src="images/LocalityListSearchLocalityTN.png" style="border: 2px solid ; width: 480px; height: 143px;"></a>
+      <a href="{% static "now/images/LocalityListSearchLocality.png" %}" target="_blank"><img title="Locality List: example search using locality" alt="Locality List: example search using locality" src="{% static "now/images/LocalityListSearchLocalityTN.png" %}" style="border: 2px solid ; width: 480px; height: 143px;"></a>
   </p>
 
   <p>The search is not case-sensitive.</p>
@@ -114,7 +112,7 @@
   <p> <b>NOTE:</b> For country names that consist of more than one word, for example 'United Kingdom', please enter the name as 'United_Kingdom' into the Country field. Entering the words without the understrike will return a list of localities in every country that has the word 'United' in their name.</p>
 
   <p>
-      <a href="images/LocalityListContinents.png" target="_blank"><img title="Locality List: example search using two continents" alt="Locality List: example search using two continents" src="images/LocalityListContinentsTN.png" style="border: 2px solid ; width: 480px; height: 177px;"></a>
+      <a href="{% static "now/images/LocalityListContinentsTN.png" %}" target="_blank"><img title="Locality List: example search using two continents" alt="Locality List: example search using two continents" src="{% static "now/images/LocalityListContinentsTN.png" %}" style="border: 2px solid ; width: 480px; height: 177px;"></a>
   </p>
 
   <p><span style="text-decoration: underline;">Numeric Fields (Maximum Age and Minimum Age)</span></p>
@@ -128,33 +126,33 @@
   <p>A combination of maximum and minimum age search terms can be entered:</p>
 
   <p>
-      <a href="images/LocalityListSearchAge.png" target="_blank"><img title="Locality List: example search using maximum and minimum age" alt="Locality List: example search using maximum and minimum age" src="images/LocalityListSearchAgeTN.png" style="border: 2px solid ; width: 480px; height: 143px;"></a>
+      <a href="{% static "now/images/LocalityListSearchAge.png" %}" target="_blank"><img title="Locality List: example search using maximum and minimum age" alt="Locality List: example search using maximum and minimum age" src="{% static "now/images/LocalityListSearchAgeTN.png" %}" style="border: 2px solid ; width: 480px; height: 143px;"></a>
   </p>
   <br>
 
-  <h2><a name="SpeciesList"></a>Species List</h2>
+  <h2><a id="SpeciesList"></a>Species List</h2>
 
   <p>A list of all species included in the database.</p>
 
   <p>
-      <a href="images/SpeciesList.png" target="_blank"><img title="Species List" alt="Species List" src="images/SpeciesListTN.png" style="border: 2px solid ; width: 480px; height: 392px;"></a>
+      <a href="{% static "now/images/SpeciesList.png" %}" target="_blank"><img title="Species List" alt="Species List" src="{% static "now/images/SpeciesList.png" %}" style="border: 2px solid ; width: 480px; height: 392px;"></a>
   </p>
 
-  <p>You can select a specific species to view by clicking the <img alt="Select Record button" src="images/SelectRecordBtn.png" style="width: 39px; height: 18px;" align="middle"> button next to the taxon name. This will take you to the <a href="browsingDetails.html#Species">Species</span> </a>details page.</p>
+  <p>You can select a specific species to view by clicking the <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 39px; height: 18px;" align="middle"> button next to the taxon name. This will take you to the <a href="{% url 'browsing_details' %}#Species">Species</span> </a>details page.</p>
 
   <p>To search for species, enter terms in the box at the top of each column, then hit
-      <img src="images/SearchBtn.png" alt="Search Button" align="middle" style="width: 63px; height: 18px;">. Hold the mouse over each box for formatting tips.</p>
+      <img src="{% static "now/images/SearchBtn.png" %}" alt="Search Button" align="middle" style="width: 63px; height: 18px;">. Hold the mouse over each box for formatting tips.</p>
 
   <p>Click on a column header to sort the records by that field, or to toggle between ascending and descending.</p>
 
-  <p>Clicking <img src="images/ClearBtn.png" alt="Clear button" align="middle" style="width: 63px; height: 18px;"> above 'Search' will clear all the search fields but keeps the previous search results visible. Click 'Species' on the <a href="images/navbarLists.png" target="_blank">Navigation Bar</a> to clear the search and show all records. </p>
+  <p>Clicking <img src="{% static "now/images/ClearBtn.png" %}" alt="Clear button" align="middle" style="width: 63px; height: 18px;"> above 'Search' will clear all the search fields but keeps the previous search results visible. Click 'Species' on the <a href="{% static "now/images/navbarLists.png" %}" target="_blank">Navigation Bar</a> to clear the search and show all records. </p>
 
   <p> <span style="text-decoration: underline;">Text Fields</span></p>
 
   <p>A wildcard is automatically entered at the end of entries in all columns, so you need only enter the beginning of words. For example, entering 'rhinocer' under Family and hitting 'Search' will find all species in Family Rhinocerotidae. If you then enter 'b' under Species and hit 'Search', you will find all species starting with b in Rhinocerotidae. You can insert your own wildcard (%) anywhere else if needed, for example typing '%therium' under Genus will find all genera with the word 'therium' in them.</p>
 
   <p>
-      <a href="images/SpeciesListSearch.png" target="_blank"><img title="Species List: example search using wildcard ('%')" alt="Species List: example search using wildcard ('%')" src="images/SpeciesListSearchTN.png" style="border: 2px solid ; width: 480px; height: 148px;"></a>
+      <a href="{% static "now/images/SpeciesListSearch.png" %}" target="_blank"><img title="Species List: example search using wildcard ('%')" alt="Species List: example search using wildcard ('%')" src="{% static "now/images/SpeciesListSearch.png" %}" style="border: 2px solid ; width: 480px; height: 148px;"></a>
   </p>
 
   <p>The search is not case-sensitive.</p>
@@ -163,41 +161,41 @@
       <span style="font-style: italic;">Stephanorhinus kirchbergensis, </span> which is the accepted synonym for <span style="font-style: italic;">Rhinoceros mercki</span> in the NOW database.</p>
 
   <p>
-      <a href="images/SpeciesListSearchSynonym.png" target="_blank">
-          <img title="Species List: example search where taxon has a synonym" alt="Species List: example search where taxon has a synonym" src="images/SpeciesListSearchSynonymTN.png" style="border: 2px solid ; width:
+      <a href="{% static "now/images/SpeciesListSearchSynonym.png" %}" target="_blank">
+          <img title="Species List: example search where taxon has a synonym" alt="Species List: example search where taxon has a synonym" src="{% static "now/images/SpeciesListSearchSynonymTN.png" %}" style="border: 2px solid ; width:
                   480px; height: 57px;"></a>
   </p>
 
-  <p>Any species that has synonym(s) listed in the database will have <img alt="Synonym button" src="images/SynonymBtn.png" style="width: 20px; height: 18px;" align="middle"> next to it. Clicking this 'Synonym' button will open a pop-up window that shows all the synonyms listed for the species, and the references that were used when they were added.</p>
+  <p>Any species that has synonym(s) listed in the database will have <img alt="Synonym button" src="{% static "now/images/SynonymBtn.png" %}" style="width: 20px; height: 18px;" align="middle"> next to it. Clicking this 'Synonym' button will open a pop-up window that shows all the synonyms listed for the species, and the references that were used when they were added.</p>
 
   <p>
-      <a href="images/SpeciesListSynonymWindow.png" target="_blank">
-          <img title="Species List: synonym window" alt="Species List: synonym window" src="images/SpeciesListSynonymWindowTN.png" style="border: 2px solid ; width: 480px; height: 120px;"></a>
+      <a href="{% static "now/images/SpeciesListSynonymWindow.png" %}" target="_blank">
+          <img title="Species List: synonym window" alt="Species List: synonym window" src="{% static "now/images/SpeciesListSynonymWindowTN.png" %}" style="border: 2px solid ; width: 480px; height: 120px;"></a>
   </p>
 
-  <p>Similarly, if a species has a taxonomic comment listed in the database, <img alt="Comment button" src="images/CommentBtn.png" style="width: 20px; height: 18px;" align="middle"> will appear next to it. Clicking this 'Comment' button will open a pop-up window showing the comment and references associated with it.</p>
+  <p>Similarly, if a species has a taxonomic comment listed in the database, <img alt="Comment button" src="{% static "now/images/CommentBtn.png" %}" style="width: 20px; height: 18px;" align="middle"> will appear next to it. Clicking this 'Comment' button will open a pop-up window showing the comment and references associated with it.</p>
 
   <p>NOTE: Subfamily is a recently added field, and so far has only been added for some taxa. However, it is included in the sort order, so that species without a subfamily name will appear before those which have one entered.</p>
 
   <br>
 
-  <h2><a name="ReferenceList"></a>Reference List</h2>
+  <h2><a id="ReferenceList"></a>Reference List</h2>
   <p>The list of all references used in the database appears in the right window. Hold the mouse over a reference title, journal title or book title to see the full text.</p>
 
   <p>
-      <a href="images/ReferenceListSearch.png" target="_blank">
-          <img title="Reference List" alt="Reference List" src="images/ReferenceListSearchTN.png" style="border: 2px solid ; width: 480px; height: 313px;"></a>
+      <a href="{% static "now/images/ReferenceListSearch.png" %}" target="_blank">
+          <img title="Reference List" alt="Reference List" src="{% static "now/images/ReferenceListSearchTN.png" %}" style="border: 2px solid ; width: 480px; height: 313px;"></a>
   </p>
 
   <p>You can select a specific reference to view by clicking the
-      <img alt="Select Record button" src="images/SelectRecordBtn.png" style="width: 39px; height: 18px;" align="middle"> button next to the reference name. This will take you to the
-      <a href="browsingDetails.html#Reference">Reference</span></a> details page.</p>
+      <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 39px; height: 18px;" align="middle"> button next to the reference name. This will take you to the
+      <a href="{% url 'browsing_details' %}#Reference">Reference</span></a> details page.</p>
 
-  <p>To search for references, enter terms in the box at the top of each column, then hit <img src="images/SearchBtn.png" alt="Search Button" width="66" height="8" align="middle" style="width: 63px; height: 18px;">. Hold the mouse over each box for formatting tips.</p>
+  <p>To search for references, enter terms in the box at the top of each column, then hit <img src="{% static "now/images/SearchBtn.png" %}" alt="Search Button" width="66" height="8" align="middle" style="width: 63px; height: 18px;">. Hold the mouse over each box for formatting tips.</p>
 
   <p>Click on a column header to sort the records by that field, or to toggle between ascending and descending.</p>
 
-  <p>Clicking <img src="images/ClearBtn.png" alt="Clear button" width="63" height="8" align="middle" style="width: 59px; height: 18px;"> above 'Search' will clear all the search fields but keeps the previous search results visible. Click 'References' on the <a href="images/navbarLists.png" target="_blank">Navigation Bar</a> to clear the search and show all records. </p>
+  <p>Clicking <img src="{% static "now/images/ClearBtn.png" %}" alt="Clear button" width="63" height="8" align="middle" style="width: 59px; height: 18px;"> above 'Search' will clear all the search fields but keeps the previous search results visible. Click 'References' on the <a href="{% static "now/images/navbarLists.png" %}" target="_blank">Navigation Bar</a> to clear the search and show all records. </p>
 
   <p><span style="text-decoration: underline;">Text Fields (Author, Title, Journal, Book Title and Type)</span></p>
 
@@ -214,8 +212,8 @@
   </p>
 
   <p>
-      <a href="images/ReferenceListSearchTitle.png" target="_blank">
-          <img title="Reference List: example search using title" alt="Reference List: example search using title" src="images/ReferenceListSearchTitleTN.png" style="border: 2px solid ; width: 480px; height: 89px;"></a>
+      <a href="{% static "now/images/ReferenceListSearchTitle.png" %}" target="_blank">
+          <img title="Reference List: example search using title" alt="Reference List: example search using title" src="{% static "now/images/ReferenceListSearchTitleTN.png" %}" style="border: 2px solid ; width: 480px; height: 89px;"></a>
   </p>
 
   <p><span style="text-decoration: underline;">Book Title</span>: the secondary title, so search here for titles of books which have had chapters cited, or conference titles, titles of journal volumes, etc.
@@ -223,7 +221,7 @@
   </p>
 
   <p>
-      <a href="images/ReferenceListSearchBookTitle.png" target="_blank"><img title="Reference List: example search using book title" alt="Reference List: example search using book title" src="images/ReferenceListSearchBookTitleTN.png" style="border: 2px solid ; width: 480px; height: 205px;"></a>
+      <a href="{% static "now/images/ReferenceListSearchBookTitle.png" %}" target="_blank"><img title="Reference List: example search using book title" alt="Reference List: example search using book title" src="{% static "now/images/ReferenceListSearchBookTitleTN.png" %}" style="border: 2px solid ; width: 480px; height: 205px;"></a>
   </p>
 
   <p>NOTE: a search in one title field will only search in the field entered. For example, entering '%neogene mammal' under Title will find all references where the phrase is included in the primary title, but entering same phrase under Book Title will find all chapters from books with the phrase in the book title.</p>

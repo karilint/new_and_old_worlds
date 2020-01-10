@@ -1,0 +1,603 @@
+{% extends "now_base_generic.html" %}
+
+{% block title %}
+  <title>NOW - Fossil Mammal Database - Proper use of Taxonomic Fields</title>
+{% endblock %}
+
+{% block content %}
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+  {% load static %}
+  As a guideline NOW uses the taxonomy of McKenna &amp; Bell's <i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href={% static "now/pdf/Muridae_tentative.pdf" %} target="_blank">Hans de Bruijn</a>.
+  <h1><a id="TaxonomicFields"></a>Proper use of Taxonomic Fields</h1>
+
+  <p>The primary assumption is that species already exist in the database, so before creating a new species entry, always check whether the species is in the database already! If this is the case, please follow the instructions under <a href="{% url 'species_at_localities' %}">Species at Localities </a> for how to add the species to your desired location. However, if the species in question really is missing from the database, for example it is a recently established species, from an area previously not included in the database, or an informal species, please follow the taxonomic conventions outlined below. </p>
+
+  <br>
+
+  <table style="width: 480px;" border="1" cellpadding="10" cellspacing="5">
+      <tbody>
+
+          <tr>
+              <td width="64" style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Class</span></td>
+              <td width="355" style="vertical-align: top; text-align: left;">The Linnean class to which the species belongs:&nbsp; <span style="font-weight: bold;">Mammalia</span>.
+                  <a id="tab_Class">
+                      <br>
+              </td>
+          </tr>
+          <tr>
+
+              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Order</span></td>
+              <td style="vertical-align: top; text-align: left;">
+                  <p>The Linnean order to which the species belongs.
+                      <a id="tab_Order"></p>
+              </td>
+          </tr>
+          <tr>
+              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Family</span></td>
+              <td style="vertical-align: top; text-align: left;">
+                  <p>The Linnean family to which the species belongs.
+                      <a id="tab_Family"></p>
+
+                  <ul>
+                      <li><span style="font-weight: bold;">incertae sedis</span> when the family of the genus is not known</li>
+                      <li><span style="font-weight: bold;">indet.</span> when nothing but the order for this taxon is known</li>
+                      <li>when there are any uncertainties in assignment of the family for this genus, enter 'family attrib of genus uncertain' in the taxonomic status field</li>
+                      <li>If the family is not known at data entry (a relatively common occurrence) the value <b>Findout</b> may be used. These species can be listed and updated later. </li>
+
+                      <li>if there are any uncertainties in the family identification at a particular locality, enter 'family id uncertain' in the ID status field, genus and species should be indet.
+                      </li>
+                  </ul>
+              </td>
+          </tr>
+          <tr>
+              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Tribe or Subfamily</span></td>
+              <td style="vertical-align: top; text-align: left;">
+                  <p>The Linnean subfamily or tribe to which the species belongs.
+                      <a id="tab_Tribe"></p>
+
+                  <ul>
+                      <li>use the most meaningful rank between family and genus for the family in question</li>
+                      <li>leave blank when tribes/subfamilies are not commonly used for the family in question</li>
+                      <li> Enter <b>Findout</b> if tribes/subfamilies are commonly used for the family but it is not known to you
+                          <li> Enter <b>indet.</b> if a tribes/subfamilies are commonly used for this family but cannot be assigned for this taxon</li>
+
+                          <li>leave blank when nothing but the order or family for this taxon is known</li>
+                  </ul>
+              </td>
+          </tr>
+          <tr>
+              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Genus</span></td>
+              <td style="vertical-align: top; text-align: left;">
+                  <p>The generic name of the species.
+                      <a id="tab_Genus"></p>
+
+                  <ul>
+                      <li><span style="font-weight: bold;">indet.</span> when the genus of the species cannot be assigned
+                          <br>(when genus is indet., species must also be indet.)</li>
+                      <li><span style="font-weight: bold;">gen.</span> when the "species" belongs to a distinct but unnamed genus
+                          <br> (when genus is gen., species should usually be sp.)</li>
+                      <li><span style="font-weight: bold;"></span>when there are any uncertainties in assignment of the genus for this species, enter 'genus attrib of species uncertain' in the taxonomic status field</li>
+
+                      <li>if there are any uncertainties in the genus identification at a particular locality, enter 'genus id uncertain' in the ID status field, species should be indet.</li>
+                  </ul>
+              </td>
+          </tr>
+          <tr>
+              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Species</span></td>
+              <td style="vertical-align: top; text-align: left;">The species epithet of the species.
+                  <a id="tab_Species">
+                      <br>
+
+                      <ul>
+                          <li><span style="font-weight: bold;">indet.</span> when the species of the taxon cannot be assigned (NOTE: indeterminate taxa are often referred to as 'sp.' in the literature but you should use 'indet.' for them in NOW)</li>
+                          <li><span style="font-weight: bold;">sp.</span> when the 'species' represents a distinct but unnamed species - when species is sp., the unique identifier must be completed</li>
+                          <li>if there are any uncertainties in the species identification at a particular locality, enter 'species id uncertain' in the ID status field</li>
+                      </ul>
+
+              </td>
+          </tr>
+          <tr>
+              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Unique</span></td>
+              <td style="vertical-align: top; text-align: left;"><a id="tab_Unique">Makes the species entry unique.<br>
+<ul>
+<li>usually left blank (automatically filled with '-')</li>
+
+<li><span style="font-weight: bold;">mandatory</span> when sp. in the species field: to indicate new, unnamed species, use '<span style="font-weight: bold;">nov. Locality</span>'
+, or '<span style="font-weight: bold;">nov. Author</span>', or simply '<span style="font-weight: bold;">Locality</span>'<br>
+(Note: NEVER enter the names of new, unpublished taxa, as this will invalidate the name)</li>
+<li><span style="font-weight: bold;">subspecies</span> name if absolutely necessary (avoid using subspecies where possible or enter into the
+'<b>Additional Info</b>' field when adding the species into a location). Subspecies can often be considered as actual species by different authors
+&ndash; for example <i>Canis palmidens</i> appears in literature also as <i>Canis chicliensis palmidens</i> &ndash; so it is good to also check
+whether the genus in question already has the same subspecies name as a species level entry in the database.</li>
+
+<li>may also be used to create informal subdivisions ('small', 'large') of taxa</li>
+<li>Avoid using meaningless distinctions such as 1, 2 or A, B in the unique field, unless following a Locality name <b>even if thus given in the literature</b>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Taxonomic Status</span></td>
+
+<td style="vertical-align: top; text-align: left;"><a id="tab_Tax_status">A taxonomic qualifier common to all occurrences of this taxon. Usually the taxonomic status is blank.
+<br>
+<p>Valid entries are:
+</p>
+<ul>
+<li>family attrib of genus uncertain</li>
+<li>genus attrib of species uncertain</li>
+<li>informal species</li>
+
+<li>species validity uncertain</li>
+<li>taxonomic validity uncertain</li>
+</ul>
+
+<p>&#39;Species validity uncertain&#39; is used for taxa that belong to a specific genus but have an uncertain standing as separate species (often due to lack of knowledge). &#39;Taxonomic validity uncertain&#39;
+indicates taxa that are most likely invalid, nomina dubia, listed only in very old literature, or chimeras but still persist in literature sources as listed species.</p>
+
+</td>
+</tr>
+<tr>
+
+<td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Taxonomic Comment</span><br>
+</td>
+<td style="vertical-align: top; text-align: left;">
+<ul>
+<li><a id="tab_Tax_comment">For most taxa, Taxonomic Comment should be left blank</li>
+<li>This field is meant for additional, relevant taxonomic information that does not fit into the common database fields</li>
+<li>Could be, for example, &#39;Several subspecies recognized&#39; or &#39;Possibly synonymous with Machairodus aphanistus&#39; &#39;
+validity uncertain&#39; should be chosen for &#39;Taxonomic status&#39;)</li>
+
+<li>Taxonomic comments can only be added by taxonomic coordinators or NOW administrators, but you are very welcome to suggest relevant comments<br></li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Synonym</span><br>
+</td>
+<td style="vertical-align: top; text-align: left;">
+
+<ul><a id="tab_Synonym">
+<li>If there are commonly known synonymous names, for example the species used to be classified under a different genus, the synonymous name(s) should be
+entered here (see also <a href = "{% url 'species_at_localities' %}#SynTaxName">examples </a> for entering a taxon under a synonomous name into a locality - last example) </li>
+                  <li>Some taxonomic names also have several different spellings which all appear in the common literature. For example, <i>Lynx pardinus</i> and <i>Lynx pardina</i> are both commonly used for the same species, but only one of the names is correct (<i>Lynx pardinus</i> is the original name) and the other should be entered as its synonym </li>
+
+                  <li> In any other (possible) synonymy cases, please contact <a href="mailto:susanna-dot-sova-at-helsinki-dot-fi">Susanna Sova</a> or <a href="mailto:laura-dot-saila-at-helsinki-dot-fi">Laura S&auml;il&auml;</a> before entering a new synonym into the database. </li>
+                  </ul>
+              </td>
+          </tr>
+
+      </tbody>
+  </table>
+  <br>
+
+  <h2><a id="TaxonomicExamples"></a>Taxonomic Examples</h2>
+
+  <p>Below are a number of hypothetical examples as a guide to correct usage of the taxonomic fields in NOW.</p>
+
+  <ul>
+      <li>
+          <h3><a id="Well-definedTaxa"></a>Well-defined taxa</h3>
+
+      </li>
+  </ul>
+  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
+      <tbody>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Order</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Family</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Subfamily</span></td>
+
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> well-defined taxonomic unit</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
+              <td style="text-align: left; vertical-align: middle;">major</td>
+
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> the family of genus <span style="font-style: italic;">Simocyon</span> is not known</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+              <td style="text-align: left; vertical-align: middle;">incertae sedis</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+              <td style="text-align: left; vertical-align: middle;">Simocyon</td>
+              <td style="text-align: left; vertical-align: middle;">primigiensis</td>
+
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> a widely accepted subspecies</td>
+          </tr>
+          <tr>
+
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+              <td style="text-align: left; vertical-align: middle;">Felidae</td>
+              <td style="text-align: left; vertical-align: middle;">Felinae</td>
+              <td style="text-align: left; vertical-align: middle;">Lynx</td>
+              <td style="text-align: left; vertical-align: middle;">lynx</td>
+              <td style="text-align: left; vertical-align: middle;">lynx</td>
+
+          </tr>
+      </tbody>
+  </table>
+
+  <p>NOTE: In most cases, it is preferred that you enter subspecies names into the <a href="{% url 'species_at_localities' %}#LocSubspecies">&#39;Additional Info&#39;</a> field within <b>Localities >
+Species</b> information tab instead of creating a new species entry.
+      <br>
+  </p>
+
+  <ul>
+
+      <li>
+          <h3><a id="IndeterminateTaxa"></a>Indeterminate taxa</h3>
+      </li>
+  </ul>
+  <p>NOTE: indeterminate taxa are often referred to as 'sp.' in the literature.</p>
+
+  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
+      <tbody>
+          <tr>
+
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Order</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Family</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Subfamily</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
+
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> indeterminate carnivore</td>
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> family Amphicyonidae, but nothing further is known</td>
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+
+              <td style="text-align: left; vertical-align: middle;">-</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+
+                  <span style="font-weight: bold;">Situation:</span> subfamily Amphicyoninae, genus and species unknown</td>
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
+
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> this material represents tribe Bovini, genus and species unknown</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Artiodactyla</td>
+              <td style="text-align: left; vertical-align: middle;">Bovidae</td>
+              <td style="text-align: left; vertical-align: middle;">Bovini</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> cannot be assigned at the species level e.g. insufficient fossil material
+                  <br>
+                  <span style="font-weight: bold;">May appear in literature as:</span> <i>Amphicyon</i> sp., <i>Amphicyon</i> indet.</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> material from genus <i>Lynx</i>, a small form but species unknown
+                  <br>
+                  <span style="font-weight: bold;">May appear in literature as:</span> <i>Lynx</i> indet. small, <i>Lynx</i> (small form)</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Carnivora</td>
+              <td style="text-align: left; vertical-align: middle;">Felidae</td>
+              <td style="text-align: left; vertical-align: middle;">Felinae</td>
+              <td style="text-align: left; vertical-align: middle;">Lynx</td>
+              <td style="text-align: left; vertical-align: middle;">indet.</td>
+
+              <td style="text-align: left; vertical-align: middle;">small</td>
+          </tr>
+      </tbody>
+  </table>
+  <br>
+  <ul>
+      <li>
+          <h3><a id="InformalSpecies"></a>Informal species</h3>
+
+      </li>
+  </ul>
+  <p>NOTE: Informal species may be novel species, or distinct but unnamed taxa from a particular locality. They are identified by 'sp.' in the species field, and an identifier in the unique field, usually the Locality name. Many taxa are listed as '<i>Genus</i> sp.' in the literature, but unless they refer to a distinct species, they should be entered in NOW as <a href="#IndeterminateTaxa">indeterminate taxa</a>, '<i>Genus</i> indet.'.</p>
+
+  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
+
+      <tbody>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Family</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Subfamily</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
+
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Taxonomic Status</span></td>
+          </tr>
+          <tr>
+              <td rowspan="1" colspan="6" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> a novel species within
+                  <si>Amphicyon</i> from locality Pasalar
+                      <br>
+
+                      <span style="font-weight: bold;">May appear in literature as:</span> <i>Amphicyon</i> sp. nov., <i>Amphicyon</i> nov.</td>
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+
+              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
+              <td style="text-align: left; vertical-align: middle;">sp.</td>
+              <td style="text-align: left; vertical-align: middle;">Pasalar</td>
+              <td style="text-align: left; vertical-align: middle;">informal species</td>
+          </tr>
+
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
+              <td style="text-align: left; vertical-align: middle;">sp.</td>
+              <td style="text-align: left; vertical-align: middle;">nov. Pasalar</td>
+
+              <td style="text-align: left; vertical-align: middle;">informal species</td>
+          </tr>
+          <tr>
+              <td rowspan="1" colspan="6" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> a novel species in probably a novel genus from locality Candir</td>
+          </tr>
+          <tr>
+
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+              <td style="text-align: left; vertical-align: middle;">gen.</td>
+              <td style="text-align: left; vertical-align: middle;">sp.</td>
+              <td style="text-align: left; vertical-align: middle;">Candir</td>
+              <td style="text-align: left; vertical-align: middle;">informal species</td>
+
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> a novel species within <i>Lynx</i> from locality Stockholm
+                  <br>
+                  <span style="font-weight: bold;">May appear in literature as:</span> <i>Lynx</i> sp.1</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Felidae</td>
+              <td style="text-align: left; vertical-align: middle;">Felinae</td>
+              <td style="text-align: left; vertical-align: middle;">Lynx</td>
+              <td style="text-align: left; vertical-align: middle;">sp.</td>
+              <td style="text-align: left; vertical-align: middle;">Stockholm 1</td>
+
+              <td style="text-align: left; vertical-align: middle;">informal species</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> a novel species, named but UNPUBLISHED
+                  <br>
+                  <span style="font-weight: bold;">May appear in literature as:</span> <i>Lynx newname</i> sp. nov.</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Felidae</td>
+              <td style="text-align: left; vertical-align: middle;">Felinae</td>
+              <td style="text-align: left; vertical-align: middle;">Lynx</td>
+              <td style="text-align: left; vertical-align: middle;">sp.</td>
+              <td style="text-align: left; vertical-align: middle;">Werdelin new</td>
+
+              <td style="text-align: left; vertical-align: middle;">informal species</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> a novel species, named and PUBLISHED
+                  <br>
+                  <span style="font-weight: bold;">May appear in literature as:</span> <i>Lynx newname</i> sp. nov</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Felidae</td>
+              <td style="text-align: left; vertical-align: middle;">Felinae</td>
+              <td style="text-align: left; vertical-align: middle;">Lynx</td>
+              <td style="text-align: left; vertical-align: middle;">newname</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+      </tbody>
+  </table>
+  <br>
+
+  <ul>
+      <li>
+          <h3><a id="UncertainTaxAssig"></a>Uncertain taxonomic assignment</h3>
+
+      </li>
+  </ul>
+  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
+      <tbody>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Family</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Subfamily</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
+
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
+              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Taxonomic Status</span></td>
+          </tr>
+          <tr>
+              <td rowspan="1" colspan="6" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> species <i>steinheimensis</i> may not belong to the genus <i>Amphicyon</i>
+                  <br>
+
+                  <span style="font-weight: bold;">May appear in literature as:</span> cf. <i>Amphicyon steinheimensis</i>, ?<i>Amphicyon steinheimensis<i>, "<i>Amphicyon</i>"
+                  <i>steinheimensis</i></td>
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
+
+              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
+              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
+              <td style="text-align: left; vertical-align: middle;">steinheimensis</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+              <td style="text-align: left; vertical-align: middle;">genus attrib of species uncertain</td>
+          </tr>
+
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> genus <i>Hecubides</i> may not belong to the family Amohycionidae
+                  <br>
+                  <span style="font-weight: bold;">May appear in literature as:</span> cf. Amohycionidae <i>Hecubides macrodon</i></td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Amohycionidae</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+              <td style="text-align: left; vertical-align: middle;">Hecubides</td>
+              <td style="text-align: left; vertical-align: middle;">macrodon</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+
+              <td style="text-align: left; vertical-align: middle;">family attrib of genus uncertain</td>
+          </tr>
+          <tr>
+              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> taxonomic validity of <i>Lynx fennicus</i> is uncertain</td>
+
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Felidae</td>
+              <td style="text-align: left; vertical-align: middle;">Felinae</td>
+              <td style="text-align: left; vertical-align: middle;">Lynx</td>
+              <td style="text-align: left; vertical-align: middle;">fennicus</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+
+              <td style="text-align: left; vertical-align: middle;">taxonomic validity uncertain</td>
+          </tr>
+      </tbody>
+  </table>
+  <br>
+
+  <p><a id="TwoTaxa_Regular">NOTE:</a> In a few recognised cases, two similar but separate species may not be possible to tell apart (e.g. can tell them apart if skull material is present, but not just from the teeth). Where the taxon is thus indeterminate but limited to two known species, and <u>this is a regular occurrence</u>, the species may be entered into NOW as a new species entry (in less common cases, please see <a href="{% url 'species_at_localities' %}#UncertainOccTax_TwoSpecies">examples</a> under 'Species at Localities')</p>
+
+  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
+      <tbody>
+          <tr>
+              <td width="89" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Family</span></td>
+              <td width="95" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
+              <td width="180" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
+              <td width="25" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
+
+              <td width="28" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Taxonomic Status</span></td>
+          </tr>
+          <tr>
+              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
+                  <br>
+                  <span style="font-weight: bold;">Situation:</span> It is often impossible to tell whether <i>Stephanorhinus etruscus</i> or <i>Stephanorhinus hundheimensis</i> is present
+                  <br>
+                  <span style="font-weight: bold;">May appear in literature as:</span> <i>Stephanorhinus etruscus/hundsheimensis<i> or <i>Stephanorhinus hundsheimensis/etruscus</i></td>
+          </tr>
+          <tr>
+              <td style="text-align: left; vertical-align: middle;">Rhinocerotidae</td>
+
+              <td style="text-align: left; vertical-align: middle;">Stephanorhinus</td>
+              <td style="text-align: left; vertical-align: middle;">etruscus/hundsheimensis</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+              <td style="text-align: left; vertical-align: middle;">-</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <br>
+
+  <p><b>Links to:</b></p>
+
+  <p><a href="{% url 'species_at_localities' %}">Species at Localities</a> </p>
+
+  <p>Notes on<a href="{% url 'species_notes' %}"> description of species </a></p>
+
+  <p>Notes on <a href="{% url 'locality_notes' %}">description of localities</a></p>
+
+  <p><a href="{% url 'data_entry_practices' %}">Data entry practices</a></p>
+
+  <br>
+  <p><b>Reference:</b></p>
+  <a id="McKennaBell"></a>
+  <b>McKenna, M.C. &amp; Bell, S.K.</b> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.</td>
+
+</article>
+{% endblock %}

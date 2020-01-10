@@ -1,0 +1,186 @@
+{% extends "now_base_generic.html" %}
+
+{% block title %}
+  <title>NOW - Fossil Mammal Database - Browsing the Database - Details</title>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+  <h1>Browsing the Database - Details</h1>
+  <h2><a id="NavBar"></a>Navigation Bar</h2>
+
+  <p>The navigation bar appears in the left window next to Locality, Species and Reference details pages.</p>
+
+  <table style="width: 480px; text-align: left;" border="0" cellpadding="1" cellspacing="2">
+      <tbody>
+          <tr>
+              <td colspan="1" rowspan="4" style="width: 80px; vertical-align: top;">
+                  <a href="src="{% static "now/images/navbar.png" %}" target="_blank">
+                      <img title="Navigation Bar" alt="Navigation Bar" src="{% static "now/images/navbarTN.png" %}" style="border: 2px solid ; witht: 64px; height: 130px;" align="left"></a>
+
+              </td>
+              <td style="vertical-align: top;"><img alt="Locality List button"src="{% static "now/images/LocalityListBtn.png" %}" style="width: 85px; height: 28px;" align="middle"> goes to the <a href="#LocalityList">Locality</a> page.</td>
+
+          </tr>
+
+          <tr>
+              <td style="vertical-align: top;"><img alt="Species List button" src="{% static "now/images/SpeciesListBtn.png" %}" style="width: 85px; height: 26px;" align="middle"> goes to the <a href="#SpeciesList">Species </a>page.</td>
+          </tr>
+
+          <tr>
+              <td style="vertical-align: top;"><img alt="Reference List button" src="{% static "now/images/ReferenceListBtn.png" %}" style="width: 85px; height: 26px;" align="middle"> goes to the <a href="#ReferenceList">Reference </a> page.</td>
+
+          </tr>
+
+          <tr>
+              <td style="vertical-align: top;"> Greyed out buttons are not available when browsing without edit permissions.</td>
+          </tr>
+      </tbody>
+  </table>
+
+  <p>
+      <br>
+  </p>
+
+  <h2><a id="Arrows"></a>Arrows</h2>
+
+  <p>The arrow buttons appear above the details window in all three details pages.</p>
+
+  <p>
+      <a href="{% static "now/images/ArrowsDetails.png" %}" target="_blank"><img title="Details page arrows" alt="Details page arrows" src="{% static "now/images/ArrowsDetails.png" %}" style="border: 2px solid ; width: 468px; height: 35px;"></a>
+  </p>
+
+  <p> Within the different details pages, you can access your search history with the left hand arrows. Next to these arrows,
+      <img alt="HistoryList" src="{% static "now/images/HistoryList.png" %}" style="width: 13px; height: 20px;" align="middle"> button lets you see, and choose, all your previous search results.</p>
+
+  <p>Right hand arrows let you navigate between the successive records of the foundset (I&lt; = first, &lt; = previous, &gt; = next, &gt;I = last).</p>
+
+  <br>
+
+  <h2><a id="Locality"></a>Locality</h2>
+
+  <p>Details of the selected locality are displayed in the right window. The total number of records displayed (foundset) are those found by the search performed in the list.</p>
+
+  <p>
+      <a href="{% static "now/images/Locality.png" %}" target="_blank"><img title="Locality record" alt="Locality record" src="{% static "now/images/LocalityTN.png" %}" style="border: 2px solid ; width: 480px; height: 401px;"></a>
+      <br>
+  </p>
+
+  <p>The top of the record displays the Locality ID, the locality name and the country. Below are the latitude and longitude in degrees, minutes and seconds, and the age of the locality.</p>
+
+  <p>The <span style="font-weight: bold;">Age</span>,
+      <span style="font-weight: bold;">Locality</span>,
+      <span style="font-weight: bold;">Lithology</span>,
+      <span style="font-weight: bold;">Climate</span> and
+      <span style="font-weight: bold;">Taphonomy</span> tabs all show further details for the locality. Click on the tab title to view the tab.</p>
+
+  <p>The <span style="font-weight: bold;">Species</span> tab shows all species associated with the locality. Click on the column headers to sort. Click on the
+      <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 43px; height: 18px;" align="middle"> button next to a taxon to view a full record (all taxonomic information, locality occurrences, etc.) of each species present.</p>
+
+  <p>
+      <a href="{% static "now/images/LocalitySpecies.png" %}" target="_blank"><img alt="Locality - species list" title="Locality - species list" src="{% static "now/images/LocalitySpeciesTN.png" %}" style="border: 2px solid ; width: 480px; height: 293px;"></a>
+  </p>
+
+  <p>The &#39;ID Uncertain&#39; field indicates an uncertain occurrence of the taxon at this locality: &#39;sp.&#39; indicates the species id is uncertain, &#39;gen.&#39; indicates the genus id is uncertain, and &#39;fam.&#39; indicates the family id is uncertain.
+  </p>
+
+  <p>The field &#39;Additional Information&#39; can contain information about how the species was listed in the reference literature, for example &#39;Listriodon cf. splendens&#39;, or it could contain historical information, for example &#39;Suidae indet. in older references&#39;. The field titled &#39;Source Name&#39; is only filled when a taxon is called by a junior synonym name, for example <i>Listriodon mongoliensis</i>, in the source literature, when the NOW database recognizes this taxon by the name of <i>Listriodon splendens</i>. </p>
+
+  <p>The <span style="font-weight: bold;">Museums</span> tab shows all museums with specimens associated with the locality. Click on the
+      <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 43px; height: 18px;" align="middle"> button next to a record to view the full museum record.</p>
+
+  <p>The <span style="font-weight: bold;">Projects</span> tab shows all projects associated with the locality. Click on the
+      <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 43px; height: 18px;" align="middle"> button next to a record to view the full project record.</p>
+
+  <p>The <span style="font-weight: bold;">Updates</span> tab shows all updates to data for this record, sorted by date.</p>
+
+  <p>
+      <a href="{% static "now/images/LocalityUpdate.png" %}" target="_blank"><img title="Locality - updates" alt="Locality - updates" src="{% static "now/images/LocalityUpdateTN.png" %}" style="border: 2px solid ; width: 480px; height: 228px;"></a>
+  </p>
+
+  <p>Click on the <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 43px; height: 18px;" align="middle"> button next to a record to view the full update record.</p>
+
+  <p>
+      <a href="{% static "now/images/LocalityUpdateDetails.png" %}" target="_blank"><img title="Locality Update Details dialog" alt="Locality Update Details dialog" src="{% static "now/images/LocalityUpdateDetailsTN.png" %}" style="border: 2px solid ;
+              width: 480px; height: 287px;"></a>
+  </p>
+
+  <p>The Update Details dialog shows all the references linked to the update (there may be several). The dialog also shows all the fields affected by the update. The &#39;Field&#39; column indicates what information the update concerned, and the &#39;Old data&#39; and &#39;New data&#39; indicate what has been added, modified or deleted during that update.</p>
+
+  <br>NOTE: update records from the old database interface were truncated, and in some cases are incomplete.</p>
+  <br>
+
+  <h2><a id="Species">Species</a></h2>
+
+  <p>Details of the selected species are displayed in the right window. The total number of records displayed (foundset) are those found by the search performed in the list.</p>
+
+  <p>
+      <a href="{% static "now/images/Species.png" %}" target="_blank"><img alt="Species record" title="Species record" src="{% static "now/images/SpeciesTN.png" %}" style="border: 2px solid ; width: 480px; height: 487px;"></a>
+  </p>
+
+  <p>The top of the record displays the species id and the binomial name, with the unique identifier below. The higher taxonomic fields (Order, Family, Subfamily/Tribe) are below this.</p>
+
+  <p>The <span style="font-weight: bold;">Taxonomy</span>,
+      <span style="font-weight: bold;">Synonyms</span>,
+      <span style="font-weight: bold;">Diet</span>,
+      <span style="font-weight: bold;">Locomotion</span>,
+      <span style="font-weight: bold;">Size</span> and
+      <span style="font-weight: bold;">Teeth</span> tabs all show further details for the species. Click on the tab title to view the tab.</p>
+
+  <p>Within the <span style="font-weight: bold;">Taxonomy</span> field, &#39;Taxonomic Status&#39; indicates a taxonomic qualifier common to all occurrences of this taxon. For example, if the genus attribution of the species is uncertain, the family attribution of the genus is uncertain, if the validity of the species is uncertain, the taxonomic validity of the entity is uncertain, or if this is an informal species. Usually the taxonomic status is blank. &#39;Comment&#39; field will show important taxonomic comments that cannot easily be incorporated within the existing data fields, for example for <i>Acinonyx crassidens</i> the comment says &#39;NOMEN DUBIUM, original description probably a chimera of cheetah and leopard; All Laetoli, Turkana and Omo Shungura specimens are Acinonyx sp. (not necessarily all one taxon). Material from other sites may belong to Acinonyx jubatus or Acinonyx aicha.&#39;</p>
+
+  <p>The <span style="font-weight: bold;">Localities</span> tab shows all localities associated with the species. Click on the column header to sort. Click on the
+      <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 43px; height: 18px;" align="middle"> button next to a record to view the full locality record.</p>
+
+  <p>
+      <a href="{% static "now/images/SpeciesLocality.png" %}" target="_blank"><img alt="Species - locality list" title="Species - locality list" src="{% static "now/images/SpeciesLocalityTN.png" %}" style="border: 2px solid ; width: 480px; height: 483px;"></a>
+  </p>
+
+  <p>The <span style="font-weight: bold;">Loc-Sp Info</span> tab displays information about the occurrence of this species at each locality it is associated with. The 'ID Uncertain' field indicates an uncertain occurrence of the taxon at this locality: &#39;sp.&#39; indicates the species id is uncertain, and so on.</p> The field 'Additional Information' can contain information about how the species was listed in the reference literature, for example &#39;
+  <i>Listriodon</i> cf. <i>splendens</i>&#39;, or it could contain historical information, for example &#39;Suidae indet. in older references&#39;. The field titled &#39;Source Name&#39; is only filled when a taxon is called by a junior synonym name, for example <i>Listriodon mongoliensis</i>, in the source literature, when the NOW database recognizes this taxon by the name of <i>Listriodon splendens</i>. Nis, pct, quad, mni and qua indicate quantitative information relating to each specific locality. </p>
+
+  <p>The <span style="font-weight: bold;">Updates</span> tab shows all updates to data for this record, sorted by date.</p>
+
+  <p>
+      <a href="{% static "now/images/SpeciesUpdate.png" %}" target="_blank"><img title="Species - updates" alt="Species - updates" src="{% static "now/images/SpeciesUpdateTN.png" %}" style="border: 2px solid ; width: 480px; height: 325px;"></a>
+  </p>
+
+  <p>Click on the <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 43px; height: 18px;" align="middle"> button next to a record to view the full update record.</p>
+
+  <p><span style="text-decoration: underline;"><a  href="{% static "now/images/SpeciesUpdateDetails.png" %}" target="_blank">
+<img title="Species Update Details dialog" alt="Species Update Details dialog" src="{% static "now/images/SpeciesUpdateDetailsTN.png" %}"  style="border: 2px solid ; width: 480px; height: 229px;"></a></span>
+      <br>
+  </p>
+
+  <p>The Update Details dialog shows all the references linked to the update (there may be several). Click on the
+      <img alt="Select Record button" src="{% static "now/images/SelectRecordBtn.png" %}" style="width: 43px; height: 18px;" align="middle"> button next to a record to view the full reference details. The dialog also shows all the fields affected by the update. The &#39;Field&#39; column indicates what information the update concerned, and the &#39;Old data&#39; and &#39;New data&#39; indicate what has been modified, added or deleted during that update.
+      <br>
+  </p>
+
+  <p>NOTE: update records from the old database interface were truncated, and in some cases are incomplete.</p>
+
+  <br>
+
+  <h2><a id="Reference">Reference</a></h2>
+
+  <p>Details of the selected reference are displayed in the right window. The total number of records displayed (foundset) are those found by the search performed in the list.</p>
+
+  <p>
+      <a href="{% static "now/images/Reference.png" %}" target="_blank"><img title="Reference record" alt="Reference record" src="{% static "now/images/ReferenceTN.png" %}" style="border: 2px solid ; width: 480px; height: 601px;"></a>
+  </p>
+
+  <p>At the top of the record, below the reference id number, is a citation version of the reference as it will appear elsewhere in the database.</p>
+
+  <p>The first field within the Reference Details indicates the type of reference (Journal, personal comment, etc.): this will affect the fields which are displayed below. In the following section, the appropriate fields are displayed for each reference. You may have to scroll down at to view the full record.</p>
+
+  <p>The Localities and Species tabs at the top show all localities and species associated with the reference. For both records, click on the column header to sort, and click on the button next to a record to view the full locality/species record. </p>
+
+  <br>
+
+</article>
+
+{% endblock %}

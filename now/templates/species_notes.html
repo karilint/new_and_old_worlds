@@ -1,0 +1,49 @@
+{% extends "now_base_generic.html" %}
+
+{% block title %}
+<title>NOW - Fossil Mammal Database - Browsing - Data Conventions</title>
+{% endblock %}
+
+{% block content %}
+<!-- Write your comments here -->
+
+<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+  <h1><a id="SpeciesDescription"></a>Notes on description of Species</h1>
+
+  <p>Descriptive species information is recorded under the following categories: Diet, Locomotion, Size and Teeth. Most data fields in these categories follow the definitions described in the <a href="http://www.pantherion.com/dbmanual97" target="_blank">ETE</a> manual, and a good example taxon for this type of information is <i>Hispanotherium grimmi</i> within the NOW database.</p>
+  <p>Additional instructions for a few categories are listed below:</p>
+
+  <ul>
+      <li><span style="font-weight: bold;">Diet 3:</span> used as is, with the recommendation that except for hypothetical, well founded exceptions, the following should be lumped: soft and hard with mixed; seeds, exudates and fr-se-res with fruit.
+          <a id="Diet"></a>
+      </li>
+      <br>
+
+      <li><span style="font-weight: bold;">Locomotion 2: </span>use as is, except that semi-fossorial is suppressed (cannot in our opinion be recognised on morphological criteria). We note that small (&lt; 10 kg) "general quadrupeds" (gen_quad) correspond roughly to Peter Andrew's category "semi-arboreal" (small mammals lacking locomotory specialisations for arboreal locomotion but equally able to walk in trees and on the ground).
+          <a id="Locomotion"></a>
+      </li>
+      <br>
+
+      <li><span style="font-weight: bold;">Locomotion 3:</span> The value cursorial should be reserved for forms with joints restricted to movement in the anteroposterior plane. More agile ungulates with more laterally mobile limbs should be classified as gen_quad (general quadruped). Remember that goats can climb trees! With increasing size, this category grades into graviportal.
+      </li>
+      <br>
+
+      <li><span style="font-weight: bold;">Body Mass &amp; Length: </span>The ETE database allows any number to be entered as the taxon's mean body mass (in grams). The snout-vent length classes of NOW are:
+          <a id="Body_Mass"></a>
+
+          <ul>
+              <li>Class 1 = very small (&lt;0.1 m)</li>
+              <li>Class 2 = small (0.1-1 m)</li>
+              <li>Class 3 = medium (1-2 m)</li>
+              <li>Class 4 = large (2-5 m)</li>
+              <li>Class 5 = very large (&gt;5 m)</li>
+
+          </ul>
+      </li>
+      <br>
+      <li><span style="font-weight: bold;">Tooth Height:</span> use as is. In doubtful cases select the lower value.
+          <a id="Teeth"></a>
+      </li>
+  </ul>
+</article>
+{% endblock %}

@@ -9,6 +9,12 @@ def acknowledgements(request):
         'acknowledgements.html',
     )
 
+def browsing_details(request):
+    return render(
+        request,
+        'browsing_details.html',
+    )
+
 def browsing_lists(request):
     """
     View function for Browsing - Lists page of site.
@@ -52,6 +58,12 @@ def database(request):
     return render(
         request,
         'database.html',
+    )
+
+def data_entry_practices(request):
+    return render(
+        request,
+        'data_entry_practices.html',
     )
 
 def ecometrics(request):
@@ -110,6 +122,15 @@ def links(request):
         'links.html',
     )
 
+def locality_notes(request):
+    """
+    View function for locality notes page of site.
+    """
+    return render(
+        request,
+        'locality_notes.html',
+    )
+
 def news(request):
     """
     View function for News page of site.
@@ -135,4 +156,28 @@ def publications(request):
     return render(
         request,
         'publications.html',
+    )
+
+def species_at_localities(request):
+    """
+    View function for Data Conventions - Species at Localities page of site.
+    """
+    return render(
+        request,
+        'species_at_localities.html',
+    )
+
+def species_notes(request):
+    return render(
+        request,
+        'species_notes.html',
+    )
+
+def taxonomy(request):
+    """
+    View function for Taxonomy page of site.
+    """
+    return render(
+        request,
+        'taxonomy.html',
     )
