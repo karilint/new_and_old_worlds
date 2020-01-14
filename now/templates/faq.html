@@ -2,39 +2,31 @@
 
 {% block style %}
 .collapsible {
-    background-color: F0F0F0;
-    color: black;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
+  background-color: F0F0F0;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
 }
-.active,
-.collapsible:hover {
-    background-color: #c0c0c0;
+
+.active, .collapsible:hover {
+  background-color: #c0c0c0;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
 }
 {% endblock %}
 
 {% block script %}
-  <script type="text/javascript">
-      var coll = document.getElementsByClassName("collapsible");
-      var i;
-
-      for (i = 0; i < coll.length; i++) {
-          coll[i].addEventListener("click", function() {
-              this.classList.toggle("active");
-              var content = this.nextElementSibling;
-              if (content.style.display === "block") {
-                  content.style.display = "none";
-              } else {
-                  content.style.display = "block";
-              }
-          });
-      }
-  </script>
 {% endblock %}
 
 {% block title %}
@@ -46,7 +38,7 @@
 <!-- Write your comments here -->
 
 <article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-	<h1>FAQ</h1>
+  <h1>FAQ</h1>
   <h2>General questions</h2>
   <button class="collapsible">Q: What is NOW used for?</button>
   <div class="content">
@@ -121,6 +113,24 @@
   <div class="content">
       <p>A: Great! Please contact us and let us know how you think you could contribute. You may contact any NOW member you might know or else database curator <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a>.</p>
   </div>
+
+  <script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight){
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+  </script>
+
 </article>
 
 {% endblock %}
