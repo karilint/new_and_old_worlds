@@ -20,71 +20,9 @@
   box-sizing: border-box;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
 [class*="col-"] {
   float: left;
-  padding: 15px;
-}
-
-body {
-    background-color: rgb(202, 176, 95);
-    margin-top: 1em;
-    margin-left: 1em;
-    text-align: center;
-    font-family: arial, helvetica, sans-serif;
-    font-size: 9pt;
-}
-
-h1 {
-    color: rgb(65, 65, 65);
-    font-family: comic sans ms;
-    font-weight: normal;
-    font-size: 32pt;
-}
-
-h2 {
-    font-family: comic sans ms;
-    font-weight: normal;
-    font-size: 14pt
-}
-
-h3 {
-    font-family: comic sans ms;
-    font-weight: normal;
-    font-size: 10pt
-}
-
-header {
-  background-color: #9933cc;
-  color: #ffffff;
-  padding: 15px;
-}
-
-html {
-  font-family: "Lucida Sans", sans-serif;
-}
-
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  padding: 8px;
-  margin-bottom: 7px;
-  background-color: rgb(192, 192, 192);
-  color: #000000;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.menu li:hover {
-  background-color: #80a138;
+  padding: 5px;
 }
 
 .aside {
@@ -104,13 +42,38 @@ html {
   padding: 10px;
 }
 
-.toppanel {
-    background-color: rgb(250, 250, 210);
+.menu li {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: rgb(192, 192, 192);
+  color: #000000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.menu li:hover {
+  background-color: #80a138;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .middlepanel {
     background-color: rgb(240, 240, 240);
 }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.toppanel {
+    background-color: rgb(250, 250, 210);
+}
+
 /* For mobile phones: */
 [class*="col-"] {
   width: 100%;
@@ -146,23 +109,52 @@ html {
   .col-11 {width: 91.66%;}
   .col-12 {width: 100%;}
 }
+
+body {
+    background-color: rgb(202, 176, 95);
+    margin-top: 1em;
+    margin-left: 1em;
+    text-align: center;
+    font-family: arial, helvetica, sans-serif;
+    font-size: 9pt;
+}
+
 {% block style %}
 {% endblock %}
 </style>
 </head>
+{% load static %}
+
 <body>
 <div class="row">
+
   <div class="col-1 col-s-1">
   </div>
 
   <div class="col-10 col-s-9">
     <div class="row toppanel">
-      <div class="col-12 col-s-12 title">
-        <img src="http://www.helsinki.fi/science/now/images/nowlogoTN.png" alt="NOW logo" align="left">
+      <div class="col-9 col-s-9">
+        <img src="{% static "now/images/nowlogoTN.png"%}" alt="NOW logo" align="left">
         <h1>NOW</h1>
         <h2>New and Old Worlds</h2>
         <h2>Database of fossil mammals</h2>
-        <p align="left">&copy; Aino Martiskainen</p>
+      </div>
+      <div class="col-3 col-s-3">
+        <p style="text-align: right; vertical-align: bottom;">Website by:
+          <br> Arja Hokkanen
+          <br> Gudrun Evans
+          <br> Susanna Sova
+          <br>
+          <br> Maintained by:
+          <br>
+          <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a>
+          <br>
+          <br>Page updated on:
+          <br>{{ last_modified }}
+        </p>
+      </div>
+      <div class="col-9 col-s-9">
+        <p style="text-align: left; height: 0px;">&copy; Aino Martiskainen</p>
       </div>
     </div>
 
@@ -192,9 +184,9 @@ html {
 
       <div class="col-3 col-s-12">
         <div class="aside">
-          <h2>NOW 25 years</h2>
+          <h2>NOW has new WWW-pages</h2>
           {% load static %}
-          <p><a href={% static "now/pdf/NOW_25_book_wbs.pdf" %} target="_blank">NOW 25 years anniversary book: call for contributions. Indicate your interest by November 30, 2019.</a></p>
+          <p><a href="{% url 'news' %}">NOW www-pages have been updated to manage new HTML5 semantic elements like &#60;header&#62;, &#60;footer&#62;, &#60;article&#62;, and &#60;section&#62;.</a></p>
         </div>
         {% block aside %}
         {% endblock %}

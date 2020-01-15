@@ -1,4 +1,6 @@
 from django.shortcuts import render
+import os.path, time
+from new_and_old_worlds.settings import BASE_DIR
 
 def acknowledgements(request):
     """
@@ -94,23 +96,28 @@ def faq(request):
     )
 
 def field_archive(request):
-    """
-    View function for field_archive page of site.
-    """
+    file_name='field_archive.html'
+    file=os.path.join(BASE_DIR + '\\now\\templates\\', file_name)
+    last_modified=time.ctime(os.path.getmtime(file))
+
     return render(
         request,
-        'field_archive.html',
+        file_name,
+        context={'last_modified':last_modified,},
     )
 
 def index(request):
     """
     View function for home page of site.
     """
+    file=os.path.join(BASE_DIR + '\\now\\templates\\', 'index.html')
+    last_modified=time.ctime(os.path.getmtime(file))
 
     # Render the HTML template index.html with the data in the context variable
     return render(
         request,
         'index.html',
+        context={'last_modified':last_modified,},
     )
 
 def links(request):
