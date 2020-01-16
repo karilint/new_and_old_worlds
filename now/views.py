@@ -107,10 +107,7 @@ def field_archive(request):
     )
 
 def index(request):
-    """
-    View function for home page of site.
-    """
-    file=os.path.join(BASE_DIR + '\\now\\templates\\', 'index.html')
+    file=os.path.join(BASE_DIR,'now', 'templates', 'index.html')
     last_modified=time.ctime(os.path.getmtime(file))
 
     # Render the HTML template index.html with the data in the context variable
