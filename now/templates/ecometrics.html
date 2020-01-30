@@ -1,64 +1,54 @@
 {% extends "now_base_generic.html" %}
-
 {% block style %}
 {% endblock %}
-
 {% block script %}
 {% endblock %}
-
 {% block title %}
-  <title>NOW - Fossil Mammal Database - Ecometrics</title>
+NOW - Fossil Mammal Database - Ecometrics
 {% endblock %}
-
 {% block content %}
 {% load static %}
-<!-- Write your comments here -->
-
-<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-	<h1>Dental ecometrics</h1>
-  <h2>Present day datasets for building ecometric models</h2>
-  <br>
-
-  <h3>Dental traits</h3>
-
-  <p>Functional crown type dataset for living species, <a href="{% static "now/datasets/data_dental_modern_public_10.csv" %}">current version v10</a></p>
-
-  <p>The functional dental trait scoring scheme is designed for capturing molar shape and main functional traits of worn occlusal surfaces of the molar dentition. The scheme is described in the supplement of
-    <a href="http://www.pnas.org/content/113/45/12751.full" target="_blank">this publication</a>.
-  </p>
-
-  <p>The scoring scheme is applicable to all living and fossil herbivorous mamals, regardless of phylogenetic relationships, size or design of the chewing apparatus. Scoring is at the level of species.</p>
-  <br>
-
-  <h3>Data attribution</h3>
-
-  <p>Data (http://www.helsinki.fi/science/now/ecometrics/) by <b>Helsinki School of Ecometrics</b> / CC BY 4.0.</p>
-
-  <h3>License</h3>
-  <p>
-  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target = "_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
-  <br /> Except where otherwise <a rel="note" href="{% url 'note' %}">noted</a>, content on this <b>page</b> (Dental ecometrics) is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target = "_blank">Creative Commons Attribution 4.0 International License</a>.</p>
-
-  <p>This license applies only to the present day data available on this page, this is not a license for the NOW database of fossil mammals. The license for the NOW database can be found <a rel='link' href="{% url 'index' %}#License">here</a>.</p>
-  <br>
-
-  <h3>Suggested citations</h3>
-
-  <p>For dental traits predicting productivity of environment:
-    <br> Liu, L., Puolamaki, K., Eronen, J. T., Mirzaie Ataabadi, M., Hernesniemi, E., Fortelius, M. (2012).
-    <a rel="paper" href="http://rspb.royalsocietypublishing.org/content/279/1739/2793" target="_blank">Dental functional traits of mammals resolve productivity in terrestrial ecosystems past and present</a>.
-    <i>Proceedings of the Royal Society B</i> 279:2793-2799.
-  </p>
-  <p>For the new dental trait scoring scheme:
-    <br> Zliobaite, I., Rinne, J., Toth, A., Mechenich, M., Liu, L., Behrensmeyer, A.K., Fortelius, M. (2016).
-    <a rel="paper" href="http://www.pnas.org/content/113/45/12751" target="_blank">Herbivore teeth predict climatic limits in Kenyan ecosystems</a>. <i>PNAS</i> 113(45), p. 12751-12756.
-  </p>
-
-  <p>Latest published version of the dental traits for living species:
-    <br> Galbrun, E., Tang, H., Fortelius, M., Zliobaite, I. (2017). Computational biomes: the ecometrics of large mammal teeth. <i>In revision</i>. <a rel="code" href="https://github.com/zliobaite/teeth-redescription" target="_blank">Code repository.</a>
-  </p>
-</article>
+          <!--Article header -->
+          <header style="display:none">
+            <h3>Dental ecometrics</h3>
+          </header>
+          <!--End of article header -->
+          <!-- Write your comments here -->
+          <section class="w3-container">
+            <header class="w3-container">
+              <h3>Dental ecometrics</h3>
+            </header>
+            <h4>Present day datasets for building ecometric models</h4>
+            <h5>Dental traits</h5>
+            Functional crown type dataset for living species, <a href="{% static "now/datasets/data_dental_modern_public_10.csv" %}">current version v10.</a>
+            <br>
+            The functional dental trait scoring scheme is designed for capturing molar shape and main functional traits of worn occlusal surfaces of the molar dentition. The scheme is described in the supplement of
+            <a href="http://www.pnas.org/content/113/45/12751.full" target="_blank">this publication</a>.
+            The scoring scheme is applicable to all living and fossil herbivorous mammals, regardless of phylogenetic relationships, size or design of the chewing apparatus. Scoring is at the level of species.
+            <br>
+            <h5>Data attribution</h5>
+            Data (http://www.helsinki.fi/science/now/ecometrics/) by <b>Helsinki School of Ecometrics</b> / CC BY 4.0.
+            <h5>License</h5>
+            <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target = "_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png"/></a>
+            <br>
+            Except where otherwise <a rel="note" href="{% url 'note' %}">noted</a>, content on this <b>page</b> (Dental ecometrics) is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target = "_blank">Creative Commons Attribution 4.0 International License</a>.
+            This license applies only to the present day data available on this page, this is not a license for the NOW database of fossil mammals. The license for the NOW database can be found <a rel='link' href="{% url 'index' %}#License">here</a>.
+            <h5>Suggested citations</h5>
+            For dental traits predicting productivity of environment:
+            <br> Liu, L., Puolamaki, K., Eronen, J. T., Mirzaie Ataabadi, M., Hernesniemi, E., Fortelius, M. (2012).
+            <a rel="paper" href="http://rspb.royalsocietypublishing.org/content/279/1739/2793" target="_blank">Dental functional traits of mammals resolve productivity in terrestrial ecosystems past and present</a>.
+            <i>Proceedings of the Royal Society B</i> 279:2793-2799.
+            <br>
+            <br>
+            For the new dental trait scoring scheme:
+            <br> Zliobaite, I., Rinne, J., Toth, A., Mechenich, M., Liu, L., Behrensmeyer, A.K., Fortelius, M. (2016).
+            <a rel="paper" href="http://www.pnas.org/content/113/45/12751" target="_blank">Herbivore teeth predict climatic limits in Kenyan ecosystems</a>. <i>PNAS</i> 113(45), p. 12751-12756.
+            <br>
+            <br>
+            Latest published version of the dental traits for living species:
+            <br>
+            Galbrun, E., Tang, H., Fortelius, M., Zliobaite, I. (2017). Computational biomes: the ecometrics of large mammal teeth. <i>In revision</i>. <a rel="code" href="https://github.com/zliobaite/teeth-redescription" target="_blank">Code repository.</a>
+          </section>
 {% endblock %}
-
 {% block aside %}
 {% endblock %}

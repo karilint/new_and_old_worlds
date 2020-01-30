@@ -1,38 +1,48 @@
 {% extends "now_base_generic.html" %}
 
 {% block title %}
-  <title>NOW - Fossil Mammal Database - Browsing - View Database</title>
+  NOW - Fossil Mammal Database - Browsing - View Database
 {% endblock %}
 
 {% block content %}
 {% load static%}
+<!--Article header -->
+<header style="display:none">
+	<h3>Enter Database</h3>
+</header>
+<!--End of article header -->
 <!-- Write your comments here -->
+<section class="w3-container">
 
-<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-	<h1><a href="http://pantodon.science.helsinki.fi/now" target="_blank">Enter Database</a><br>
-  <h2>Login</h2>
-  <p>User name and password are no longer required to browse the database. However any data used should be cited as specified <a href="{% url 'index' %}#Citation">here</a>. If you would like a personal account, please contact <a href="mailto:indre-dot-zliobaite-at-helsinki-dot-fi">Indr&#279; Žliobait&#279;</a> or <a href="mailto:kari-dot-lintulaakso-at-helsinki-dot-fi">Kari Lintulaakso</a> for more information.</p>
-  <br>
-  <h2>Need help? Illustrated instructions for using the interface</h2>
+  <header class="w3-container">
+    <h3><a href="http://pantodon.science.helsinki.fi/now" target="_blank">Enter Database</a></h3>
+  </header>
+  <h4>Login</h4>
+
+  <p>User name and password are no longer required to browse the database. However, any data used should be cited as specified <a href="{% url 'index' %}#Citation">here</a>. If you would like a personal account, please contact <a href="mailto:indre-dot-zliobaite-at-helsinki-dot-fi">Indr&#279; Žliobait&#279;</a> or <a href="mailto:kari-dot-lintulaakso-at-helsinki-dot-fi">Kari Lintulaakso</a> for more information.</p>
+
+  <h4>Need help? Illustrated instructions for using the interface</h4>
 
   <p>While we have done our best to make the interface intuitive, we highly recommend you spend a few moments familiarising yourself with it using the guides below:</p>
   <ul>
-    <li><a href="{% url 'browsing_lists' %}">Searching the lists</a></li>
-    <li><a href="{% url 'browsing_details' %}">Record details</a></li>
+    <li><a href="{% url 'browsing_lists' %}">Browsing the Database - Lists</a></li>
+    <li><a href="{% url 'browsing_details' %}">Browsing the Database - Details</a></li>
   </ul>
-  <br>
-  <h2>Export Data</h2>
+
+  <h4>Export Data</h4>
 
   <p>It is possible to export and download datasets directly from the database. Please read the instructions for <a href="{% url 'export_maps' %}">exporting records and map coordinates</a>, and remember to acknowledge the source of the data using the recommended <a href="{% url 'index' %}#Citation">citation</a>.</p>
-  <h3>Download standard versions</h3>
+
+  <h4>Download standard versions</h4>
   <p>Previous public releases of NOW data are available as an Excel file (version 4.0).</p>
-  <p><a href="{% static 'now/excel/NOW_public_030717.zip' %}">2003 (July)</a></p>
-  <p><a href="{% static 'now/excel/NOW_public_020104.zip' %}">2002 (January)</a></p>
-  <p><a href="{% static 'now/excel/NOW_public_001102.zip' %}">2000 (November)</a></p>
-  <p><a href="{% static 'now/excel/NOW_public_000309.zip' %}">2000 (March)</a></p>
-  <br>
+  <ul>
+    <li><a href="{% static 'now/excel/NOW_public_030717.zip' %}">2003 (July)</a></li>
+    <li><a href="{% static 'now/excel/NOW_public_020104.zip' %}">2002 (January)</a></li>
+    <li><a href="{% static 'now/excel/NOW_public_001102.zip' %}">2000 (November)</a></li>
+    <li><a href="{% static 'now/excel/NOW_public_000309.zip' %}">2000 (March)</a></li>
+  </ul>
+  <hr>
   <p>NOW database interface created and maintained by Gudrun Evans and Jouni Veps&auml;l&auml;inen.</p>
-  <br>
-</article>
+</section>
 
 {% endblock %}

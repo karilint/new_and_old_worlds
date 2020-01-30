@@ -1,449 +1,387 @@
 {% extends "now_base_generic.html" %}
-
 {% block style %}
 {% endblock %}
-
 {% block script %}
 {% endblock %}
-
 {% block title %}
-  <title>NOW - Fossil Mammal Database - Data Conventions - Species at Localities</title>
+NOW - Fossil Mammal Database - Data Conventions - Species at Localities
 {% endblock %}
-
 {% block content %}
-
 <!-- Write your comments here -->
-
-<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
+<section class="w3-container">
   {% load static %}
-  <p>As a guideline NOW uses the taxonomy of <a href="{% url 'conventions' %}#McKennaBell">McKenna &amp; Bell's</a><i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href={% static "now/pdf/Muridae_tentative.pdf" %} target="_blank">Hans de Bruijn</a>.</p>
-	<h1>Species at Localities</h1>
-  <p>The most common function performed in NOW is inputting taxon lists into localities. If the locality in question is not in NOW yet, please follow the instructions under <a href="{% url 'locality_notes' %}">Localities</a> first. When entering taxon lists into a locality, the primary assumption is that all the species already exist in the database, and can be added into the locality with the <b>'Select species'</b> function. For these species, please follow the rules and examples below.</p>
-
-  <p>However, in some cases all of the species do not exist in the database yet, usually because they are informal or recently established species. For such species, use the
-      <b>'Add new species'</b> function, and follow the guidelines under <a href="{% url 'taxonomy' %}">Taxonomic Fields</a> for correctly entering the taxonomic information of the new species. Then follow these instructions for the occurrence of taxa at the locality you are adding.</p>
-  <br>
-
-  <p> The fields explained below can be found in the Locality > <b>Species</b> tab for all species at a locality, and in the Species > <b>Loc-Sp Info</b> tab for all locality occurrences of a specific species.</p>
-
-  <table style="width: 480px;" border="1" cellpadding="10" cellspacing="5">
-      <tbody>
-          <tr>
-              <td width="64" style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">ID Status</span>
-                  <br>
-              </td>
-              <td width="355" style="vertical-align: top; text-align: left;"><a name="tab_ID_status">Indicates</a> an uncertain identification and therefore an uncertain occurrence of the taxon at a particular locality, so is an attribute of the species-locality relationship. Usually the ID status is blank.
-                  <p>Valid entries are:</p>
-
-                  <ul>
-                      <li>family id uncertain</li>
-                      <li>genus id uncertain</li>
-                      <li>species id uncertain</li>
-                  </ul>
-              </td>
-          </tr>
-
-          <tr>
-              <td width="64" style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Additional Info</span></td>
-              <td width="355" style="vertical-align: top; text-align: left;"><a name="tab_Add_Info">Additional Info</a> field can be used to record locality related species information that cannot be recorded in any other field but might be important for other users to know:
-                  <ul>
-                      <li>Taxonomic devices like 'cf.', 'aff.', 'ex gr.' no longer exist as such in the database, but have instead become attributes of individual occurrences of the taxon, indicated by ID status (or attributes of all instances of the taxon, indicated by
-                          <a href="{% url 'taxonomy' %}#tab_Tax_status">taxonomic status</a>). Use 'Additional Info' in these cases to record what was written in the original document
-                      </li>
-                      <br>
-
-                      <li>'Additional Info' can contain historical information, for example 'Suidae indet. in older references' or 'previous ID S. splendens incorrect'.
-                      </li>
-                      <br>
-                      <li>You can also enter subspecies names into the &#39;Additional Info&#39; field (this is preferred over creating a new species entry with a subspecies in the &#39;Unique ID&#39; field)</li>
-                      <br>
-                  </ul>
-              </td>
-          </tr>
-          <tr>
-
-              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Source Name</span>
-                  <br>
-              </td>
-              <td style="vertical-align: top; text-align: left;">This information should be recorded for localities where the reference literature lists a species with a junior synonym name. For example:
-                  <br>
-
-                  <a name="tab_Source_Name">
-                      <p>Reference literature lists the species <i>Listriodon mongoliensis</i> present, but this taxon is recognized by the name of <i>Listriodon splendens</i> in the NOW database. In this case, the taxon will be listed as Listriodon splendens in the Locality species list, but Listriodon mongoliensis will be recorded in the 'Source Name' field. </p>
-
-                      <p>If a comment '*from merge' appears in the 'Source Name' field after the junior synonym name, this means it was automatically transferred there when two (or more) species were recognized as synonymous during taxonomic updates of the NOW database (and the locality in question listed the junior synonym name).</p>
-
-                      <p><b>NOTE:</b> Source Name field was added to NOW in December 2011, so this field will be empty in localities which have not been updated recently.</p>
-              </td>
-          </tr>
-          <tr>
-              <td style="vertical-align: middle; text-align: left;"><span style="font-weight: bold;">Other</span>
-                  <br>
-
-              </td>
-              <td style="vertical-align: top; text-align: left;">This information can be added for localities where it is available - it is very valuable but optional:
-                  <br>
-                  <br>
-                  <a name="tab_Other"><b>nis</b> = number of identified specimens</a>
-                  <br>
-                  <b>pct</b> = percent
-                  <br>
-                  <b>quad</b> = quadrate count
-                  <br>
-
-                  <b>mni</b> = minimum number of individuals
-                  <br>
-                  <b>qu</b> = qualitative
-              </td>
-          </tr>
-      </tbody>
-  </table>
-  <br>
-
-  <h2><a name="ExamplesSpeciesLocalities"></a>Examples &ndash; Species at Localities</h2>
-
-  <ul>
-      <li>
-          <h3><a name="UncertainOccTax"></a>Uncertain occurrence of taxon</h3>
-      </li>
-  </ul>
-
-  <p>NOTE: ideally, where the identification of a taxon is uncertain (meaning the occurrence of the taxon at a certain locality is uncertain), it should not be entered in the database. However, when such taxa are entered for some good reason, this is the accepted style.</p>
-
-  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
-      <tbody>
-          <tr>
-              <td colspan="5" rowspan="1" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species At Locality</span></td>
-          </tr>
-
-          <tr>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Family</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Subfamily</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
-
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">ID Status</span></td>
-          </tr>
-          <tr>
-              <td rowspan="1" colspan="6" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <span style="font-weight: bold;">Situation:</span> uncertain occurrence of species at locality
-                  <br>
-                  <span style="font-weight: bold;">May appear in literature as:</span> <span style="font-style: italic;">Amphicyon</span> cf.
-                  <span style="font-style: italic;">major</span>, cf. <span style="font-style: italic;">Amphicyon major</span>,
-                  <span style="font-style: italic;">Amphicyon</span> aff. <span style="font-style: italic;">major</span>,
-                  <span style="font-style: italic;">Amphicyon</span> ex gr. <span style="font-style: italic;">major</span></td>
-
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
-              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
-              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
-              <td style="text-align: left; vertical-align: middle;">major</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-
-              <td style="text-align: left; vertical-align: middle;">species id uncertain</td>
-          </tr>
-          <tr>
-              <td rowspan="1" colspan="6" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <span style="font-weight: bold;">Situation:</span> uncertain occurrence of genus at locality
-                  <br>
-                  <span style="font-weight: bold;">May appear in literature as:</span> cf. <span style="font-style: italic;">Amphicyon</span> sp., cf.
-                  <span style="font-style: italic;">Amphicyon</span> indet., cf. <span style="font-style: italic;">Amphicyon</span>, ?
-                  <span style="font-style: italic;">Amphicyon</span></td>
-
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Amphicyonidae</td>
-              <td style="text-align: left; vertical-align: middle;">Amphicyoninae</td>
-              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
-              <td style="text-align: left; vertical-align: middle;">indet</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-
-              <td style="text-align: left; vertical-align: middle;">genus id uncertain</td>
-          </tr>
-          <tr>
-              <td colspan="6" rowspan="1" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <span style="font-weight: bold;">Situation:</span> uncertain occurrence of family at locality
-                  <br>
-                  <span style="font-weight: bold;">May appear in literature as:</span> cf. Felidae indet. indet.</td>
-
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Felidae</td>
-              <td style="text-align: left; vertical-align: middle;">&nbsp;</td>
-              <td style="text-align: left; vertical-align: middle;">indet.</td>
-              <td style="text-align: left; vertical-align: middle;">indet.</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-
-              <td style="text-align: left; vertical-align: middle;">family id uncertain</td>
-          </tr>
-      </tbody>
-  </table>
-
+  <header class="w3-container">
+    <h3>Species at Localities</h3>
+  </header>
   <p>
-      <a name="UncertainOccTax_TwoSpecies"></a>Additional Info field can be used to record information when there is uncertainly between two possible species at a locality.</p>
-  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
-      <tbody>
-          <tr>
-
-              <td rowspan="1" colspan="4" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td width="171" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species At Locality</span></td>
-          </tr>
-          <tr>
-              <td width="60" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
-              <td width="86" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td width="65" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
-
-              <td width="54" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Taxonomic Status</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Additional Info</span></td>
-          </tr>
-          <br>
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <b>Situation:</b> <i>Amphicyon major</i> cf. <i>steinheimensis</i> in the literature - if the intention is species <i>major</i> or <u>possibly</u> species
-                  <i>steinheimensis</i>
-                  <br>
-
-              </td>
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
-              <td style="text-align: left; vertical-align: middle;">major</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-
-              <td style="text-align: left; vertical-align: middle;">A. major cf. steinheimensis</td>
-          </tr>
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <b>Situation:</b> <i>Amphicyon major</i> / <i>steinheimensis</i> in the literature - if the intention is species <i>major</i> or species <i>steinheimensis</i> (both as likely, <u>neither</u> is preferred)
-                  <br>
-
-              </td>
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
-              <td style="text-align: left; vertical-align: middle;">indet</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-
-              <td style="text-align: left; vertical-align: middle;">A. major/steinheimensis</td>
-          </tr>
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <b>Situation:</b> Uncertain genus, species unknown, <i>Amphicyon</i>/<i>Cynelos</i> indet in literature
-                  <br>
-
-              </td>
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">indet</td>
-              <td style="text-align: left; vertical-align: middle;">indet</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-
-              <td style="text-align: left; vertical-align: middle;">Amphicyon/Cynelos indet</td>
-          </tr>
-      </tbody>
-  </table>
-
+    As a guideline NOW uses the taxonomy of <a href="{% url 'conventions' %}#McKennaBell">McKenna &amp; Bell's</a><i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href={% static "now/pdf/Muridae_tentative.pdf" %} target="_blank">Hans de Bruijn</a>.
+  </p>
+  <br>
   <p>
-      <b>NOTE</b>: In a few recognised cases, two similar but separate species may not be possible to tell apart (for example, not just from dental material). Where the taxon is thus indeterminate but limited to two known species, and <u>this is a regular occurrence</u>, the species may be entered into NOW as a new species entry. Please see an
-      <a href="{% url 'taxonomy' %}#TwoTaxa_Regular">example</a> under 'Proper use of Taxonomic fields'. </i>
-
+    The most common function performed in NOW is inputting taxon lists into localities. If the locality in question is not in NOW yet, please follow the instructions under <a href="{% url 'locality_notes' %}">Localities</a> first. When entering taxon lists into a locality, the primary assumption is that all the species already exist in the database, and can be added into the locality with the <strong>'Select species'</strong> function. For these species, please follow the rules and examples below.</p>
+    <br>
+    <p>
+      However, in some cases, all of the species do not exist in the database yet, usually because they are informal or recently established species. For such species, use the <strong>'Add new species'</strong> function, and follow the guidelines under <a href="{% url 'taxonomy' %}">Taxonomic Fields</a> for correctly entering the taxonomic information of the new species. Then follow these instructions for the occurrence of taxa at the locality you are adding.
   </p>
 
-  <ul>
-      <li>
-          <h3><a name="UncertainOccAssig">Uncertain occurrence of taxon with uncertain taxonomic assignment</a></h3>
-      </li>
-  </ul>
-  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
+  <section class="w3-container">
+    <header class="w3-container">
+      <h4>Fields</h4>
+    </header>
+    The fields explained below can be found in the Locality > <strong>Species</strong> tab for all species at a locality, and in the Species > <strong>Loc-Sp Info</strong> tab for all locality occurrences of a specific species.
+    <table class="w3-table-all now-table-all">
       <tbody>
-
-          <tr>
-              <td rowspan="1" colspan="4" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species At Locality</span></td>
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Taxonomic Status</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">ID Status</span></td>
-          </tr>
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <span style="font-weight: bold;">Situation:</span> uncertain occurrence of species at locality
-                  <br>
-
-                  <span style="font-weight: bold;">May appear in literature as:</span> cf. <i>Amphicyon</i> cf. <i>steinheimensis</i>, ?
-                  <i>Amphicyon</i> aff. <i>steinheimensis</i>, "<i>Amphicyon</i>" ?<i>steinheimensis</i></td>
-
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
-              <td style="text-align: left; vertical-align: middle;">steinheimensis</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">genus attrib of species uncertain</td>
-              <td style="text-align: left; vertical-align: middle;">species id uncertain</td>
-
-          </tr>
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <span style="font-weight: bold;">Situation:</span> uncertain occurrence of unnamed species at locality Stockholm
-                  <br>
-                  <span style="font-weight: bold;">May appear in literature as: </span>cf. <i>Lynx</i> sp.1</td>
-
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Lynx</td>
-              <td style="text-align: left; vertical-align: middle;">sp.</td>
-              <td style="text-align: left; vertical-align: middle;">Stockholm 1</td>
-              <td style="text-align: left; vertical-align: middle;">informal species</td>
-              <td style="text-align: left; vertical-align: middle;">species id uncertain</td>
-
-          </tr>
+        <tr>
+          <td id="tab_ID_status" style="vertical-align:middle"><strong>ID Status</strong>
+          </td>
+          <td>
+            Indicates an uncertain identification and therefore an uncertain occurrence of the taxon at a particular locality so is an attribute of the species-locality relationship. Usually, the ID status is blank.<br><br>
+            <strong>Valid entries are:</strong><br>
+            <i class="fas fa-caret-right"></i> family id uncertain<br>
+            <i class="fas fa-caret-right"></i> genus id uncertain<br>
+            <i class="fas fa-caret-right"></i> species id uncertain<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle"><strong>Additional Info</strong></td>
+          <td id="tab_Add_Info">
+            Additional Info field can be used to record locality related species information that cannot be recorded in any other field but might be important for other users to know:
+            <br><br><i class="fas fa-caret-right"></i> Taxonomic devices like 'cf.', 'aff.', 'ex gr.' no longer exist as such in the database, but have instead become attributes of individual occurrences of the taxon, indicated by ID status (or attributes of all instances of the taxon, indicated by <a href="{% url 'taxonomy' %}#tab_Tax_status">taxonomic status</a>). Use 'Additional Info' in these cases to record what was written in the original document
+            <br><br><i class="fas fa-caret-right"></i>'Additional Info' can contain historical information, for example, 'Suidae indet. in older references' or 'previous ID S. splendens incorrect'.
+            <br><br><i class="fas fa-caret-right"></i>You can also enter subspecies names into the &#39;Additional Info&#39; field (this is preferred over creating a new species entry with a subspecies in the &#39;Unique ID&#39; field)
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle"><strong>Source Name</strong></td>
+          <td id="tab_Source_Name">
+            This information should be recorded for localities where the reference literature lists a species with a junior synonym name. For example:
+            <br>
+            <br>
+            Reference literature lists the species <i>Listriodon mongoliensis</i> present, but this taxon is recognized by the name of <i>Listriodon splendens</i> in the NOW database. In this case, the taxon will be listed as Listriodon splendens in the Locality species list, but Listriodon mongoliensis will be recorded in the 'Source Name' field.
+            <br>
+            <br>
+            If a comment '*from merge' appears in the 'Source Name' field after the junior synonym name, this means it was automatically transferred there when two (or more) species were recognized as synonymous during taxonomic updates of the NOW database (and the locality in question listed the junior synonym name).
+            <br>
+            <br>
+            <strong>NOTE:</strong> Source Name field was added to NOW in December 2011, so this field will be empty in localities which have not been updated recently.
+          </td>
+        </tr>
+        <tr>
+          <td style="vertical-align:middle"><strong>Other</strong></td>
+          <td id="tab_Other">This information can be added for localities where it is available - it is very valuable but optional:
+            <br>
+            <br>
+            <strong>nis</strong> = number of identified specimens
+            <br>
+            <strong>pct</strong> = percent
+            <br>
+            <strong>quad</strong> = quadrate count
+            <br>
+            <strong>mni</strong> = minimum number of individuals
+            <br>
+            <strong>qu</strong> = qualitative
+          </td>
+        </tr>
       </tbody>
-  </table>
-  <br>
-
+    </table>
+  </section>
+  <section class="w3-container">
+    <header class="w3-container">
+      <h4 id="ExamplesSpeciesLocalities">Examples &ndash; Species at Localities</h4>
+    </header>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5 id="UncertainOccTax">The uncertain occurrence of a taxon</h5>
+        NOTE: ideally, where the identification of a taxon is uncertain (meaning the occurrence of the taxon at a certain locality is uncertain), it should not be entered in the database. However, when such taxa are entered for some good reason, this is the accepted style.
+      </header>
+      <table class="w3-table-all now-table-all">
+        <tbody>
+          <tr>
+            <td colspan="5" rowspan="1"><strong>Species</strong></td>
+            <td><strong>Species At Locality</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Family</strong></td>
+            <td><strong>Subfamily</strong></td>
+            <td><strong>Genus</strong></td>
+            <td><strong>Species</strong></td>
+            <td><strong>Unique</strong></td>
+            <td><strong>ID Status</strong></td>
+          </tr>
+          <tr>
+            <td colspan="6" rowspan="1">
+              <br>
+              <strong>Situation:</strong> uncertain occurrence of species at a locality
+              <br>
+              <strong>May appear in literature as:</strong> <i>Amphicyon</i> cf.
+              <i>major</i>, cf. <i>Amphicyon major</i>,
+              <i>Amphicyon</i> aff. <i>major</i>,
+              <i>Amphicyon</i> ex gr. <i>major</i>
+            </td>
+          </tr>
+          <tr>
+            <td>Amphicyonidae</td>
+            <td>Amphicyoninae</td>
+            <td>Amphicyon</td>
+            <td>major</td>
+            <td>-</td>
+            <td>species id uncertain</td>
+          </tr>
+          <tr>
+            <td colspan="6" rowspan="1">
+              <br>
+              <strong>Situation:</strong> uncertain occurrence of genus at a locality
+              <br>
+              <strong>May appear in literature as:</strong> cf. <i>Amphicyon</i> sp., cf.
+              <i>Amphicyon</i> indet., cf. <i>Amphicyon</i>, ?
+              <i>Amphicyon</i>
+            </td>
+          </tr>
+          <tr>
+            <td>Amphicyonidae</td>
+            <td>Amphicyoninae</td>
+            <td>Amphicyon</td>
+            <td>indet</td>
+            <td>-</td>
+            <td>genus id uncertain</td>
+          </tr>
+          <tr>
+            <td colspan="6" rowspan="1">
+              <br>
+              <strong>Situation:</strong> uncertain occurrence of a family at a locality
+              <br>
+              <strong>May appear in literature as:</strong> cf. Felidae indet. indet.
+            </td>
+          </tr>
+          <tr>
+            <td>Felidae</td>
+            <td>&nbsp;</td>
+            <td>indet.</td>
+            <td>indet.</td>
+            <td>-</td>
+            <td>family id uncertain</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <br>
+    <section class="w3-container" id="UncertainOccTax_TwoSpecies">
+      <header class="w3-container">
+        <h5>The uncertain occurrence of a taxon - Additional info</h5>
+        Additional Info field can be used to record information when there is uncertainty between two possible species at a locality.
+      </header>
+      <table class="w3-table-all now-table-all">
+        <tbody>
+          <tr>
+            <td colspan="4" rowspan="1"><strong>Species</strong></td>
+            <td><strong>Species At Locality</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Genus</strong></td>
+            <td><strong>Species</strong></td>
+            <td><strong>Unique</strong></td>
+            <td><strong>Taxonomic Status</strong></td>
+            <td><strong>Additional Info</strong></td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> <i>Amphicyon major</i> cf. <i>steinheimensis</i> in the literature - if the intention is species <i>major</i> or <u>possibly</u> species
+              <i>steinheimensis</i>
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>Amphicyon</td>
+            <td>major</td>
+            <td>-</td>
+            <td>-</td>
+            <td>A. major cf. steinheimensis</td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> <i>Amphicyon major</i> / <i>steinheimensis</i> in the literature - if the intention is species <i>major</i> or species <i>steinheimensis</i> (both as likely, <u>neither</u> is preferred)
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>Amphicyon</td>
+            <td>indet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>A. major/steinheimensis</td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> Uncertain genus, species unknown, <i>Amphicyon</i>/<i>Cynelos</i> indet in literature
+              <br>
+            </td>
+          </tr>
+          <tr>
+            <td>indet</td>
+            <td>indet</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Amphicyon/Cynelos indet</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <strong>NOTE</strong>: In a few recognised cases, two similar but separate species may not be possible to tell apart (for example, not just from dental material). Where the taxon is thus indeterminate but limited to two known species, and <u>this is a regular occurrence</u>, the species may be entered into NOW as a new species entry. Please see an
+      <a href="{% url 'taxonomy' %}#TwoTaxa_Regular">example</a> under 'Proper use of Taxonomic fields'.
+    </section>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h4 id="UncertainOccAssig">The uncertain occurrence of a taxon with uncertain taxonomic assignment</h4>
+        The fields explained below can be found in the Locality > <strong>Species</strong> tab for all species at a locality, and in the Species > <strong>Loc-Sp Info</strong> tab for all locality occurrences of a specific species.
+      </header>
+      <table class="w3-table-all now-table-all">
+        <tbody>
+          <tr>
+            <td colspan="4" rowspan="1"><strong>Species</strong></td>
+            <td><strong>Species At Locality</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Genus</strong></td>
+            <td><strong>Species</strong></td>
+            <td><strong>Unique</strong></td>
+            <td><strong>Taxonomic Status</strong></td>
+            <td><strong>ID Status</strong></td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> uncertain occurrence of species at a locality
+              <br>
+              <strong>May appear in literature as:</strong> cf. <i>Amphicyon</i> cf. <i>steinheimensis</i>, ?
+              <i>Amphicyon</i> aff. <i>steinheimensis</i>, "<i>Amphicyon</i>" ?<i>steinheimensis</i>
+            </td>
+          </tr>
+          <tr>
+            <td>Amphicyon</td>
+            <td>steinheimensis</td>
+            <td>-</td>
+            <td>genus attrib of species uncertain</td>
+            <td>species id uncertain</td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> uncertain occurrence of unnamed species at a locality Stockholm
+              <br>
+              <strong>May appear in literature as: </strong>cf. <i>Lynx</i> sp.1
+            </td>
+          </tr>
+          <tr>
+            <td>Lynx</td>
+            <td>sp.</td>
+            <td>Stockholm 1</td>
+            <td>informal species</td>
+            <td>species id uncertain</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <br>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5 id="LocSubspecies">When a subspecies is listed for a taxon</h5>
+      </header>
+      <table class="w3-table-all now-table-all">
+        <tbody>
+          <tr>
+            <td colspan="4" rowspan="1"><strong>Species</strong></td>
+            <td><strong>Species At Locality</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Genus</strong></td>
+            <td><strong>Species</strong></td>
+            <td><strong>Unique</strong></td>
+            <td><strong>Taxonomic Status</strong></td>
+            <td><strong>Additional Info</strong></td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> a subspecies is listed for the species in the literature
+              <br>
+              <strong>May appear in literature as:</strong><i> Amphicyon steinheimensis kurteni</i>, <i>Amphicyon steinheimensis arcticus</i>, etc.
+          </tr>
+          <tr>
+            <td>Amphicyon</td>
+            <td>steinheimensis</td>
+            <td>-</td>
+            <td>-</td>
+            <td>subspecies: kurteni</td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> a possible subspecies is listed for the species in the literature
+              <br>
+              <strong>May appear in literature as:</strong> <i>Amphicyon steinheimensis</i> cf. <i>kurteni</i>, <i>Amphicyon steinheimensis </i> cf. <i> arcticus</i>, etc.
+            </td>
+          </tr>
+          <tr>
+            <td>Amphicyon</td>
+            <td>steinheimensis</td>
+            <td>-</td>
+            <td>-</td>
+            <td>subspecies: cf. kurteni</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <br>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5 id="SynTaxName">When a synonymous name is listed in the literature</h5>
+      </header>
+      <table class="w3-table-all now-table-all">
+        <tbody>
+          <tr>
+            <td colspan="4" rowspan="1"><strong>Species</strong></td>
+            <td><strong>Species At Locality</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Genus</strong></td>
+            <td><strong>Species</strong></td>
+            <td><strong>Unique</strong></td>
+            <td><strong>Taxonomic Status</strong></td>
+            <td><strong>Source Name</strong></td>
+          </tr>
+          <tr>
+            <td colspan="5" rowspan="1">
+              <br>
+              <strong>Situation:</strong> a synonymous name is listed for the species in the literature
+              <br>
+              <strong>May appear in literature as:</strong><i> Rhinocerus mercki</i>, which is listed as a synonym of <i>Stephanorhinus kirchbergensis</i> in NOW
+            </td>
+          </tr>
+          <tr>
+            <td>Stephanorhinus</td>
+            <td>kirchbergensis</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Rhinocerus mercki</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+  <h4>Links to</h4>
   <ul>
-      <li>
-          <h3><a name="LocSubspecies"></a>When a subspecies is listed for a taxon</h3>
-      </li>
-
+    <li>Proper use of <a href="{% url 'taxonomy' %}">Taxonomic Fields</a></li>
+    <li>Notes on<a href="{% url 'species_notes' %}"> the description of species</a></li>
+    <li>Notes on<a href="{% url 'locality_notes' %}"> the description of localities</a></li>
+    <li><a href="{% url 'data_entry_practices' %}">Data entry practices</a></li>
   </ul>
-  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
-      <tbody>
-          <tr>
-              <td rowspan="1" colspan="4" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td width="171" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species At Locality</span></td>
-          </tr>
-          <tr>
-
-              <td width="60" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
-              <td width="133" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td width="18" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
-              <td width="54" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Taxonomic Status</span></td>
-              <td style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Additional Info</span></td>
-          </tr>
-
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <b>Situation:</b> a subspecies is listed for the species in the literature
-                  <br>
-                  <b>May appear in literature as:</b><i> Amphicyon steinheimensis kurteni</i>, <i>Amphicyon steinheimensis arcticus</i>, etc.
-
-          </tr>
-
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
-              <td style="text-align: left; vertical-align: middle;">steinheimensis</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">subspecies: kurteni</td>
-
-          </tr>
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <b>Situation:</b> a possible subspecies is listed for the species in the literature
-                  <br>
-                  <b>May appear in literature as:</b> Amphicyon steinheimensis</i> cf. <i>kurteni</i>, <i>Amphicyon steinheimensis </i> cf. <i> arcticus</i>, etc.</td>
-
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Amphicyon</td>
-              <td style="text-align: left; vertical-align: middle;">steinheimensis</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">subspecies: cf. kurteni</td>
-
-          </tr>
-      </tbody>
-  </table>
   <br>
-
-  <ul>
-      <li>
-          <h3><a name="SynTaxName"></a>When a synonymous name is listed in the literature</h3>
-      </li>
-
-  </ul>
-  <table style="width: 480px;" border="1" cellpadding="2" cellspacing="2">
-      <tbody>
-          <tr>
-              <td rowspan="1" colspan="4" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td width="171" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species At Locality</span></td>
-          </tr>
-          <tr>
-
-              <td width="60" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Genus</span></td>
-              <td width="86" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Species</span></td>
-              <td width="65" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Unique</span></td>
-              <td width="54" style="text-align: left; vertical-align: middle;"><span style="font-weight: bold;">Taxonomic Status</span></td>
-              <td style="text-align: left; vertical-align: middle;"><b>Source Name</b></td>
-          </tr>
-
-          <tr>
-              <td rowspan="1" colspan="5" style="text-align: left; vertical-align: middle;">
-                  <br>
-                  <b>Situation:</b> a synonymous name is listed for the species in the literature
-                  <br>
-                  <b>May appear in literature as:</b><i> Rhinocerus mercki</i>, which is listed as a synonym of <i>Stephanorhinus kirchbergensis</i> in NOW</td>
-
-          </tr>
-          <tr>
-              <td style="text-align: left; vertical-align: middle;">Stephanorhinus</td>
-              <td style="text-align: left; vertical-align: middle;">kirchbergensis</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">-</td>
-              <td style="text-align: left; vertical-align: middle;">Rhinocerus mercki</td>
-
-          </tr>
-      </tbody>
-  </table>
-  <br>
-
-  <p><b>Links to:</b></p>
-
-  <p>Proper use of <a href="{% url 'taxonomy' %}">Taxonomic Fields</a></p>
-
-  <p>Notes on <a href="{% url 'species_notes' %}">description of species</a></p>
-
-  <p>Notes on <a href="{% url 'locality_notes' %}">description of localities</a></p>
-
-  <p><a href="{% url 'data_entry_practices' %}">Data entry practices</a></p>
-  <br>
-
-  <p><b>Reference:</b></p>
-  <p>
-      <a name="McKenna & Bell"></a><b>McKenna, M.C. &amp; Bell, S.K.</b> 2000. <i>Classification of Mammals Above the Species Level</i>. i&ndash;xii, 16&ndash;631. Columbia University Press.
-      </td>
-
-      <td style="width: 130px; vertical-align: top;" class="sidepanel">
-  </p>
-  </td>
-  </tr>
-</tbody>
-</table>
-
-
-</article>
+  <h4 id="McKennaBell">References</h4>
+  <strong>McKenna, M.C. &amp; Bell, S.K.</strong> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.
+</section>
 {% endblock %}
-
 {% block aside %}
 {% endblock %}

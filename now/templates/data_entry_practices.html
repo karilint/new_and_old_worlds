@@ -1,47 +1,42 @@
 {% extends "now_base_generic.html" %}
-
 {% block title %}
-  <title>NOW - Fossil Mammal Database - Browsing - Data Conventions</title>
+NOW - Fossil Mammal Database - Browsing - Data Conventions
 {% endblock %}
-
 {% block content %}
 {% load static %}
+<!--Article header -->
+<header style="display:none">
+	<h3>Practices related to data entry</h3>
+</header>
+<!--End of article header -->
 <!-- Write your comments here -->
+<section class="w3-container">
+  <header class="w3-container">
+    <br>
+    As a guideline NOW uses the taxonomy of <a href="{% url 'taxonomy' %}#McKennaBell">McKenna &amp; Bell's</a><i> Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href="{% static "now/pdf/Muridae_tentative.pdf" %}" target="_blank">Hans de Bruijn</a>.
+    <br>
+    <h3 id="DataEntry">Practices related to data entry</h3>
+  </header>
 
-<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-  As a guideline NOW uses the taxonomy of <a href="{% url 'taxonomy' %}#McKennaBell">McKenna &amp; Bell's</a><i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href="{% static "now/pdf/Muridae_tentative.pdf" %}" target="_blank">Hans de Bruijn</a>.
-  <br>
-
-  <h1><a id="DataEntry"></a>Practices related to data entry</h1>
   <ul>
-      <li>If the family (or subfamily) is not known at data entry (a relatively common occurrence) the value '<span style="font-weight: bold;">Findout</span>' may be used. These species can be listed and updated later.</li>
-      <br>
-
-      <li>Taxonomic devices like &#39;cf.&#39;, &#39;aff.&#39;, &#39;ex gr.&#39; no longer exist as such in the database, but have instead become attributes of individual occurrences of the taxon, indicated by ID status, or attributes of all instances of the taxon, indicated by taxonomic status. The <a href="{%url 'species_at_localities' %}#tab_Add_Info">Additional Info </a> field in the Locality > Species tab (also visible in &#39;Loc-Sp Info&#39; within Species records) may be used in these cases to mark what was written in the original document.</li>
-      <br>
-
-      <li>It is important to think about the intention of the author when entering new species into the database or existing species into a locality. Please familiarise yourself with our guidelines and examples under <a href="{% url 'taxonomy' %}">Taxonomic Fields </a> and <a href="{% url 'species_at_localities' %}">Species at Localities</a>. </li>
-      <br>
-
-      <li>Before entering a new species into the database, please make sure that it does not already exist under another genus name in the same family! You can search for this by inputting the correct family and species names into the &#39;Species&#39; list search fields. If this appears to be the case, see instructions under
-          <a href="{% url 'taxonomy' %}#tab_Synonym">'Taxonomy - Synonyms'</a>. In any other (possible) synonymy cases, please contact <a href="mailto:susanna-dot-sova-at-helsinki-dot-fi">Susanna Sova</a> or <a href="mailto:laura-dot-saila-at-helsinki-dot-fi">Laura S&auml;il&auml;</a> before entering a new synonym into the database. </li>
-
+    <li>If the family (or subfamily) is not known at data entry (a relatively common occurrence) the value '<strong>Findout</strong>' may be used. These species can be listed and updated later.</li>
+    <li><br>Taxonomic devices like &#39;cf.&#39;, &#39;aff.&#39;, &#39;ex gr.&#39; no longer exist as such in the database, but have instead become attributes of individual occurrences of the taxon, indicated by ID status, or attributes of all instances of the taxon, indicated by taxonomic status. The <a href="{%url 'species_at_localities' %}#tab_Add_Info">Additional Info </a> field in the Locality > Species tab (also visible in &#39;Loc-Sp Info&#39; within Species records) may be used in these cases to mark what was written in the original document.</li>
+    <li><br>It is important to think about the intention of the author when entering new species into the database or existing species into a locality. Please familiarise yourself with our guidelines and examples under <a href="{% url 'taxonomy' %}">Taxonomic Fields </a> and <a href="{% url 'species_at_localities' %}">Species at Localities</a>.</li>
+    <li><br>Before entering a new species into the database, please make sure that it does not already exist under another genus name in the same family! You can search for this by inputting the correct family and species names into the &#39;Species&#39; list search fields. If this appears to be the case, see instructions under
+      <a href="{% url 'taxonomy' %}#tab_Synonym">'Taxonomy - Synonyms'</a>. In any other (possible) synonymy cases, please contact <a href="mailto:susanna-dot-sova-at-helsinki-dot-fi">Susanna Sova</a> or <a href="mailto:laura-dot-saila-at-helsinki-dot-fi">Laura S&auml;il&auml;</a> before entering a new synonym into the database.</li>
   </ul>
   <br>
-
-  <p><b>Links to:</b></p>
-
-  <p><a href="{% url 'species_at_localities' %}">Species at Localities</a> </p>
-
-  <p>Proper use of <a href="{% url 'taxonomy' %}">Taxonomic Fields </a> </p>
-
-  <p>Notes on <a href="{% url 'species_notes' %}">description of species </a></p>
-
-  <p>Notes on <a href="{% url 'locality_notes' %}">description of localities</a></p>
-
+  <h3>Links to:</h3>
+  <ul>
+    <li><a href="{% url 'species_at_localities' %}">Species at Localities</a></li>
+    <li>Proper use of <a href="{% url 'taxonomy' %}">Taxonomic Fields </a></li>
+    <li>Notes on<a href="{% url 'species_notes' %}"> the description of species</a></li>
+    <li>Notes on<a href="{% url 'locality_notes' %}"> the description of localities</a></li>
+  </ul>
   <br>
-  <a id="McKenna & Bell"></a>
-  <b>McKenna, M.C. &amp; Bell, S.K.</b> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.</td>
+  <h3 id="McKennaBell">References</h3>
+  <strong>McKenna, M.C. &amp; Bell, S.K.</strong> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.
+  <strong>de Bruijn, Hans.</strong> "A tentative classification of the Eurasian Paleogene and Neogene Muridae above the species level." <i>Neogene of the Old World Database of Fossil Mammals (NOW), http://www. helsinki. fi/science/now/, University of Helsinki (2010).</i>
 
-</article>
+</section>
 {% endblock %}

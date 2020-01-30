@@ -1,207 +1,266 @@
+{% load static %}
 <!DOCTYPE html>
 <!-- Write your comments here -->
-
 <html lang="en">
-<head>
-{% block title %}
-{% endblock %}
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="NOW (New and Old Worlds) fossil mammal database">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<script src="https://use.fontawesome.com/baa70f3cd3.js"></script>
-{% block script %}
-{% endblock %}
-
-<style>
-
-* {
-  box-sizing: border-box;
-}
-
-[class*="col-"] {
-  float: left;
-  padding: 5px;
-}
-
-.aside {
-  background-color: rgb(192, 192, 192);
-  padding: 15px;
-  color: #ffffff;
-  text-align: center;
-  font-size: 14px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.footer {
-  background-color: rgb(202, 176, 95);
-  color: #ffffff;
-  text-align: center;
-  font-size: 12px;
-  padding: 10px;
-}
-
-.menu li {
-  padding: 5px;
-  margin-bottom: 5px;
-  background-color: rgb(192, 192, 192);
-  color: #000000;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.menu li:hover {
-  background-color: #80a138;
-}
-
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.middlepanel {
-    background-color: rgb(240, 240, 240);
-}
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.toppanel {
-    background-color: rgb(250, 250, 210);
-}
-
-/* For mobile phones: */
-[class*="col-"] {
-  width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  /* For tablets: */
-  .col-s-1 {width: 8.33%;}
-  .col-s-2 {width: 16.66%;}
-  .col-s-3 {width: 25%;}
-  .col-s-4 {width: 33.33%;}
-  .col-s-5 {width: 41.66%;}
-  .col-s-6 {width: 50%;}
-  .col-s-7 {width: 58.33%;}
-  .col-s-8 {width: 66.66%;}
-  .col-s-9 {width: 75%;}
-  .col-s-10 {width: 83.33%;}
-  .col-s-11 {width: 91.66%;}
-  .col-s-12 {width: 100%;}
-}
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
-  .col-7 {width: 58.33%;}
-  .col-8 {width: 66.66%;}
-  .col-9 {width: 75%;}
-  .col-10 {width: 83.33%;}
-  .col-11 {width: 91.66%;}
-  .col-12 {width: 100%;}
-}
-
-body {
-    background-color: rgb(202, 176, 95);
-    margin-top: 1em;
-    margin-left: 1em;
-    text-align: center;
-    font-family: arial, helvetica, sans-serif;
-    font-size: 9pt;
-}
-
-{% block style %}
-{% endblock %}
-</style>
-</head>
-{% load static %}
-
-<body>
-<div class="row">
-
-  <div class="col-1 col-s-1">
-  </div>
-
-  <div class="col-10 col-s-9">
-    <div class="row toppanel">
-      <div class="col-9 col-s-9">
-        <img src="{% static "now/images/nowlogoTN.png"%}" alt="NOW logo" align="left">
-        <h1>NOW</h1>
-        <h2>New and Old Worlds</h2>
-        <h2>Database of fossil mammals</h2>
-      </div>
-      <div class="col-3 col-s-3">
-        <p style="text-align: right; vertical-align: bottom;">Website by:
-          <br> Arja Hokkanen
-          <br> Gudrun Evans
-          <br> Susanna Sova
-          <br>
-          <br> Maintained by:
-          <br>
-          <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a>
-          <br>
-          <br>Page updated on:
-          <br>{{ last_modified }}
-        </p>
-      </div>
-      <div class="col-9 col-s-9">
-        <p style="text-align: left; height: 0px;">&copy; Aino Martiskainen</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-3 col-s-3 menu">
-        <ul>
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'conventions' %}">Data Conventions</a></li>
-          <li><a href="{% url 'database' %}">View Database</a></li>
-          <li><a href="{% url 'browsing_lists' %}">Browsing - Lists</a></li>
-          <li><a href="{% url 'browsing_details' %}">Browsing - Details</a></li>
-          <li><a href="{% url 'export_maps' %}">Export and Maps</a></li>
-          <li><a href="{% url 'board' %}">Advisory Board</a></li>
-          <li><a href="{% url 'publications' %}">Publications</a></li>
-          <li><a href="{% url 'ecometrics' %}">Dental ecometrics</a></li>
-          <li><a href="{% url 'field_archive' %}">NOW Field Archives</a></li>
-          <li><a href="{% url 'acknowledgements' %}">Acknowledgements</a></li>
-          <li><a href="{% url 'contact' %}">Contact</a></li>
-          <li><a href="{% url 'faq' %}">FAQ</a></li>
-          <li><a href="{% url 'links' %}">Links</a></li>
-          <li><a href="{% url 'news' %}">News</a></li>
-        </ul>
-      </div>
-
-      {% block content %}
+  <head>
+    <title>
+      {% block title %}
       {% endblock %}
-
-      <div class="col-3 col-s-12">
-        <div class="aside">
-          <h2>NOW has new WWW-pages</h2>
-          {% load static %}
-          <p><a href="{% url 'news' %}">NOW www-pages have been updated to manage new HTML5 semantic elements like &#60;header&#62;, &#60;footer&#62;, &#60;article&#62;, and &#60;section&#62;.</a></p>
-        </div>
-        {% block aside %}
-        {% endblock %}
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'nav_style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Place your kit's code here -->
+    <script src="https://kit.fontawesome.com/5768ea2a16.js" crossorigin="anonymous"></script>
+    <style>
+      body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(202, 176, 95);}
+      html {
+      height: 100%;
+      }
+      .now-font{
+      font-family: comic sans ms;
+      }
+      .now-image{
+      border: 2px solid blue;
+      margin: 15px;
+      width: calc(100% - 30px);
+      height:auto
+      }
+      .now-table-all td{
+      border: 1px solid black;
+      }
+      {% block style %}
+      {% endblock %}
+    </style>
+  </head>
+  <body style="margin: 10px;">
+    <!-- Beginning of top row-->
+    <div class="w3-row" style="width:75%; margin: auto; background-color: rgb(250, 250, 210);">
+      <!-- Beginning of logo-->
+      <div class="w3-col w3-container m4 l4">
+        <figure>
+          <img src="{% static "now/images/nowlogoTN.png"%}" alt="NOW logo">
+          <figcaption class="w3-tiny">&copy; Aino Martiskainen</figcaption>
+        </figure>
       </div>
+      <!-- End of logo-->
+      <!-- Beginning of main heading-->
+      <div class="w3-col w3-container m4 l4 w3-center">
+        <h1 class="now-font">NOW</h1>
+        <h2 class="now-font">New and Old Worlds</h2>
+        <h3 class="now-font">Database of fossil mammals</h3>
+      </div>
+      <!-- End of main heading-->
+      <!-- Beginning of top right empty corner-->
+      <div class="w3-col w3-container m4 l4">
+      </div>
+      <!-- End of top right empty corner-->
     </div>
-  </div>
+    <!-- End of top row-->
+    <!-- Beginning of nav, article, side-->
+    <div class="w3-row" style="width:75%; margin: auto;">
+      <!-- Beginning of nav-->
+      <div class="w3-col w3-container m3 l2 w3-small" style="background-color: #9DA590;">
+        <!-- Beginning of nav ul-->
+        <ul id="accordion" class="accordion">
+          <li>
+            <div class="single-link"><i class="fa fa-home"></i><a href="{% url 'index' %}">Home</a></div>
+          </li>
+          <li>
+            <div class="link">
+              <i class="fa fa-check-circle"></i>Data Conventions<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'conventions' %}">Background</a></li>
+              <li><a href="{% url 'species_at_localities' %}">Species at Localities</a></li>
+              <li><a href="{% url 'taxonomy' %}">Taxonomic Fields</a></li>
+              <li><a href="{% url 'species_notes' %}">Description of Species</a></li>
+              <li><a href="{% url 'locality_notes' %}">Description of Localities</a></li>
+              <li><a href="{% url 'data_entry_practices' %}">Data entry practices</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="single-link">
+              <i class="fa fa-database"></i><a href="{% url 'database' %}">Enter Database</a>
+            </div>
+          </li>
+          <li>
+            <div class="link">
+              <i class="fa fa-list"></i>Browsing - Lists<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'browsing_lists' %}#NavBarLists">Navigation Bar</a></li>
+              <li><a href="{% url 'browsing_lists' %}#Arrows">Arrows</a></li>
+              <li><a href="{% url 'browsing_lists' %}#LocalityList">Locality List</a></li>
+              <li><a href="{% url 'browsing_lists' %}#SpeciesList">Species List</a></li>
+              <li><a href="{% url 'browsing_lists' %}#ReferenceList">Reference List</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link">
+              <i class="fa fa-window-maximize"></i>Browsing - Details<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'browsing_details' %}#NavBar">Navigation Bar</a></li>
+              <li><a href="{% url 'browsing_details' %}#Arrows">Arrows</a></li>
+              <li><a href="{% url 'browsing_details' %}#Locality">Locality</a></li>
+              <li><a href="{% url 'browsing_details' %}#Species">Species</a></li>
+              <li><a href="{% url 'browsing_details' %}#Reference">Reference</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link">
+              <i class="fa fa-download"></i>Export and Maps<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'export_maps' %}#Export">Export</a></li>
+              <li><a href="{% url 'export_maps' %}#ShowMap">Show Map</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link">
+              <i class="fa fa-group"></i>Advisory Board<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'board' %}#General">General Coordination & Development</a></li>
+              <li><a href="{% url 'board' %}#SteeringGroup">Steering Group</a></li>
+              <li><a href="{% url 'board' %}#RegionalCoordinators">Regional Coordinators</a></li>
+              <li><a href="{% url 'board' %}#Stratigraphy">Stratigraphy</a></li>
+              <li><a href="{% url 'board' %}#GeologyandTaphonomy">Geology and Taphonomy</a></li>
+              <li><a href="{% url 'board' %}#Traits">Traits</a></li>
+              <li><a href="{% url 'board' %}#Taxonomy_Ecomorphology_Eurasia_and_Africa">Taxonomy &amp; Ecomorphology, Eurasia and Africa</a></li>
+              <li><a href="{% url 'board' %}#Taxonomy_Ecomorphology_North_America">Taxonomy &amp; Ecomorphology, North America</a></li>
+              <li><a href="{% url 'board' %}#SouthAmerica">South America</a></li>
+              <li><a href="{% url 'board' %}#Palaeoecology">Palaeoecology</a></li>
+              <li><a href="{% url 'board' %}#Contacts">Contacts with related projects</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="single-link">
+              <i class="fa fa-file-pdf-o"></i><a href="{% url 'publications' %}">Publications</a>
+            </div>
+            <div class="single-link">
+              <i class="fa fa-dashboard"></i><a href="{% url 'ecometrics' %}">Dental ecometrics</a>
+            </div>
+          </li>
+          <li>
+            <div class="link">
+              <i class="fa fa-archive"></i>NOW Field Archives<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'field_archive' %}#fieldCat">Field Catalogues</a></li>
+              <li><a href="{% url 'field_archive' %}#otherFieldCat">Other Field Catalogues</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="single-link" style="word-wrap: break-word;">
+              <i class="fa fa-thumbs-up"></i><a href="{% url 'acknowledgements' %}">Acknowledgements</a>
+            </div>
+            <div class="single-link">
+              <i class="fa fa-question"></i><a href="{% url 'faq' %}">FAQ</a>
+            </div>
+            <div class="single-link">
+              <i class="fa fa-external-link"></i><a href="{% url 'links' %}">Links</a>
+            </div>
+            <div class="single-link">
+              <i class="fa fa-newspaper-o"></i><a href="{% url 'news' %}">News</a>
+            </div>
+          </li>
+        </ul>
+        <!-- End of nav ul-->
+      </div>
+      <!-- End of nav-->
+      <!-- Beginning of article, Lisence and maintained by-->
+      <div class="w3-col w3-container m6 l8 w3-light-grey w3-small">
+        <article class="w3-container">
+          {% block content %}
+          {% endblock %}
+        </article>
+        <hr>
+        <!-- Beginning of Lisence-->
+        <section class="w3-container w3-row w3-section">
+          <div class="w3-col m12 l12">
+            <header class="w3-container">
+              <h6 style="display:none;">License</h6>
+              <p>
+                <strong>License:</strong> Except where otherwise <a rel="note" href="{% url 'note' %}">noted</a>, content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License.</a>
+              </p>
+            </header>
+            <p>
+              <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="float: right; vertical-align:top;" src="https://i.creativecommons.org/l/by/4.0/88x31.png"></a>
+            </p>
+          </div>
+        </section>
+        <!-- End of Lisence-->
+        <hr>
+        <!-- Beginning maintained by-->
+        <section class="w3-container w3-section">
+          <header class="w3-container">
+            <h6 style="display:none;">Website by</h6>
+          </header>
+          <footer class="w3-row">
+            <address class="w3-col w3-container m4 l4">
+              <strong>Website by:</strong>
+              <br> Arja Hokkanen, Gudrun Evans, Susanna Sova, Kari Lintulaakso
+            </address>
+            <address class="w3-col w3-container m4 l4">
+              <strong>Maintained by:</strong>
+              <br>
+              <a href="mailto:kari-dot-lintulaakso%20-at-%20gmail-dot-com">Kari Lintulaakso</a>
+            </address>
+            <div class="w3-col w3-container m4 l4">
+              <strong>Page updated on:</strong>
+              <br>
+              {{ last_modified }}
+            </div>
+          </footer>
+        </section>
+        <!-- End of maintained by-->
+      </div>
+      <!-- End of article, Lisence and maintained by-->
+      <section class="w3-section w3-container w3-col m3 l2">
+        <header>
+          <h6 style="display:none;">Highlights</h6>
+        </header>
+        <aside class="w3-container" style="background-color: #9DA590;">
+          <p>NOW 25 years anniversary meeting will be in Barcelona in December 2021.<br><br>All welcome!<br><br>More info will follow.</p>
+        </aside>
+      </section>
+    </div>
+    <!-- End of nav, article, side-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script>
+      $(function() {
+        var Accordion = function(el, multiple) {
+          this.el = el || {};
+          this.multiple = multiple || false;
 
-  <div class="col-1 col-s-12">
-  </div>
-</div>
+          // Private variables
+          var links = this.el.find('.link');
+          // Event
+          links.on('click', {el: this.el, multiple: this.multiple}, this.dropdown)
+        }
 
-<div class="footer">
-  <h3>License</h3>
-  <p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /> Except where otherwise <a rel="note" href="{% url 'note' %}">noted</a>, content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a></p>
-</div>
+        Accordion.prototype.dropdown = function(e) {
+          var $el = e.data.el;
+          $this = $(this),
+          $next = $this.next();
 
-</body>
+          $next.slideToggle();
+          $this.parent().toggleClass('open');
+
+          if (!e.data.multiple) {
+            $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+          };
+        }
+
+        var accordion = new Accordion($('#accordion'), false);
+      });
+    </script>
+  </body>
 </html>

@@ -7,16 +7,19 @@
 {% endblock %}
 
 {% block title %}
-  <title>NOW - Fossil Mammal Database - Contact</title>
+  NOW - Fossil Mammal Database - Contact
 {% endblock %}
 
 {% block content %}
 
 <!-- Write your comments here -->
 
-<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-	<h1>Contact us</h1>
-  <p>We welcome all of your comments and suggestions.</p>
+<section class="w3-container">
+  <header class="w3-container">
+    <h3>Contact us</h3>
+  </header>
+
+  We welcome all of your comments and suggestions.
 
   <form method="post" action="http://www.helsinki.fi/cgi-bin/postitalomake">{% csrf_token %}
       <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">Enter your comments here:</span></p>
@@ -60,7 +63,7 @@
         <input value="Clear Form" type="reset">
       </p>
   </form>
-</article>
+</section>
 
 {% endblock %}
 

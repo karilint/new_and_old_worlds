@@ -1,36 +1,41 @@
 {% extends "now_base_generic.html" %}
-
 {% block style %}
 {% endblock %}
-
 {% block script %}
 {% endblock %}
-
 {% block title %}
-  <title>NOW - Fossil Mammal Database - Advisory Board</title>
+NOW - Fossil Mammal Database - Advisory Board
 {% endblock %}
-
 {% block content %}
+<!--Article header -->
+<header style="display:none">
+  <h3>Advisory Board</h3>
+</header>
+<!--End of article header -->
 
 <!-- Write your comments here -->
-
-<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-	<h1>Advisory Board</h1>
-
-  <h2><a id="General"></a>General Coordination &amp; Development</h2>
-
-  <ul>
+<section class="w3-container">
+  <header class="w3-container">
+    <h3>Advisory Board</h3>
+  </header>
+  <section class="w3-container" id="General">
+    <header class="w3-container">
+      <h4>General Coordination &amp; Development</h4>
+    </header>
+    <ul class="w3-ul">
       <li>Overall coordination and data entry &ndash; Indr&#279; &#381;liobait&#279;</li>
       <li>Associate NOW coordinator</li>
-      <ul>
-          <li>Jussi T Eronen, Lars van den Hoek Ostende, Laura S&auml;il&auml;</li>
-          <li>database development &ndash; Kari Lintulaakso</li>
-      </ul>
+        <li style="margin-left: 35px;">Jussi T Eronen, Lars van den Hoek Ostende, Laura S&auml;il&auml;</li>
+        <li style="margin-left: 35px;">database development &ndash; Kari Lintulaakso</li>
       <li>Data development &ndash; John Damuth and Jukka Jernvall</li>
       <li>NOW Office Manager &ndash; Susanna Sova</li>
-  </ul>
-  <h2><a id="General"></a>Steering Group</h2>
-  <ul>
+    </ul>
+  </section>
+  <section class="w3-container" id="SteeringGroup">
+    <header class="w3-container">
+      <h4>Steering Group</h4>
+    </header>
+    <ul class="w3-ul">
       <li>Indr&#279; &#381;liobait&#279;</li>
       <li>Mikael Fortelius</li>
       <li>Laura S&auml;il&auml;</li>
@@ -40,34 +45,76 @@
       <li>Christine Janis</li>
       <li>Ray Bernor</li>
       <li>Kari Lintulaakso</li>
-  </ul>
-  <h2><a id="Regional"></a>Regional Coordinators</h2>
-  <ul>
-      <h3>Europe</h3>
-      <li>Western Europe &ndash; Jordi Agust&iacute; and Lars van den Hoek Ostende</li>
-      <li>Central Europe &ndash; Gudrun Daxner-H&ouml;ck</li>
-      <li>Eastern Europe &ndash; George Koufos, Adam Nadachowski and Nikolai Spassov</li>
-      <li>Eastern Mediterranean and Greece &ndash; Dimitris Kostopoulos</li>
-      <li>Italy &ndash; Lorenzo Rook</li>
-      <li>Carpathian Basin &ndash; Kordos Laszlo</li>
-      <li>Russia &ndash; Inesa Vislobokova and Alexey Tesakov</li>
-      <h3>Asia</h3>
-      <li>Southwest Asia &ndash; Sevket Sen</li>
-      <li>South and East Asia (small mammals) &ndash; Larry Flynn</li>
-      <li>Indian subcontinent &ndash; David Pilbeam and John Barry</li>
-      <li>China &ndash; Qiu Zhuding, Zhang Zhaoqun and Liu Liping</li>
-      <li>Israel &ndash; Miriam Belmaker</li>
-      <h3>Africa</h3>
-      <li>Africa &ndash; Lars Werdelin</li>
-      <h3>North America</h3>
-      <li>North America &ndash; Samantha Hopkins, Christine Janis, Greg McDonald</li>
-      <h3>South America</h3>
-      <li>South America &ndash; Darin Croft</li>
-      <h3>Australia</h3>
-      <li>Australia &ndash; Kenny Travouillon</li>
-  </ul>
-  <h2><a id="Stratigraphy"></a>Stratigraphy</h2>
-  <ul>
+    </ul>
+  </section>
+  <section class="w3-container" id="RegionalCoordinators">
+    <header class="w3-container">
+      <h4>Regional Coordinators</h4>
+    </header>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5>Europe</h5>
+      </header>
+      <ul class="w3-ul">
+        <li>Western Europe &ndash; Jordi Agust&iacute; and Lars van den Hoek Ostende</li>
+        <li>Central Europe &ndash; Gudrun Daxner-H&ouml;ck</li>
+        <li>Eastern Europe &ndash; George Koufos, Adam Nadachowski and Nikolai Spassov</li>
+        <li>Eastern Mediterranean and Greece &ndash; Dimitris Kostopoulos</li>
+        <li>Italy &ndash; Lorenzo Rook</li>
+        <li>Carpathian Basin &ndash; Kordos Laszlo</li>
+        <li>Russia &ndash; Inesa Vislobokova and Alexey Tesakov</li>
+      </ul>
+    </section>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5>Asia</h5>
+      </header>
+      <ul class="w3-ul">
+        <li>Southwest Asia &ndash; Sevket Sen</li>
+        <li>South and East Asia (small mammals) &ndash; Larry Flynn</li>
+        <li>Indian subcontinent &ndash; David Pilbeam and John Barry</li>
+        <li>China &ndash; Qiu Zhuding, Zhang Zhaoqun and Liu Liping</li>
+        <li>Israel &ndash; Miriam Belmaker</li>
+      </ul>
+    </section>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5>Africa</h5>
+      </header>
+      <ul class="w3-ul">
+        <li>Africa &ndash; Lars Werdelin</li>
+      </ul>
+    </section>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5>North America</h5>
+      </header>
+      <ul class="w3-ul">
+        <li>North America &ndash; Samantha Hopkins, Christine Janis, Greg McDonald</li>
+      </ul>
+    </section>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5>South America</h5>
+      </header>
+      <ul class="w3-ul">
+        <li>South America &ndash; Darin Croft</li>
+      </ul>
+    </section>
+    <section class="w3-container">
+      <header class="w3-container">
+        <h5>Australia</h5>
+      </header>
+      <ul class="w3-ul">
+        <li>Australia &ndash; Kenny Travouillon</li>
+      </ul>
+    </section>
+  </section>
+  <section class="w3-container" id="Stratigraphy">
+    <header class="w3-container">
+      <h4>Stratigraphy</h4>
+    </header>
+    <ul class="w3-ul">
       <li>General stratigraphic coordinator &ndash; Anu Kaakinen</li>
       <li>John Kappelman</li>
       <li>Pierre Mein</li>
@@ -82,18 +129,30 @@
       <li>Neogene of North America &ndash; David Fox</li>
       <li>Palaeogene of Eurasia &ndash; Wilma Wessels</li>
       <li>Pleistocene and Holocene &ndash; Jussi Eronen, Martin Sabol</li>
-  </ul>
-  <h2><a id="Geology"></a>Geology and Taphonomy</h2>
-  <ul>
+    </ul>
+  </section>
+  <section class="w3-container" id="GeologyandTaphonomy">
+    <header class="w3-container">
+      <h4>Geology and Taphonomy</h4>
+    </header>
+    <ul class="w3-ul">
       <li>Sedimentology &ndash; J.P. Lunkka and Anu Kaakinen</li>
       <li>Taphonomy &ndash; Miranda Armour-Chelu</li>
-  </ul>
-  <h2><a id="Traits"></a>Traits</h2>
-  <ul>
-      General body size coordinator &ndash; Juha Saarinen</li>
-  </ul>
-  <h2><a id="Taxonomy"></a>Taxonomy &amp; Ecomorphology, Eurasia and Africa</h2>
-  <ul>
+    </ul>
+  </section>
+  <section class="w3-container" id="Traits">
+    <header class="w3-container">
+      <h4>Traits</h4>
+    </header>
+    <ul class="w3-ul">
+      <li>General body size coordinator &ndash; Juha Saarinen</li>
+    </ul>
+  </section>
+  <section class="w3-container" id="Taxonomy_Ecomorphology_Eurasia_and_Africa">
+    <header class="w3-container">
+      <h4>Taxonomy &amp; Ecomorphology, Eurasia and Africa</h4>
+    </header>
+    <ul class="w3-ul">
       <li>General small mammal coordinator &ndash; Hans de Bruijn</li>
       <li>General large mammal coordinator &ndash; Ray Bernor</li>
       <li>Insectivores &ndash; Constantin Doukas and Marc Furi&oacute;</li>
@@ -101,11 +160,9 @@
       <li>Hominoid Primates &ndash; Peter Andrews and David Alba</li>
       <li>Cercopithecoid Primates &ndash; Eric Delson</li>
       <li>Other Primates</li>
-      <ul>
-          <li>Christopher Beard (Asian non-catarrhines)</li>
-          <li>Raef Minwer Barakat (Omomyiformes and Adapiformes)</li>
-          <li>Sergi Lopez-Torres (Plesiadapiforms)</li>
-      </ul>
+        <li style="margin-left: 35px;">Christopher Beard (Asian non-catarrhines)</li>
+        <li style="margin-left: 35px;">Raef Minwer Barakat (Omomyiformes and Adapiformes)</li>
+        <li style="margin-left: 35px;">Sergi Lopez-Torres (Plesiadapiforms)</li>
       <li>Feloid Carnivores &ndash; Lars Werdelin</li>
       <li>Arctoid Carnivores &ndash; Suvi Viranta</li>
       <li>Suiforms &ndash; Jan van der Made</li>
@@ -122,10 +179,14 @@
       <li>Hyracoids &ndash; Elmar Heizmann</li>
       <li>Tubulidentates &ndash; Sevket Sen</li>
       <li>Hippopotamuses and Anthracotheres &ndash; Jean-Renaud Boisserie
-          <li>General body size coordinator &ndash; Juha Saarinen</li>
-  </ul>
-  <h2><a id="Taxonomy"></a>Taxonomy &amp; Ecomorphology, North America</h2>
-  <ul>
+      <li>General body size coordinator &ndash; Juha Saarinen</li>
+    </ul>
+  </section>
+  <section class="w3-container" id="Taxonomy_Ecomorphology_North_America">
+    <header class="w3-container">
+      <h4>Taxonomy &amp; Ecomorphology, North America</h4>
+    </header>
+    <ul class="w3-ul">
       <li>General coordinator of North America &ndash; Samantha Hopkins, Christine Janis</li>
       <li>Multituberculates &ndash; John Hunter</li>
       <li>Marsupials &ndash; Bill Korth</li>
@@ -143,35 +204,47 @@
       <li>Non-equid perissodactyls &ndash; Matt Mihlbachler</li>
       <li>Equids &ndash; Richard Hulbert and Michael O. Woodburne</li>
       <li>General body size coordinator &ndash; Juha Saarinen</li>
-  </ul>
-  <h2><a id="South America"></a>South America</h2>
-  <ul>
+    </ul>
+  </section>
+  <section class="w3-container" id="SouthAmerica">
+    <header class="w3-container">
+      <h4>South America</h4>
+    </header>
+    <ul class="w3-ul">
       <li>Genral coordinator of South America &ndash; Darin Croft</li>
       <li>Basal caviomorphs and octodontoid rodents &ndash; Michelle Arnal</li>
       <li>Platyrrhine primates &ndash; Siobhan Cooke</li>
       <li>Paleogene of Northwest Argentina &ndash; Daniel Garc&iacute;a L&oacute;pez</li>
-  </ul>
-  <h2><a id="Palaeoecology"></a>Palaeoecology</h2>
-  <ul>
+    </ul>
+  </section>
+  <section class="w3-container" id="Palaeoecology">
+    <header class="w3-container">
+      <h4>Palaeoecology</h4>
+    </header>
+    <ul class="w3-ul">
       <li>Kay Behrensmeyer</li>
       <li>Jan van Dam</li>
       <li>Thomas Kaiser</li>
       <li>Peter Ungar</li>
       <li>Mikael Fortelius</li>
       <li>Torsten Utescher</li>
-  </ul>
-  <h2><a id="Contacts"></a>Contacts with related projects</h2>
-  <ul>
+    </ul>
+  </section>
+  <section class="w3-container" id="Contacts">
+    <header class="w3-container">
+      <h4>Contacts with related projects</h4>
+    </header>
+    <ul class="w3-ul">
       <li>MioMap &ndash; Samantha Hopkins, Anthony D. Barnosky</li>
       <li>ROCEEH &ndash; Angela Bruch</li>
       <li>Neogene birds &ndash; Ursula G&ouml;hlich</li>
       <li>Fish, amphibians and reptiles &ndash; Madelaine B&ouml;hme</li>
       <li>NECLIME &ndash; Torsten Utescher</li>
       <li>Leaf and fruit floras &ndash; Johanna Kovar-Eder</li>
-      <li>FutTRES (<a href="http://www.futres.org" target="_blank">www.futres.org</a> "Functional Trait Resource for Environmental Studies", a collaborative NSF funded project [U. Oregon, U. Arizona, U. Florida and Howard University) &ndash; Ray Bernor</li>
-  </ul>
-</article>
+      <li>FutTRES (<a href="http://www.futres.org" target="_blank">>www.futres.org</a> "Functional Trait Resource for Environmental Studies", a collaborative NSF funded project [U. Oregon, U. Arizona, U. Florida and Howard University) &ndash; Ray Bernor</li>
+    </ul>
+  </section>
+</section>
 {% endblock %}
-
 {% block aside %}
 {% endblock %}

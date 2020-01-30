@@ -2,186 +2,114 @@ from django.shortcuts import render
 import os.path, time
 from new_and_old_worlds.settings import BASE_DIR
 
+from django.conf import settings
+from django.urls import resolve
+import os, time
+from django.template.response import TemplateResponse
+
+# add_mod_date:
+# Use a decorator for displaying the last modification date of the template file (html)
+# https://community.simpleisbetterthancomplex.com/t/displaying-the-last-modification-date-of-the-template-file/952/4
+
+def add_mod_date(template):
+    def outer_wrapper(func):
+        def wrapper(request, *args, **kwargs):
+           template_path = os.path.join(settings.BASE_DIR, resolve(request.path).app_name, settings.TEMPLATE_URL, template)
+           r = func(request, *args, **kwargs)
+           r.context_data = {"last_modified": time.ctime(os.path.getmtime(template_path))}
+           return r.render()
+        return wrapper
+    return outer_wrapper
+
+#def acknowledgements(request):
+#    """
+#    View function for acknowledgements page of site.
+#    """
+#    return render(
+#        request,
+#        'acknowledgements.html',
+#    )
+
+@add_mod_date("acknowledgements.html")
 def acknowledgements(request):
-    """
-    View function for acknowledgements page of site.
-    """
-    return render(
-        request,
-        'acknowledgements.html',
-    )
+    return TemplateResponse(request, "acknowledgements.html")
 
+@add_mod_date("browsing_details.html")
 def browsing_details(request):
-    return render(
-        request,
-        'browsing_details.html',
-    )
+    return TemplateResponse(request, "browsing_details.html")
 
+@add_mod_date("browsing_lists.html")
 def browsing_lists(request):
-    """
-    View function for Browsing - Lists page of site.
-    """
-    return render(
-        request,
-        'browsing_lists.html',
-    )
+    return TemplateResponse(request, "browsing_lists.html")
 
+@add_mod_date("board.html")
 def board(request):
-    """
-    View function for board page of site.
-    """
-    return render(
-        request,
-        'board.html',
-    )
+    return TemplateResponse(request, "board.html")
 
+@add_mod_date("contact.html")
 def contact(request):
-    """
-    View function for contact page of site.
-    """
-    return render(
-        request,
-        'contact.html',
-    )
+    return TemplateResponse(request, "contact.html")
 
+@add_mod_date("conventions.html")
 def conventions(request):
-    """
-    View function for conventions page of site.
-    """
-    return render(
-        request,
-        'conventions.html',
-    )
+    return TemplateResponse(request, "conventions.html")
 
+@add_mod_date("database.html")
 def database(request):
-    """
-    View function for database page of site.
-    """
-    return render(
-        request,
-        'database.html',
-    )
+    return TemplateResponse(request, "database.html")
 
+@add_mod_date("data_entry_practices.html")
 def data_entry_practices(request):
-    return render(
-        request,
-        'data_entry_practices.html',
-    )
+    return TemplateResponse(request, "data_entry_practices.html")
 
+@add_mod_date("ecometrics.html")
 def ecometrics(request):
-    """
-    View function for ecometrics page of site.
-    """
-    return render(
-        request,
-        'ecometrics.html',
-    )
+    return TemplateResponse(request, "ecometrics.html")
 
+@add_mod_date("export_maps.html")
 def export_maps(request):
-    """
-    View function for export_maps page of site.
-    """
-    return render(
-        request,
-        'export_maps.html',
-    )
+    return TemplateResponse(request, "export_maps.html")
 
+@add_mod_date("faq.html")
 def faq(request):
-    """
-    View function for FAQ page of site.
-    """
-    return render(
-        request,
-        'faq.html',
-    )
+    return TemplateResponse(request, "faq.html")
 
+@add_mod_date("field_archive.html")
 def field_archive(request):
-    file_name='field_archive.html'
-    file=os.path.join(BASE_DIR + '\\now\\templates\\', file_name)
-    last_modified=time.ctime(os.path.getmtime(file))
+    return TemplateResponse(request, "field_archive.html")
 
-    return render(
-        request,
-        file_name,
-        context={'last_modified':last_modified,},
-    )
-
+@add_mod_date("index.html")
 def index(request):
-    file=os.path.join(BASE_DIR,'now', 'templates', 'index.html')
-    last_modified=time.ctime(os.path.getmtime(file))
+    return TemplateResponse(request, "index.html")
 
-    # Render the HTML template index.html with the data in the context variable
-    return render(
-        request,
-        'index.html',
-        context={'last_modified':last_modified,},
-    )
-
+@add_mod_date("links.html")
 def links(request):
-    """
-    View function for links page of site.
-    """
-    return render(
-        request,
-        'links.html',
-    )
+    return TemplateResponse(request, "links.html")
 
+@add_mod_date("locality_notes.html")
 def locality_notes(request):
-    """
-    View function for locality notes page of site.
-    """
-    return render(
-        request,
-        'locality_notes.html',
-    )
+    return TemplateResponse(request, "locality_notes.html")
 
+@add_mod_date("news.html")
 def news(request):
-    """
-    View function for News page of site.
-    """
-    return render(
-        request,
-        'news.html',
-    )
+    return TemplateResponse(request, "news.html")
 
+@add_mod_date("note.html")
 def note(request):
-    """
-    View function for note page of site.
-    """
-    return render(
-        request,
-        'note.html',
-    )
+    return TemplateResponse(request, "note.html")
 
+@add_mod_date("publications.html")
 def publications(request):
-    """
-    View function for publications page of site.
-    """
-    return render(
-        request,
-        'publications.html',
-    )
+    return TemplateResponse(request, "publications.html")
 
+@add_mod_date("species_at_localities.html")
 def species_at_localities(request):
-    """
-    View function for Data Conventions - Species at Localities page of site.
-    """
-    return render(
-        request,
-        'species_at_localities.html',
-    )
+    return TemplateResponse(request, "species_at_localities.html")
 
+@add_mod_date("species_notes.html")
 def species_notes(request):
-    return render(
-        request,
-        'species_notes.html',
-    )
+    return TemplateResponse(request, "species_notes.html")
 
+@add_mod_date("taxonomy.html")
 def taxonomy(request):
-    """
-    View function for Taxonomy page of site.
-    """
-    return render(
-        request,
-        'taxonomy.html',
-    )
+    return TemplateResponse(request, "taxonomy.html")

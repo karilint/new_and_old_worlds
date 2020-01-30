@@ -1,169 +1,165 @@
 {% extends "now_base_generic.html" %}
-
 {% block style %}
 .collapsible {
-  background-color: F0F0F0;
-  color: black;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
+background-color: #F0F0F0;
+color: black;
+cursor: pointer;
+padding: 18px;
+width: 100%;
+border: none;
+text-align: left;
+outline: none;
+font-size: 15px;
 }
-
 .active, .collapsible:hover {
-  background-color: #c0c0c0;
+background-color: #c0c0c0;
 }
-
 .content {
-  padding: 0 18px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+padding: 0 18px;
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.2s ease-out;
+background-color: #f1f1f1;
 }
 {% endblock %}
-
 {% block script %}
 {% endblock %}
-
 {% block title %}
-  <title>NOW - Fossil Mammal Database - News</title>
+NOW - Fossil Mammal Database - News
 {% endblock %}
-
 {% block content %}
 {% load static %}
-<!-- Write your comments here -->
+            <!--Article header -->
+            <header style="display:none">
+              <h3>News</h3>
+            </header>
+            <!--End of article header -->
+            <!-- Write your comments here -->
+            <section class="w3-container w3-section">
+              <header class="w3-container">
+                <h3>News</h3>
+              </header>
+              <h4>Latest news and Circulars</h4>
+              <button class="collapsible">2020/01:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>The NOW www-pages have been updated to manage HTML5 semantic elements like &#60;header&#62;, &#60;footer&#62;, &#60;article&#62;, and &#60;section&#62;.</li>
+                </ul>
+              </div>
+              <button class="collapsible">2019/11:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>November 7, 2019: A bit on how NOW works.<a href="{% static "now/circulars/2019-11-07-circular-IZ.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+                <ul class="w3-ul">
+                  <li>November 6, 2019: Announcing NOW book.<a href="{% static "now/circulars/2019-11-06-circular-IZ.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2019/10:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>October 14, 2019: Indrė Žliobaitė replaces Mikael Fortelius as the General Coordinator of NOW. A new NOW body, the Emeritus Board has been set up.<a href="{% static "now/circulars/2019-10-14-circular-MF.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2013/12:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>December 12, 2013: Lars van den Hoek Ostende as the Associate Coordinator. Steering Group for NOW has been set up.<a href="{% static "now/circulars/Goodbye NOW Mafia 131213.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2010/06:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>June 8, 2010: Initiating a concerted effort to come to grips with NOW synonyms.<a href="{% static "now/circulars/NOW circular 100608.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2010/04:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>April 29, 2010: New Board listing on the NOW homepage.<a href="{% static "now/circulars/NOW circular 100429.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2009/10:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>October 23, 2009: North American Advisory Board for NOW has been set up. New PHP-based interface launched. Sections for Australia as well as for South America.<a href="{% static "now/circulars/NOW circular 091023.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2009/02:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>February 15, 2009: Data from the Tertiary Mammals of North America monographs into NOW. New suggestion for NOW - "New and Old Worlds".<a href="{% static "now/circulars/NOW circular 090215.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2006/12:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>December 19, 2006: It’s ten years since the official launch of the NOW database as a public resource. <a href="{% static "now/circulars/Ten Years NOW.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">2002/06:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>June 3, 2002: NOW is available in the Biodiversity U.K. home page. NOW data are being used in analyses that are beginning to catch the attention of the evolutionary biology community. <a href="{% static "now/circulars/NOW circular 020603.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">1998/05:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>May 14, 1998: Next year it will probably be possible to access a recent version of the public set of NOW data with a common web browser (such as Netscape).<a href="{% static "now/circulars/NOW circular 980514.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">1997/10:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>October 15, 1997: Creation of an Advisory Board for NOW. A few words about the "data policy".<a href="{% static "now/circulars/Setting up the first AB 971015.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <button class="collapsible">1995/09:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>September 15, 1995: The Evolutionary History of Western Eurasia: A Synthesis of Regional Faunas, Their Geochronology and Paleoenvironments, 15-5 m. y. a. -- The Schloss Reisensburg ´92 Database.<a href="{% static "now/circulars/First public NOW last revision 950915.pdf" %}" target="_blank">[PDF]</a>
+                </ul>
+              </div>
+              <h4>New features & fixes to the NOW database</h4>
+              <button class="collapsible">2019/10:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>Data: Body mass data has been added to 1258 species</li>
+                  <li>Data: South American data added from Croft, D.A., 2016. Horned armadillos and rafting monkeys: the fascinating fossil mammals of South America.</li>
+                  <li>Added new taxonomical fields: Subclass or Superorder, Suborder or Superfamily</li>
+                  <li>Fix: coordinate services in the data entry</li>
+                </ul>
+              </div>
+              <button class="collapsible">2019/05:</button>
+              <div class="content">
+                <ul class="w3-ul">
+                  <li>Data: New MN units (Hilgen, 2012) are added to the time units</li>
+                  <li>Data: 'Findout' taxa updated as 'indet.'</li>
+                  <li>Added an error reporting button (contact) for Locality, Species and Reference</li>
+                  <li>Added a FAQ page</li>
+                  <li>Added “unworn” to mesowear categories</li>
+                  <li>Added a list of metadata of the website, including the major contributors of the last few months</li>
+                  <li>Added into the download file species that have no public locality (interesting because of traits)</li>
+                  <li>Updated the NOW Advisoy Board listing</li>
+                  <li>Fix: Trim all taxa before saving them in the database.</li>
+                </ul>
+              </div>
+              <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
 
-<article style="vertical-align: top; text-align: justify;" class="col-6 col-s-9 middlepanel">
-  <h1>News</h1>
-  <h2>Latest news and Circulars</h2>
-  <button class="collapsible">2020/01:</button>
-  <div class="content">
-	  <ul>
-  	  <li>The NOW www-pages have been updated to manage new HTML5 semantic elements like &#60;header&#62;, &#60;footer&#62;, &#60;article&#62;, and &#60;section&#62;.</li>
-	  </ul>
-  </div>
-  <button class="collapsible">2019/11:</button>
-  <div class="content">
-    <ul>
-      <li>November 7, 2019: A bit on how NOW works.<a href="{% static "now/circulars/2019-11-07-circular-IZ.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-	  <ul>
-      <li>November 6, 2019: Announcing NOW book.<a href="{% static "now/circulars/2019-11-06-circular-IZ.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2019/10:</button>
-  <div class="content">
-	  <ul>
-      <li>October 14, 2019: Indrė Žliobaitė replaces Mikael Fortelius as the General Coordinator of NOW. A new NOW body, the Emeritus Board has been set up.<a href="{% static "now/circulars/2019-10-14-circular-MF.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2013/12:</button>
-  <div class="content">
-	  <ul>
-      <li>December 12, 2013: Lars van den Hoek Ostende as the Associate Coordinator. Steering Group for NOW has been set up.<a href="{% static "now/circulars/Goodbye NOW Mafia 131213.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2010/06:</button>
-  <div class="content">
-	  <ul>
-      <li>June 8, 2010: Initiating a concerted effort to come to grips with NOW synonyms.<a href="{% static "now/circulars/NOW circular 100608.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2010/04:</button>
-  <div class="content">
-	  <ul>
-      <li>April 29, 2010: New Board listing on the NOW homepage.<a href="{% static "now/circulars/NOW circular 100429.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2009/10:</button>
-  <div class="content">
-	  <ul>
-      <li>October 23, 2009: North American Advisory Board for NOW has been set up. New PHP-based interface launched. Sections for Australia as well as for South America.<a href="{% static "now/circulars/NOW circular 091023.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2009/02:</button>
-  <div class="content">
-	  <ul>
-      <li>February 15, 2009: Data from the Tertiary Mammals of North America monographs into NOW. New suggestion for NOW - "New and Old Worlds".<a href="{% static "now/circulars/NOW circular 090215.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2006/12:</button>
-  <div class="content">
-	  <ul>
-      <li>December 19, 2006: It’s ten years since the official launch of the NOW database as a public resource. <a href="{% static "now/circulars/Ten Years NOW.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">2002/06:</button>
-  <div class="content">
-	  <ul>
-      <li>June 3, 2002: NOW is available in the Biodiversity U.K. home page. NOW data are being used in analyses that are beginning to catch the attention of the evolutionary biology community. <a href="{% static "now/circulars/NOW circular 020603.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">1998/05:</button>
-  <div class="content">
-	  <ul>
-      <li>May 14, 1998: Next year it will probably be possible to access a recent version of the public set of NOW data with a common web browser (such as Netscape).<a href="{% static "now/circulars/NOW circular 980514.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">1997/10:</button>
-  <div class="content">
-	  <ul>
-      <li>October 15, 1997: Creation of an Advisory Board for NOW. A few words about the "data policy".<a href="{% static "now/circulars/Setting up the first AB 971015.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-  <button class="collapsible">1995/09:</button>
-  <div class="content">
-	  <ul>
-      <li>September 15, 1995: The Evolutionary History of Western Eurasia: A Synthesis of Regional Faunas, Their Geochronology and Paleoenvironments, 15-5 m. y. a. -- The Schloss Reisensburg ´92 Database.<a href="{% static "now/circulars/First public NOW last revision 950915.pdf" %}" target="_blank">[PDF]</a></p>
-	  </ul>
-  </div>
-
-  <h2>New features & fixes to the NOW database</h2>
-  <button class="collapsible">2019/10:</button>
-  <div class="content">
-	  <ul>
-  	  <li>Data: Body mass data has been added to 1258 species</li>
-  	  <li>Data: South American data added from Croft, D.A., 2016. Horned armadillos and rafting monkeys: the fascinating fossil mammals of South America.</li>
-  	  <li>Added new taxonomical fields: Subclass or Superorder, Suborder or Superfamily</li>
-  	  <li>Fix: coordinate services in the data entry</li>
-	  </ul>
-  </div>
-  <button class="collapsible">2019/05:</button>
-  <div class="content">
-  <ul>
-    <li>Data: New MN units (Hilgen, 2012) are added to the time units</li>
-    <li>Data: 'Findout' taxa updated as 'indet.'</li>
-    <li>Added an error reporting button (contact) for Locality, Species and Reference</li>
-    <li>Added a FAQ page</li>
-    <li>Added “unworn” to mesowear categories</li>
-    <li>Added a list of metadata of the website, including the major contributors of the last few months</li>
-    <li>Added into the download file species that have no public locality (interesting because of traits)</li>
-    <li>Updated the NOW Advisoy Board listing</li>
-    <li>Fix: Trim all taxa before saving them in the database.</li>
-  </ul>
-  </div>
-
-  <script>
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.maxHeight){
-        content.style.maxHeight = null;
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-      }
-    });
-  }
-  </script>
-
-</article>
-
+                for (i = 0; i < coll.length; i++) {
+                  coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight){
+                      content.style.maxHeight = null;
+                    } else {
+                      content.style.maxHeight = content.scrollHeight + "px";
+                    }
+                  });
+                }
+              </script>
+            </section>
 {% endblock %}

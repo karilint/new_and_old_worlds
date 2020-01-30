@@ -1,0 +1,161 @@
+/* NOW Colors from the new logo
+green #80A138
+light yellow #F2E7B1
+grey #9DA590
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(202, 176, 95);
+/*  background: #2d2c41;*/
+  font-family: 'Open Sans', Arial, Helvetica, Sans-serif, Verdana, Tahoma;
+}
+
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-top: 1px solid #ccc;
+}
+
+ul { list-style-type: none; }
+
+a {
+  color: #b63b4d;
+  text-decoration: none;
+}
+
+/** =================================================================
+ * We are thankful to fainder at https://codepen.io/fainder/pen/AydHJ
+ * for providing the css, html and js of
+ * Smooth Accordion Dropdown Menu
+ ====================================================================*/
+
+
+.accordion {
+  width: 100%;
+/*  max-width: 3600px;*/
+  margin: 30px auto 20px;
+  background: #9DA590;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.accordion .link {
+  cursor: pointer;
+  display: block;
+  padding: 15px 15px 15px 42px;
+  color: blue;
+/*  font-size: 14px;*/
+  font-weight: 700;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.single-link {
+  cursor: pointer;
+  display: block;
+  padding: 15px 15px 15px 42px;
+  color: BlueViolet;
+/*  font-size: 14px;*/
+  font-weight: 700;
+  border-bottom: 1px solid #CCC;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.single-link a{
+  color: Blue;
+}
+.accordion li:last-child .link { border-bottom: 0; }
+
+.accordion li i {
+  position: absolute;
+  top: 16px;
+  left: 12px;
+/*  font-size: 18px;*/
+  color: #F2E7B1;
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.accordion li i.fa-chevron-down {
+  right: 12px;
+  left: auto;
+/*  font-size: 16px;*/
+}
+
+.accordion li.open .link { color: black; }
+
+.accordion li.open i { color: #80A138; }
+
+.accordion li.open i.fa-chevron-down {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/**
+ * Submenu
+ -----------------------------*/
+
+.menuitem {
+  display: block;
+  background: LightSalmon;
+/*  font-size: 14px;*/
+}
+
+.menuitem li { border-bottom: 1px solid #4b4a5e; }
+
+.menuitem a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 12px;
+  padding-left: 42px;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.submenu {
+  display: none;
+  background: #9DA590;
+/*  font-size: 14px;*/
+}
+
+.submenu li { border-bottom: 1px solid #4b4a5e; }
+
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 12px;
+  padding-left: 42px;
+  -webkit-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
+
+.submenu a:hover {
+  background: #80A138;
+  color: Black;
+}
