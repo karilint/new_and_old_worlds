@@ -7,7 +7,12 @@
 NOW - Fossil Mammal Database - Data Conventions - Species at Localities
 {% endblock %}
 {% block content %}
-<!-- Write your comments here -->
+<!--Article header -->
+<header style="display:none">
+  <h3>Data Conventions - Species at Localities</h3>
+</header>
+<!--End of article header -->
+<!-- Species at Localities -->
 <section class="w3-container">
   {% load static %}
   <header class="w3-container">
@@ -89,7 +94,7 @@ NOW - Fossil Mammal Database - Data Conventions - Species at Localities
     <header class="w3-container">
       <h4 id="ExamplesSpeciesLocalities">Examples &ndash; Species at Localities</h4>
     </header>
-    <section class="w3-container">
+    <section class="w3-container w3-responsive">
       <header class="w3-container">
         <h5 id="UncertainOccTax">The uncertain occurrence of a taxon</h5>
         NOTE: ideally, where the identification of a taxon is uncertain (meaning the occurrence of the taxon at a certain locality is uncertain), it should not be entered in the database. However, when such taxa are entered for some good reason, this is the accepted style.
@@ -165,7 +170,7 @@ NOW - Fossil Mammal Database - Data Conventions - Species at Localities
       </table>
     </section>
     <br>
-    <section class="w3-container" id="UncertainOccTax_TwoSpecies">
+    <section class="w3-container w3-responsive" id="UncertainOccTax_TwoSpecies">
       <header class="w3-container">
         <h5>The uncertain occurrence of a taxon - Additional info</h5>
         Additional Info field can be used to record information when there is uncertainty between two possible species at a locality.
@@ -232,7 +237,7 @@ NOW - Fossil Mammal Database - Data Conventions - Species at Localities
       <strong>NOTE</strong>: In a few recognised cases, two similar but separate species may not be possible to tell apart (for example, not just from dental material). Where the taxon is thus indeterminate but limited to two known species, and <u>this is a regular occurrence</u>, the species may be entered into NOW as a new species entry. Please see an
       <a href="{% url 'taxonomy' %}#TwoTaxa_Regular">example</a> under 'Proper use of Taxonomic fields'.
     </section>
-    <section class="w3-container">
+    <section class="w3-container w3-responsive">
       <header class="w3-container">
         <h4 id="UncertainOccAssig">The uncertain occurrence of a taxon with uncertain taxonomic assignment</h4>
         The fields explained below can be found in the Locality > <strong>Species</strong> tab for all species at a locality, and in the Species > <strong>Loc-Sp Info</strong> tab for all locality occurrences of a specific species.
@@ -285,7 +290,7 @@ NOW - Fossil Mammal Database - Data Conventions - Species at Localities
       </table>
     </section>
     <br>
-    <section class="w3-container">
+    <section class="w3-container w3-responsive">
       <header class="w3-container">
         <h5 id="LocSubspecies">When a subspecies is listed for a taxon</h5>
       </header>
@@ -335,7 +340,7 @@ NOW - Fossil Mammal Database - Data Conventions - Species at Localities
       </table>
     </section>
     <br>
-    <section class="w3-container">
+    <section class="w3-container w3-responsive">
       <header class="w3-container">
         <h5 id="SynTaxName">When a synonymous name is listed in the literature</h5>
       </header>
@@ -371,17 +376,29 @@ NOW - Fossil Mammal Database - Data Conventions - Species at Localities
       </table>
     </section>
   </section>
-  <h4>Links to</h4>
-  <ul>
+</section>
+<!-- End of Species at Localities -->
+<!-- Links to -->
+<section class="w3-container w3-responsive">
+	<header>
+		<h3>Links to</h3>
+	</header>
+	<ul>
     <li>Proper use of <a href="{% url 'taxonomy' %}">Taxonomic Fields</a></li>
     <li>Notes on<a href="{% url 'species_notes' %}"> the description of species</a></li>
     <li>Notes on<a href="{% url 'locality_notes' %}"> the description of localities</a></li>
     <li><a href="{% url 'data_entry_practices' %}">Data entry practices</a></li>
-  </ul>
-  <br>
-  <h4 id="McKennaBell">References</h4>
-  <strong>McKenna, M.C. &amp; Bell, S.K.</strong> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.
+	</ul>
 </section>
+<!-- End of Links to -->
+<!-- References -->
+<section class="w3-container w3-responsive">
+	<header>
+		<h3 id="McKennaBell">References</h3>
+	</header>
+	<strong>McKenna, M.C. &amp; Bell, S.K.</strong> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.
+</section>
+<!-- End of References -->
 {% endblock %}
 {% block aside %}
 {% endblock %}

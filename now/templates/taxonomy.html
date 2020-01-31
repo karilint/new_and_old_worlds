@@ -1,15 +1,16 @@
 {% extends "now_base_generic.html" %}
 {% block title %}
-NOW - Fossil Mammal Database - Proper use of Taxonomic Fields
+NOW - Fossil Mammal Database - Data Conventions - Proper use of Taxonomic Fields
 {% endblock %}
 {% block content %}
 <!--Article header -->
 <header style="display:none">
-	<h3>Proper use of Taxonomic Fields</h3>
+  <h3>Data Conventions - Proper use of Taxonomic Fields</h3>
 </header>
 <!--End of article header -->
-<!-- Write your comments here -->
-<section class="w3-container">
+<!-- Proper use of Taxonomic Fields -->
+<section class="w3-container w3-responsive">
+ class="w3-container w3-responsive">
   {% load static %}
   As a guideline NOW uses the taxonomy of McKenna &amp; Bell's <i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href={% static "now/pdf/Muridae_tentative.pdf" %} target="_blank">Hans de Bruijn</a>.
   <header id="TaxonomicFields">
@@ -92,9 +93,9 @@ NOW - Fossil Mammal Database - Proper use of Taxonomic Fields
           <i class="fas fa-caret-right"></i> usually left blank (automatically filled with '-')<br>
           <i class="fas fa-caret-right"></i> <strong>mandatory</strong> when sp. in the species field: to indicate new, unnamed species, use '<strong>nov. Locality</strong>', or '<strong>nov. Author</strong>', or simply '<strong>Locality</strong>' (Note: NEVER enter the names of new, unpublished taxa, as this will invalidate the name)<br>
           <i class="fas fa-caret-right"></i> <strong>subspecies</strong> name if absolutely necessary (avoid using subspecies where possible or enter into the
-            '<strong>Additional Info</strong>' field when adding the species into a location). Subspecies can often be considered as actual species by different authors
-            &ndash; for example, <i>Canis palmidens</i> appears in literature also as <i>Canis chicliensis palmidens</i> &ndash; so it is good to also check
-            whether the genus in question already has the same subspecies name as a species level entry in the database.<br>
+          '<strong>Additional Info</strong>' field when adding the species into a location). Subspecies can often be considered as actual species by different authors
+          &ndash; for example, <i>Canis palmidens</i> appears in literature also as <i>Canis chicliensis palmidens</i> &ndash; so it is good to also check
+          whether the genus in question already has the same subspecies name as a species level entry in the database.<br>
           <i class="fas fa-caret-right"></i> may also be used to create informal subdivisions ('small', 'large') of taxa<br>
           <i class="fas fa-caret-right"></i> Avoid using meaningless distinctions such as 1, 2 or A, B in the unique field, unless following a Locality name <strong>even if thus given in the literature</strong><br>
         </td>
@@ -134,381 +135,414 @@ NOW - Fossil Mammal Database - Proper use of Taxonomic Fields
       </tr>
     </tbody>
   </table>
-  <br>
-  <h3 id="TaxonomicExamples">Taxonomic Examples</h3>
-  Below are a number of hypothetical examples as a guide to correct usage of the taxonomic fields in NOW.
-  <ul class="taxonomy">
-    <li>
-      <h4 id="Well-definedTaxa">Well-defined taxa</h4>
-    </li>
-  </ul>
-  <table class="w3-table-all now-table-all">
-    <tbody>
-      <tr>
-        <th>Order</th>
-        <th>Family</th>
-        <th>Subfamily</th>
-        <th>Genus</th>
-        <th>Species</th>
-        <th>Unique</th>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> well-defined taxonomic unit
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>Amphicyonidae</td>
-        <td>Amphicyoninae</td>
-        <td>Amphicyon</td>
-        <td>major</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> the family of genus <strong><i>Simocyon</i></strong> is not known
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>incertae sedis</td>
-        <td>-</td>
-        <td>Simocyon</td>
-        <td>primigiensis</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> a widely accepted subspecies
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>Felidae</td>
-        <td>Felinae</td>
-        <td>Lynx</td>
-        <td>lynx</td>
-        <td>lynx</td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  NOTE: In most cases, it is preferred that you enter subspecies names into the <a href="{% url 'species_at_localities' %}#LocSubspecies">&#39;Additional Info&#39;</a> field within <strong>Localities > Species</strong> information tab instead of creating a new species entry.
-  <br>
-
-  <h4 id="IndeterminateTaxa">Indeterminate taxa</h4>
-  NOTE: indeterminate taxa are often referred to as 'sp.' in the literature.
-  <table class="w3-table-all now-table-all">
-    <tbody>
-      <tr>
-        <th>Order</th>
-        <th>Family</th>
-        <th>Subfamily</th>
-        <th>Genus</th>
-        <th>Species</th>
-        <th>Unique</th>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> indeterminate carnivore
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>indet.</td>
-        <td>-</td>
-        <td>indet.</td>
-        <td>indet.</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> family Amphicyonidae, but nothing further is known
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>Amphicyonidae</td>
-        <td>-</td>
-        <td>indet.</td>
-        <td>indet.</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> subfamily Amphicyoninae, genus and species unknown
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>Amphicyonidae</td>
-        <td>Amphicyoninae</td>
-        <td>indet.</td>
-        <td>indet.</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> this material represents tribe Bovini, genus and species unknown
-        </td>
-      </tr>
-      <tr>
-        <td>Artiodactyla</td>
-        <td>Bovidae</td>
-        <td>Bovini</td>
-        <td>indet.</td>
-        <td>indet.</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> cannot be assigned at the species-level e.g. insufficient fossil material
-          <br>
-          <strong>May appear in literature as:</strong> <i>Amphicyon</i> sp., <i>Amphicyon</i> indet.
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>Amphicyonidae</td>
-        <td>Amphicyoninae</td>
-        <td>Amphicyon</td>
-        <td>indet.</td>
-        <td>-</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> material from genus <i>Lynx</i>, a small form but species unknown
-          <br>
-          <strong>May appear in literature as:</strong> <i>Lynx</i> indet. small, <i>Lynx</i> (small form)
-        </td>
-      </tr>
-      <tr>
-        <td>Carnivora</td>
-        <td>Felidae</td>
-        <td>Felinae</td>
-        <td>Lynx</td>
-        <td>indet.</td>
-        <td>small</td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  <h4 id="InformalSpecies">Informal species</h4>
-  <br>
-  NOTE: Informal species may be novel species or distinct but unnamed taxa from a particular locality. They are identified by 'sp.' in the species field, and an identifier in the unique field, usually the Locality name. Many taxa are listed as '<i>Genus</i> sp.' in the literature, but unless they refer to a distinct species, they should be entered in NOW as <a href="#IndeterminateTaxa">indeterminate taxa</a>, '<i>Genus</i> indet.'.
-  <br>
-  <table class="w3-table-all now-table-all">
-    <tbody>
-      <tr>
-        <th>Family</th>
-        <th>Subfamily</th>
-        <th>Genus</th>
-        <th>Species</th>
-        <th>Unique</th>
-        <th>Taxonomic Status</th>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> a novel species within <i>Amphicyon</i> from locality Pasalar
-          <br>
-          <strong>May appear in literature as:</strong> <i>Amphicyon</i> sp. nov., <i>Amphicyon</i> nov.
-        </td>
-      </tr>
-      <tr>
-        <td>Amphicyonidae</td>
-        <td>Amphicyoninae</td>
-        <td>Amphicyon</td>
-        <td>sp.</td>
-        <td>Pasalar</td>
-        <td>informal species</td>
-      </tr>
-      <tr>
-        <td>Amphicyonidae</td>
-        <td>Amphicyoninae</td>
-        <td>Amphicyon</td>
-        <td>sp.</td>
-        <td>nov. Pasalar</td>
-        <td>informal species</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> a novel species in probably a novel genus from locality Candir
-        </td>
-      </tr>
-      <tr>
-        <td>Amphicyonidae</td>
-        <td>-</td>
-        <td>gen.</td>
-        <td>sp.</td>
-        <td>Candir</td>
-        <td>informal species</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> a novel species within <i>Lynx</i> from locality Stockholm
-          <br>
-          <strong>May appear in literature as:</strong> <i>Lynx</i> sp.1
-        </td>
-      </tr>
-      <tr>
-        <td>Felidae</td>
-        <td>Felinae</td>
-        <td>Lynx</td>
-        <td>sp.</td>
-        <td>Stockholm 1</td>
-        <td>informal species</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> a novel species, named but UNPUBLISHED
-          <br>
-          <strong>May appear in literature as:</strong> <i>Lynx newname</i> sp. nov.
-        </td>
-      </tr>
-      <tr>
-        <td>Felidae</td>
-        <td>Felinae</td>
-        <td>Lynx</td>
-        <td>sp.</td>
-        <td>Werdelin new</td>
-        <td>informal species</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> a novel species, named and PUBLISHED
-          <br>
-          <strong>May appear in literature as:</strong> <i>Lynx newname</i> sp. nov
-        </td>
-      </tr>
-      <tr>
-        <td>Felidae</td>
-        <td>Felinae</td>
-        <td>Lynx</td>
-        <td>newname</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  <ul>
-    <li>
-      <h4 id="UncertainTaxAssig">Uncertain taxonomic assignment</h4>
-    </li>
-  </ul>
-  <table class="w3-table-all now-table-all">
-    <tbody>
-      <tr>
-        <th>Family</th>
-        <th>Subfamily</th>
-        <th>Genus</th>
-        <th>Species</th>
-        <th>Unique</th>
-        <th>Taxonomic Status</th>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> species <i>steinheimensis</i> may not belong to the genus <i>Amphicyon</i>
-          <br>
-          <strong>May appear in literature as:</strong> cf. <i>Amphicyon steinheimensis</i>, ?<i>Amphicyon steinheimensis</i>, "<i>Amphicyon</i>"
-          <i>steinheimensis</i>
-        </td>
-      </tr>
-      <tr>
-        <td>Amphicyonidae</td>
-        <td>Amphicyoninae</td>
-        <td>Amphicyon</td>
-        <td>steinheimensis</td>
-        <td>-</td>
-        <td>genus attrib of species uncertain</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> genus <i>Hecubides</i> may not belong to the family Amohycionidae
-          <br>
-          <strong>May appear in literature as:</strong> cf. Amohycionidae <i>Hecubides macrodon</i>
-        </td>
-      </tr>
-      <tr>
-        <td>Amohycionidae</td>
-        <td>-</td>
-        <td>Hecubides</td>
-        <td>macrodon</td>
-        <td>-</td>
-        <td>family attrib of genus uncertain</td>
-      </tr>
-      <tr>
-        <td colspan="6">
-          <br>
-          <strong>Situation:</strong> taxonomic validity of <i>Lynx fennicus</i> is uncertain
-        </td>
-      </tr>
-      <tr>
-        <td>Felidae</td>
-        <td>Felinae</td>
-        <td>Lynx</td>
-        <td>fennicus</td>
-        <td>-</td>
-        <td>taxonomic validity uncertain</td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-  <strong>NOTE:</strong> In a few recognised cases, two similar but separate species may not be possible to tell apart (e.g. can tell them apart if skull material is present, but not just from the teeth). Where the taxon is thus indeterminate but limited to two known species, and <u>this is a regular occurrence</u>, the species may be entered into NOW as a new species entry (in less common cases, please see <a href="{% url 'species_at_localities' %}#UncertainOccTax_TwoSpecies">examples</a> under 'Species at Localities')
-  <table class="w3-table-all now-table-all">
-    <tbody>
-      <tr id="TwoTaxa_Regular">
-        <td><strong>Family</strong></td>
-        <td><strong>Genus</strong></td>
-        <td><strong>Species</strong></td>
-        <td><strong>Unique</strong></td>
-        <td><strong>Taxonomic Status</strong></td>
-      </tr>
-      <tr>
-        <td colspan="5">
-          <br>
-          <strong>Situation:</strong> It is often impossible to tell whether <i>Stephanorhinus etruscus</i> or <i>Stephanorhinus hundheimensis</i> is present
-          <br>
-          <strong>May appear in literature as:</strong> <i>Stephanorhinus etruscus/hundsheimensis</i> or <i>Stephanorhinus hundsheimensis/etruscus</i>
-        </td>
-      </tr>
-      <tr>
-        <td>Rhinocerotidae</td>
-        <td>Stephanorhinus</td>
-        <td>etruscus/hundsheimensis</td>
-        <td>-</td>
-        <td>-</td>
-      </tr>
-    </tbody>
-  </table>
-  <br>
-
-  <h3>Links to</h3>
-  <ul>
-    <li><a href="{% url 'species_at_localities' %}">Species at Localities</a></li>
-    <li>Notes on<a href="{% url 'species_notes' %}"> the description of species</a></li>
-    <li>Notes on<a href="{% url 'locality_notes' %}"> the description of localities</a></li>
-    <li><a href="{% url 'data_entry_practices' %}">Data entry practices</a></li>
-  </ul>
-  <br>
-  <h3 id="McKennaBell">References</h3>
-  <strong>McKenna, M.C. &amp; Bell, S.K.</strong> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.
 </section>
+<!-- End of Proper use of Taxonomic Fields -->
+<!-- Taxonomic Examples -->
+<section class="w3-container w3-responsive" id="TaxonomicExamples">
+  As a guideline NOW uses the taxonomy of McKenna &amp; Bell's <i>Classification of Mammals Above the Species Level</i>, except for Muridae for which we use McKenna &amp; Bell's classification with the modifications suggested by <a href={% static "now/pdf/Muridae_tentative.pdf" %} target="_blank">Hans de Bruijn</a>.
+  <header>
+    <h3>Taxonomic Examples</h3>
+    <p>Below are a number of hypothetical examples as a guide to correct usage of the taxonomic fields in NOW.</p>
+  </header>
+  <!-- Taxonomic Examples - Well-defined taxa -->
+  <section class="w3-container w3-responsive" id="Well-definedTaxa">
+    <header>
+      <h4>Well-defined taxa</h4>
+      <p>NOTE: In most cases, it is preferred that you enter subspecies names into the <a href="{% url 'species_at_localities' %}#LocSubspecies">&#39;Additional Info&#39;</a> field within <strong>Localities > Species</strong> information tab instead of creating a new species entry.</p>
+    </header>
+    <table class="w3-table-all now-table-all">
+      <tbody>
+        <tr>
+          <th>Order</th>
+          <th>Family</th>
+          <th>Subfamily</th>
+          <th>Genus</th>
+          <th>Species</th>
+          <th>Unique</th>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> well-defined taxonomic unit
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>Amphicyonidae</td>
+          <td>Amphicyoninae</td>
+          <td>Amphicyon</td>
+          <td>major</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> the family of genus <strong><i>Simocyon</i></strong> is not known
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>incertae sedis</td>
+          <td>-</td>
+          <td>Simocyon</td>
+          <td>primigiensis</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> a widely accepted subspecies
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>Felidae</td>
+          <td>Felinae</td>
+          <td>Lynx</td>
+          <td>lynx</td>
+          <td>lynx</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <!-- End of Taxonomic Examples - Well-defined taxa -->
+  <!-- Taxonomic Examples - Indeterminate taxa -->
+  <section class="w3-container w3-responsive" id="IndeterminateTaxa">
+    <header>
+      <h4>Indeterminate taxa</h4>
+      <p>NOTE: indeterminate taxa are often referred to as 'sp.' in the literature.</p>
+    </header>
+    <table class="w3-table-all now-table-all">
+      <tbody>
+        <tr>
+          <th>Order</th>
+          <th>Family</th>
+          <th>Subfamily</th>
+          <th>Genus</th>
+          <th>Species</th>
+          <th>Unique</th>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> indeterminate carnivore
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>indet.</td>
+          <td>-</td>
+          <td>indet.</td>
+          <td>indet.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> family Amphicyonidae, but nothing further is known
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>Amphicyonidae</td>
+          <td>-</td>
+          <td>indet.</td>
+          <td>indet.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> subfamily Amphicyoninae, genus and species unknown
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>Amphicyonidae</td>
+          <td>Amphicyoninae</td>
+          <td>indet.</td>
+          <td>indet.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> this material represents tribe Bovini, genus and species unknown
+          </td>
+        </tr>
+        <tr>
+          <td>Artiodactyla</td>
+          <td>Bovidae</td>
+          <td>Bovini</td>
+          <td>indet.</td>
+          <td>indet.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> cannot be assigned at the species-level e.g. insufficient fossil material
+            <br>
+            <strong>May appear in literature as:</strong> <i>Amphicyon</i> sp., <i>Amphicyon</i> indet.
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>Amphicyonidae</td>
+          <td>Amphicyoninae</td>
+          <td>Amphicyon</td>
+          <td>indet.</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> material from genus <i>Lynx</i>, a small form but species unknown
+            <br>
+            <strong>May appear in literature as:</strong> <i>Lynx</i> indet. small, <i>Lynx</i> (small form)
+          </td>
+        </tr>
+        <tr>
+          <td>Carnivora</td>
+          <td>Felidae</td>
+          <td>Felinae</td>
+          <td>Lynx</td>
+          <td>indet.</td>
+          <td>small</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <!-- End of Taxonomic Examples - Indeterminate taxa -->
+  <!-- Taxonomic Examples - Indeterminate taxa -->
+  <section class="w3-container w3-responsive" id="InformalSpecies">
+    <header>
+      <h4>Informal species</h4>
+      <p>NOTE: Informal species may be novel species or distinct but unnamed taxa from a particular locality. They are identified by 'sp.' in the species field, and an identifier in the unique field, usually the Locality name. Many taxa are listed as '<i>Genus</i> sp.' in the literature, but unless they refer to a distinct species, they should be entered in NOW as <a href="#IndeterminateTaxa">indeterminate taxa</a>, '<i>Genus</i> indet.'.</p>
+    </header>
+    <br>
+    <table class="w3-table-all now-table-all">
+      <tbody>
+        <tr>
+          <th>Family</th>
+          <th>Subfamily</th>
+          <th>Genus</th>
+          <th>Species</th>
+          <th>Unique</th>
+          <th>Taxonomic Status</th>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> a novel species within <i>Amphicyon</i> from locality Pasalar
+            <br>
+            <strong>May appear in literature as:</strong> <i>Amphicyon</i> sp. nov., <i>Amphicyon</i> nov.
+          </td>
+        </tr>
+        <tr>
+          <td>Amphicyonidae</td>
+          <td>Amphicyoninae</td>
+          <td>Amphicyon</td>
+          <td>sp.</td>
+          <td>Pasalar</td>
+          <td>informal species</td>
+        </tr>
+        <tr>
+          <td>Amphicyonidae</td>
+          <td>Amphicyoninae</td>
+          <td>Amphicyon</td>
+          <td>sp.</td>
+          <td>nov. Pasalar</td>
+          <td>informal species</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> a novel species in probably a novel genus from locality Candir
+          </td>
+        </tr>
+        <tr>
+          <td>Amphicyonidae</td>
+          <td>-</td>
+          <td>gen.</td>
+          <td>sp.</td>
+          <td>Candir</td>
+          <td>informal species</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> a novel species within <i>Lynx</i> from locality Stockholm
+            <br>
+            <strong>May appear in literature as:</strong> <i>Lynx</i> sp.1
+          </td>
+        </tr>
+        <tr>
+          <td>Felidae</td>
+          <td>Felinae</td>
+          <td>Lynx</td>
+          <td>sp.</td>
+          <td>Stockholm 1</td>
+          <td>informal species</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> a novel species, named but UNPUBLISHED
+            <br>
+            <strong>May appear in literature as:</strong> <i>Lynx newname</i> sp. nov.
+          </td>
+        </tr>
+        <tr>
+          <td>Felidae</td>
+          <td>Felinae</td>
+          <td>Lynx</td>
+          <td>sp.</td>
+          <td>Werdelin new</td>
+          <td>informal species</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> a novel species, named and PUBLISHED
+            <br>
+            <strong>May appear in literature as:</strong> <i>Lynx newname</i> sp. nov
+          </td>
+        </tr>
+        <tr>
+          <td>Felidae</td>
+          <td>Felinae</td>
+          <td>Lynx</td>
+          <td>newname</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <!-- End of Taxonomic Examples - Indeterminate taxa -->
+  <!-- Taxonomic Examples - Uncertain taxonomic assignment -->
+  <section class="w3-container w3-responsive" id="UncertainTaxAssig">
+    <header>
+      <h4>Uncertain taxonomic assignment</h4>
+      <p>NOTE: Informal species may be novel species or distinct but unnamed taxa from a particular locality. They are identified by 'sp.' in the species field, and an identifier in the unique field, usually the Locality name. Many taxa are listed as '<i>Genus</i> sp.' in the literature, but unless they refer to a distinct species, they should be entered in NOW as <a href="#IndeterminateTaxa">indeterminate taxa</a>, '<i>Genus</i> indet.'.</p>
+    </header>
+    <table class="w3-table-all now-table-all">
+      <tbody>
+        <tr>
+          <th>Family</th>
+          <th>Subfamily</th>
+          <th>Genus</th>
+          <th>Species</th>
+          <th>Unique</th>
+          <th>Taxonomic Status</th>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> species <i>steinheimensis</i> may not belong to the genus <i>Amphicyon</i>
+            <br>
+            <strong>May appear in literature as:</strong> cf. <i>Amphicyon steinheimensis</i>, ?<i>Amphicyon steinheimensis</i>, "<i>Amphicyon</i>"
+            <i>steinheimensis</i>
+          </td>
+        </tr>
+        <tr>
+          <td>Amphicyonidae</td>
+          <td>Amphicyoninae</td>
+          <td>Amphicyon</td>
+          <td>steinheimensis</td>
+          <td>-</td>
+          <td>genus attrib of species uncertain</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> genus <i>Hecubides</i> may not belong to the family Amohycionidae
+            <br>
+            <strong>May appear in literature as:</strong> cf. Amohycionidae <i>Hecubides macrodon</i>
+          </td>
+        </tr>
+        <tr>
+          <td>Amohycionidae</td>
+          <td>-</td>
+          <td>Hecubides</td>
+          <td>macrodon</td>
+          <td>-</td>
+          <td>family attrib of genus uncertain</td>
+        </tr>
+        <tr>
+          <td colspan="6">
+            <br>
+            <strong>Situation:</strong> taxonomic validity of <i>Lynx fennicus</i> is uncertain
+          </td>
+        </tr>
+        <tr>
+          <td>Felidae</td>
+          <td>Felinae</td>
+          <td>Lynx</td>
+          <td>fennicus</td>
+          <td>-</td>
+          <td>taxonomic validity uncertain</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <!-- End of Taxonomic Examples - Uncertain taxonomic assignment -->
+  <!-- Taxonomic Examples - Two similar but separate species -->
+  <section class="w3-container w3-responsive" id="TwoSimilarSpecies">
+    <header>
+      <h4>Two similar but separate species</h4>
+      <p><strong>NOTE:</strong> In a few recognised cases, two similar but separate species may not be possible to tell apart (e.g. can tell them apart if skull material is present, but not just from the teeth). Where the taxon is thus indeterminate but limited to two known species, and <u>this is a regular occurrence</u>, the species may be entered into NOW as a new species entry (in less common cases, please see <a href="{% url 'species_at_localities' %}#UncertainOccTax_TwoSpecies">examples</a> under 'Species at Localities')</p>
+    </header>
+    <table class="w3-table-all now-table-all">
+      <tbody>
+        <tr id="TwoTaxa_Regular">
+          <td><strong>Family</strong></td>
+          <td><strong>Genus</strong></td>
+          <td><strong>Species</strong></td>
+          <td><strong>Unique</strong></td>
+          <td><strong>Taxonomic Status</strong></td>
+        </tr>
+        <tr>
+          <td colspan="5">
+            <br>
+            <strong>Situation:</strong> It is often impossible to tell whether <i>Stephanorhinus etruscus</i> or <i>Stephanorhinus hundheimensis</i> is present
+            <br>
+            <strong>May appear in literature as:</strong> <i>Stephanorhinus etruscus/hundsheimensis</i> or <i>Stephanorhinus hundsheimensis/etruscus</i>
+          </td>
+        </tr>
+        <tr>
+          <td>Rhinocerotidae</td>
+          <td>Stephanorhinus</td>
+          <td>etruscus/hundsheimensis</td>
+          <td>-</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <!-- End of Taxonomic Examples - Two similar but separate species -->
+</section>
+<!-- End of Taxonomic Examples -->
+<!-- Links to -->
+<section class="w3-container w3-responsive">
+	<header>
+		<h3>Links to</h3>
+	</header>
+	<ul>
+		<li><a href="{% url 'species_at_localities' %}">Species at Localities</a></li>
+		<li>Notes on<a href="{% url 'species_notes' %}"> the description of species</a></li>
+		<li>Notes on<a href="{% url 'locality_notes' %}"> the description of localities</a></li>
+		<li><a href="{% url 'data_entry_practices' %}">Data entry practices</a></li>
+	</ul>
+</section>
+<!-- End of Links to -->
+<!-- References -->
+<section class="w3-container w3-responsive">
+	<header>
+		<h3 id="McKennaBell">References</h3>
+	</header>
+	<strong>McKenna, M.C. &amp; Bell, S.K.</strong> 2000. <i>Classification of Mammals Above the Species Level</i>. i-xii, 1-631. Columbia University Press.
+</section>
+<!-- End of References -->
 {% endblock %}
