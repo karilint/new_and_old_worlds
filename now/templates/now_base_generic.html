@@ -70,62 +70,16 @@
         <!-- Beginning of nav ul-->
         <ul id="accordion" class="accordion">
           <li>
-            <div class="single-link"><i class="fa fa-home"></i><a href="{% url 'index' %}">Home</a></div>
-          </li>
-          <li>
-            <div class="link">
-              <i class="fa fa-check-circle"></i>Data Conventions<i class="fa fa-chevron-down"></i>
-            </div>
-            <ul class="submenu">
-              <li><a href="{% url 'conventions' %}">Background</a></li>
-              <li><a href="{% url 'species_at_localities' %}">Species at Localities</a></li>
-              <li><a href="{% url 'taxonomy' %}">Taxonomic Fields</a></li>
-              <li><a href="{% url 'species_notes' %}">Description of Species</a></li>
-              <li><a href="{% url 'locality_notes' %}">Description of Localities</a></li>
-              <li><a href="{% url 'data_entry_practices' %}">Data entry practices</a></li>
-            </ul>
-          </li>
-          <li>
             <div class="single-link">
               <i class="fa fa-database"></i><a href="{% url 'database' %}">Enter Database</a>
             </div>
           </li>
           <li>
-            <div class="link">
-              <i class="fa fa-list"></i>Browsing - Lists<i class="fa fa-chevron-down"></i>
-            </div>
-            <ul class="submenu">
-              <li><a href="{% url 'browsing_lists' %}#NavBarLists">Navigation Bar</a></li>
-              <li><a href="{% url 'browsing_lists' %}#Arrows">Arrows</a></li>
-              <li><a href="{% url 'browsing_lists' %}#LocalityList">Locality List</a></li>
-              <li><a href="{% url 'browsing_lists' %}#SpeciesList">Species List</a></li>
-              <li><a href="{% url 'browsing_lists' %}#ReferenceList">Reference List</a></li>
-            </ul>
+            <div class="single-link"><i class="fa fa-home"></i><a href="{% url 'index' %}">About</a></div>
           </li>
           <li>
             <div class="link">
-              <i class="fa fa-window-maximize"></i>Browsing - Details<i class="fa fa-chevron-down"></i>
-            </div>
-            <ul class="submenu">
-              <li><a href="{% url 'browsing_details' %}#NavBar">Navigation Bar</a></li>
-              <li><a href="{% url 'browsing_details' %}#Arrows">Arrows</a></li>
-              <li><a href="{% url 'browsing_details' %}#Locality">Locality</a></li>
-              <li><a href="{% url 'browsing_details' %}#Species">Species</a></li>
-              <li><a href="{% url 'browsing_details' %}#Reference">Reference</a></li>
-            </ul>
-          </li>
-          <li>
-            <div class="link">
-              <i class="fa fa-download"></i>Export and Maps<i class="fa fa-chevron-down"></i>
-            </div>
-            <ul class="submenu">
-              <li><a href="{% url 'export_maps' %}#Export">Export</a></li>
-              <li><a href="{% url 'export_maps' %}#ShowMap">Show Map</a></li>
-            </ul>
-          </li>
-          <li>
-            <div class="link">
-              <i class="fa fa-group"></i>Advisory Board<i class="fa fa-chevron-down"></i>
+              <i class="fa fa-group"></i>People<i class="fa fa-chevron-down"></i>
             </div>
             <ul class="submenu">
               <li><a href="{% url 'board' %}#General">General Coordination & Development</a></li>
@@ -142,35 +96,54 @@
             </ul>
           </li>
           <li>
-            <div class="single-link">
-              <i class="fa fa-file-pdf-o"></i><a href="{% url 'publications' %}">Publications</a>
-            </div>
-            <div class="single-link">
-              <i class="fa fa-dashboard"></i><a href="{% url 'ecometrics' %}">Dental ecometrics</a>
-            </div>
-          </li>
-          <li>
             <div class="link">
-              <i class="fa fa-archive"></i>NOW Field Archives<i class="fa fa-chevron-down"></i>
+              <i class="fa fa-check-circle"></i>Data Conventions<i class="fa fa-chevron-down"></i>
             </div>
             <ul class="submenu">
-              <li><a href="{% url 'field_archive' %}#fieldCat">Field Catalogues</a></li>
-              <li><a href="{% url 'field_archive' %}#otherFieldCat">Other Field Catalogues</a></li>
+              <li><a href="{% url 'conventions' %}">Background</a></li>
+              <li><a href="{% url 'species_at_localities' %}">Species at Localities</a></li>
+              <li><a href="{% url 'taxonomy' %}">Taxonomic Fields</a></li>
+              <li><a href="{% url 'species_notes' %}">Description of Species</a></li>
+              <li><a href="{% url 'locality_notes' %}">Description of Localities</a></li>
+              <li><a href="{% url 'data_entry_practices' %}">Data entry practices</a></li>
             </ul>
           </li>
           <li>
-            <div class="single-link" style="word-wrap: break-word;">
-              <i class="fa fa-thumbs-up"></i><a href="{% url 'acknowledgements' %}">Acknowledgements</a>
+            <div class="link">
+              <i class="fa fa-list"></i>Instructions<i class="fa fa-chevron-down"></i>
             </div>
+            <ul class="submenu">
+              <li><a href="{% url 'browsing_lists' %}">Browsing Lists</a></li>
+              <li><a href="{% url 'browsing_details' %}">Browsing Details</a></li>
+              <li><a href="{% url 'export_maps' %}">Export and Maps</a></li>
+            </ul>
+          </li>
+          <li>
+            <div class="link">
+              <i class="fa fa-archive"></i>Archives<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'field_archive' %}">NOW Field Archives</a></li>
+              <li><a href="{% url 'ecometrics' %}">Dental ecometrics</a></li>
+              <li><a href="{% url 'links' %}">Links</a></li>
+            </ul>
+          </li>
+          <li>
             <div class="single-link">
               <i class="fa fa-question"></i><a href="{% url 'faq' %}">FAQ</a>
             </div>
             <div class="single-link">
-              <i class="fa fa-external-link"></i><a href="{% url 'links' %}">Links</a>
-            </div>
-            <div class="single-link">
               <i class="fa fa-newspaper-o"></i><a href="{% url 'news' %}">News</a>
             </div>
+          </li>
+          <li>
+            <div class="link" style="word-wrap: break-word;">
+              <i class="fa fa-thumbs-up"></i>Acknowledgements<i class="fa fa-chevron-down"></i>
+            </div>
+            <ul class="submenu">
+              <li><a href="{% url 'acknowledgements' %}">Funding</a></li>
+              <li><a href="{% url 'publications' %}">Publications</a></li>
+            </ul>
           </li>
         </ul>
         <!-- End of nav ul-->
