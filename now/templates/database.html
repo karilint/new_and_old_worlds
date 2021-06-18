@@ -15,7 +15,7 @@
 <section class="w3-container">
 
   <header class="w3-container">
-    <h3><a href="https://nowdatabase.luomus.fi/" target="_blank">Enter Database without login --></a></h3>
+    <h3><a href="https://nowdatabase.luomus.fi/" target="_blank" style="background-color:tomato;"> Enter Database without login [click here] </a></h3>
   </header>
   <h4>Login</h4>
 
@@ -31,18 +31,8 @@
 
   <h4>Export Data</h4>
 
-  <p>It is possible to export and download datasets directly from the database. Please read the instructions for <a href="{% url 'export_maps' %}">exporting records and map coordinates</a>, and remember to acknowledge the source of the data using the recommended <a href="{% url 'index' %}#Citation">citation</a>.</p>
+  <p> In addition to browsing data via web interface it is possible to download snapshots or a full public dataset from the database as text files (csv). Instructions are available for <a href="{% url 'export_maps' %}">exporting records and map coordinates</a>. Please remember to acknowledge NOW using the recommended <a href="{% url 'index' %}#Citation">citation</a>. This helps to keep NOW running.</p>
 
-  <h4>Download standard versions</h4>
-  <p>Previous public releases of NOW data are available as an Excel file (version 4.0).</p>
-  <ul>
-    <li><a href="{% static 'now/excel/NOW_public_030717.zip' %}">2003 (July)</a></li>
-    <li><a href="{% static 'now/excel/NOW_public_020104.zip' %}">2002 (January)</a></li>
-    <li><a href="{% static 'now/excel/NOW_public_001102.zip' %}">2000 (November)</a></li>
-    <li><a href="{% static 'now/excel/NOW_public_000309.zip' %}">2000 (March)</a></li>
-  </ul>
-  <hr>
-  <p>NOW database interface created and maintained by Gudrun Evans and Jouni Veps&auml;l&auml;inen.</p>
 </section>
 
 {% endblock %}
