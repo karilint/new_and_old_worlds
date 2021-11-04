@@ -43,15 +43,17 @@
     <div class="w3-row" style="width:75%; margin: auto; background-color: rgb(250, 250, 210);">
       <!-- Beginning of logo-->
       <div class="w3-col w3-container m4 l4">
-        <figure>
-          <img class ="w3-image" src="{% static "now/images/nowlogoTN.png"%}" alt="NOW logo">
-          <figcaption class="w3-tiny">&copy; Noira Martiskainen</figcaption>
-        </figure>
+        <a href="{% url 'index' %}">
+          <figure>
+            <img class ="w3-image" src="{% static "now/images/nowlogoTN.png"%}" alt="NOW logo">
+            <figcaption class="w3-tiny">&copy; Noira Martiskainen</figcaption>
+          </figure>
+        </a>
       </div>
       <!-- End of logo-->
       <!-- Beginning of main heading-->
       <div class="w3-col w3-container m4 l4 w3-center">
-        <h1 class="now-font">NOW</h1>
+        <h1 class="now-font"><a href="{% url 'index' %}">NOW</a></h1>
         <h2 class="now-font">New and Old Worlds</h2>
         <h3 class="now-font"><a href="https://nowdatabase.luomus.fi/" target="_blank">Database of fossil mammals</a></h3>
 
