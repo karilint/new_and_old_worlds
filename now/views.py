@@ -115,5 +115,5 @@ def taxonomy(request):
     return TemplateResponse(request, "taxonomy.html")
 
 @add_mod_date("wiki.html")
-def conventions(request):
+def wiki(request):
     return TemplateResponse(request, "wiki.html")
