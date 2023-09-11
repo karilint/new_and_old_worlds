@@ -113,3 +113,7 @@ def species_notes(request):
 @add_mod_date("taxonomy.html")
 def taxonomy(request):
     return TemplateResponse(request, "taxonomy.html")
+
+@add_mod_date("wiki.html")
+def conventions(request):
+    return TemplateResponse(request, "wiki.html")
