@@ -82,6 +82,10 @@ def field_archive(request):
 def index(request):
     return TemplateResponse(request, "index.html")
 
+@add_mod_date("index.html")
+def database(request):
+    return TemplateResponse(request, "index.html")
+
 @add_mod_date("links.html")
 def links(request):
     return TemplateResponse(request, "links.html")
