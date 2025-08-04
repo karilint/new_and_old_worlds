@@ -9,7 +9,7 @@ __pycache__
 *.sqlite3
 
 # Settings
-**/settings.py
+# Project settings are tracked for testing
 
 # Virtual environment
 venv/
