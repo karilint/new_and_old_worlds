@@ -20,7 +20,15 @@
         In <i>{{ pub.journal }}</i>
       {% endif %}
       {% if pub.citation %}, {{ pub.citation }}{% endif %}.
-      {% if pub.doi %}<a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">[DOI]</a>{% endif %}
+      {% if pub.pdf %}
+        <a href="{{ pub.pdf_link }}" target="_blank" rel="noopener">[PDF]</a>
+      {% endif %}
+      {% if pub.dataset %}
+        <a href="{{ pub.dataset_link }}" target="_blank" rel="noopener">[dataset]</a>
+      {% endif %}
+      {% if pub.doi %}
+        <a href="https://doi.org/{{ pub.doi }}" target="_blank" rel="noopener">[doi:{{ pub.doi }}]</a>
+      {% endif %}
     {% endfor %}
   {% empty %}
     <p>No publications are available.</p>

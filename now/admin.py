@@ -13,6 +13,9 @@ class PublicationResource(resources.ModelResource):
             "title",
             "journal",
             "citation",
+            "pages",
+            "pdf",
+            "dataset",
             "year",
             "doi",
         )
