@@ -26,7 +26,7 @@ class PublicationViewTests(TestCase):
         self.assertContains(response, '[PDF]')
         self.assertContains(response, '/static/now/pdf/example.pdf')
         self.assertContains(response, '[dataset]')
-        self.assertContains(response, '/static/now/dataset/data.csv')
+        self.assertContains(response, '/static/now/datasets/data.csv')
         self.assertContains(response, '[doi:10.1234/example]')
         self.assertContains(response, 'https://doi.org/10.1234/example')
 
