@@ -6,6 +6,7 @@ from django.conf import settings
 from django.urls import resolve
 import os, time
 from django.template.response import TemplateResponse
+from .models import Publication
 
 # add_mod_date:
 # Use a decorator for displaying the last modification date of the template file (html)
@@ -14,9 +15,18 @@ from django.template.response import TemplateResponse
 def add_mod_date(template):
     def outer_wrapper(func):
         def wrapper(request, *args, **kwargs):
-           template_path = os.path.join(settings.BASE_DIR, resolve(request.path).app_name, settings.TEMPLATE_URL, template)
+           match = resolve(request.path)
+           app_name = match.app_name or match.namespace or match.func.__module__.split(".")[0]
+           template_path = os.path.join(
+               settings.BASE_DIR,
+               app_name,
+               settings.TEMPLATE_URL,
+               template,
+           )
            r = func(request, *args, **kwargs)
-           r.context_data = {"last_modified": time.ctime(os.path.getmtime(template_path))}
+           context = getattr(r, "context_data", {}) or {}
+           context.update({"last_modified": time.ctime(os.path.getmtime(template_path))})
+           r.context_data = context
            return r.render()
         return wrapper
     return outer_wrapper
@@ -104,7 +114,8 @@ def note(request):
 
 @add_mod_date("publications.html")
 def publications(request):
-    return TemplateResponse(request, "publications.html")
+    pubs = Publication.objects.all().order_by("-year", "authors")
+    return TemplateResponse(request, "publications.html", {"publications": pubs})
 
 @add_mod_date("species_at_localities.html")
 def species_at_localities(request):
