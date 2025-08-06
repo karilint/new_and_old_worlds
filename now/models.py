@@ -49,4 +49,4 @@ class Publication(models.Model):
             return ""
         if self.dataset.startswith(("http://", "https://")):
             return self.dataset
-        return static(f"now/dataset/{self.dataset}")
+        return static(f"now/datasets/{self.dataset}")
