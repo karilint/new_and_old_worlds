@@ -90,7 +90,17 @@ def field_archive(request):
 
 @add_mod_date("index.html")
 def index(request):
-    return TemplateResponse(request, "index.html")
+    return TemplateResponse(
+        request,
+        "index.html",
+        {
+            "front_page_alert": (
+                "16/03/2026: there are Issues in Openshift services, "
+                "including NOW database. The University IT is currently "
+                "investigating the issue."
+            )
+        },
+    )
 
 @add_mod_date("index.html")
 def database(request):
