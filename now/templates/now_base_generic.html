@@ -56,10 +56,19 @@
         <h1 class="now-font"><a href="{% url 'index' %}">NOW</a></h1>
         <h2 class="now-font">New and Old Worlds</h2>
         <h3 class="now-font">Database of fossil mammals</h3>
-        {% if front_page_alert %}
-        <section class="w3-container w3-pale-red" style="margin-bottom: 12px;">
-          <p><strong>Alert:</strong> {{ front_page_alert }}</p>
-        </section>
+        {% if front_page_alerts %}
+          {% for alert in front_page_alerts %}
+        <button class="collapsible w3-large w3-pale-red" style="margin-bottom: 8px;">{{ alert.title }}</button>
+        <div class="content w3-left-align w3-pale-red" style="margin-bottom: 12px;">
+          <p><strong>Start:</strong> {{ alert.start }}</p>
+          {% if alert.description %}
+          <p><strong>Description:</strong> {{ alert.description }}</p>
+          {% endif %}
+          {% if alert.duration_estimate %}
+          <p><strong>Duration estimate:</strong> {{ alert.duration_estimate }}</p>
+          {% endif %}
+        </div>
+          {% endfor %}
         {% endif %}
         <header class="w3-container w3-yellow">
         <!-- <h3><a href="https://od.helsinki.fi/katko/SB-00004053.html" target="_blank"> Disruptions in several university IT services, including NOW </a></h3> -->

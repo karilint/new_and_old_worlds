@@ -1,8 +1,22 @@
 import re
 
-from django.db import models
 from django.core.validators import RegexValidator
+from django.db import models
 from django.templatetags.static import static
+
+
+class Alert(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField(blank=True)
+    start = models.DateTimeField(blank=True, null=True)
+    end = models.DateTimeField(blank=True, null=True)
+    duration_estimate = models.CharField(max_length=255, blank=True)
+
+    class Meta:
+        ordering = ["-start", "title"]
+
+    def __str__(self) -> str:  # pragma: no cover - trivial
+        return self.title
 
 
 class Publication(models.Model):

@@ -1,16 +1,16 @@
-from django.shortcuts import render
-import os.path, time
-from new_and_old_worlds.settings import BASE_DIR
-
 from django.conf import settings
-from django.urls import resolve
-import os, time
+from django.shortcuts import render
 from django.template.response import TemplateResponse
-from .models import Publication
+from django.urls import resolve
+import os
+import time
+
+from .models import Alert, Publication
 
 # add_mod_date:
 # Use a decorator for displaying the last modification date of the template file (html)
 # https://community.simpleisbetterthancomplex.com/t/displaying-the-last-modification-date-of-the-template-file/952/4
+
 
 def add_mod_date(template):
     def outer_wrapper(func):
@@ -90,17 +90,8 @@ def field_archive(request):
 
 @add_mod_date("index.html")
 def index(request):
-    return TemplateResponse(
-        request,
-        "index.html",
-        {
-            "front_page_alert": (
-                "16/03/2026: there are Issues in Openshift services, "
-                "including NOW database. The University IT is currently "
-                "investigating the issue."
-            )
-        },
-    )
+    active_alerts = Alert.objects.filter(start__isnull=False, end__isnull=True)
+    return TemplateResponse(request, "index.html", {"front_page_alerts": active_alerts})
 
 @add_mod_date("index.html")
 def database(request):
