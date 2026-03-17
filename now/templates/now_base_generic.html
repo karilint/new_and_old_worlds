@@ -1,4 +1,5 @@
 {% load static %}
+{% load board_tags %}
 <!DOCTYPE html>
 <!-- Write your comments here -->
 <html lang="en">
@@ -33,6 +34,10 @@
       }
       .now-table-all td{
       border: 1px solid black;
+      }
+      .board-nav-link a {
+      display: inline-block;
+      width: calc(100% - 42px);
       }
       {% block style %}
       {% endblock %}
@@ -105,17 +110,11 @@
               <i class="fa fa-group"></i>People<i class="fa fa-chevron-down"></i>
             </div>
             <ul class="submenu">
-              <li><a href="{% url 'board' %}">General Coordination & Development</a></li>
-              <li><a href="{% url 'board' %}#SteeringGroup">Steering Group</a></li>
-              <li><a href="{% url 'board' %}#RegionalCoordinators">Regional Coordinators</a></li>
-              <li><a href="{% url 'board' %}#Stratigraphy">Stratigraphy</a></li>
-              <li><a href="{% url 'board' %}#GeologyandTaphonomy">Geology and Taphonomy</a></li>
-              <li><a href="{% url 'board' %}#Traits">Traits</a></li>
-              <li><a href="{% url 'board' %}#Taxonomy_Ecomorphology_Eurasia_and_Africa">Taxonomy &amp; Ecomorphology, Eurasia and Africa</a></li>
-              <li><a href="{% url 'board' %}#Taxonomy_Ecomorphology_North_America">Taxonomy &amp; Ecomorphology, North America</a></li>
-              <li><a href="{% url 'board' %}#SouthAmerica">South America</a></li>
-              <li><a href="{% url 'board' %}#Palaeoecology">Palaeoecology</a></li>
-              <li><a href="{% url 'board' %}#Contacts">Contacts with related projects</a></li>
+              {% if board_nav_roots %}
+                {% render_board_nav board_nav_roots %}
+              {% else %}
+                <li><a href="{% url 'board' %}">Advisory Board</a></li>
+              {% endif %}
             </ul>
           </li>
           <li>
@@ -238,7 +237,10 @@
           $this.parent().toggleClass('open');
 
           if (!e.data.multiple) {
-            $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            $this.parent().siblings().each(function() {
+              $(this).removeClass('open');
+              $(this).find('> .submenu').slideUp();
+            });
           };
         }
 
