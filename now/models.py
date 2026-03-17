@@ -19,6 +19,92 @@ class Alert(models.Model):
         return self.title
 
 
+class Person(models.Model):
+    surname = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(blank=True)
+    affiliation = models.CharField(max_length=255, blank=True)
+    orcid = models.CharField(max_length=19, blank=True)
+
+    class Meta:
+        ordering = ["surname", "first_name", "id"]
+
+    @property
+    def display_name(self) -> str:
+        if self.first_name:
+            return f"{self.first_name} {self.surname}"
+        return self.surname
+
+    @property
+    def orcid_url(self) -> str:
+        if not self.orcid:
+            return ""
+        return f"https://orcid.org/{self.orcid}"
+
+    def __str__(self) -> str:  # pragma: no cover - trivial
+        return self.display_name
+
+
+class RoleType(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "name"]
+
+    def __str__(self) -> str:  # pragma: no cover - trivial
+        return self.name
+
+
+class BoardNode(models.Model):
+    name = models.CharField(max_length=255)
+    parent = models.ForeignKey(
+        "self",
+        blank=True,
+        null=True,
+        on_delete=models.CASCADE,
+        related_name="children",
+    )
+    node_type = models.CharField(
+        max_length=50,
+        help_text="Examples: section, region, discipline, project, taxon, time.",
+    )
+    url = models.URLField(blank=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "name", "id"]
+
+    @property
+    def project_url(self) -> str:
+        if self.url and self.node_type.lower() == "project":
+            return self.url
+        return ""
+
+    def __str__(self) -> str:  # pragma: no cover - trivial
+        return self.name
+
+
+class BoardAssignment(models.Model):
+    person = models.ForeignKey(Person, on_delete=models.CASCADE, related_name="board_assignments")
+    node = models.ForeignKey(BoardNode, on_delete=models.CASCADE, related_name="assignments")
+    role = models.ForeignKey(
+        RoleType,
+        blank=True,
+        null=True,
+        on_delete=models.SET_NULL,
+        related_name="board_assignments",
+    )
+    note = models.CharField(max_length=255, blank=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ["order", "id"]
+
+    def __str__(self) -> str:  # pragma: no cover - trivial
+        return f"{self.person} -> {self.node}"
+
+
 class Publication(models.Model):
     """A bibliographic reference for the publications page."""
     authors = models.CharField(max_length=512)

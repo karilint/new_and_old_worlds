@@ -1,0 +1,17 @@
+{% load board_tags %}
+{% for node in nodes %}
+  <li>
+    {% if node.nav_children %}
+      <div class="link">
+        <i class="fa fa-sitemap"></i><a href="{% url 'board' %}#{{ node.anchor_id }}">{{ node.name }}</a><i class="fa fa-chevron-down"></i>
+      </div>
+      <ul class="submenu">
+        {% render_board_nav node.nav_children %}
+      </ul>
+    {% else %}
+      <div class="single-link">
+        <i class="fa fa-angle-right"></i><a href="{% url 'board' %}#{{ node.anchor_id }}">{{ node.name }}</a>
+      </div>
+    {% endif %}
+  </li>
+{% endfor %}

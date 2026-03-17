@@ -1,0 +1,47 @@
+{% load board_tags %}
+<ul class="board-tree">
+  {% for node in nodes %}
+    <li class="board-node" id="{{ node.anchor_id }}">
+      <section class="board-node-card">
+        <div>
+          <span class="board-node-title">
+            {% if node.project_url %}
+              <a href="{{ node.project_url }}" target="_blank" rel="noopener noreferrer">{{ node.name }}</a>
+            {% else %}
+              {{ node.name }}
+            {% endif %}
+          </span>
+        </div>
+
+        {% if node.assignment_groups %}
+          <ul class="board-assignments w3-ul">
+            {% for group in node.assignment_groups %}
+              <li class="board-assignment-group">
+                {% if group.role %}
+                  <div class="board-role">{{ group.role.name }}</div>
+                {% endif %}
+                <div class="board-assignment">
+                  {% for assignment in group.assignments %}
+                    {% if not forloop.first %}
+                      {% if forloop.last %} and {% else %}, {% endif %}
+                    {% endif %}
+                    {% if assignment.person.orcid_url %}
+                      <a href="{{ assignment.person.orcid_url }}" target="_blank" rel="noopener noreferrer">{{ assignment.person.display_name }}</a>
+                    {% else %}
+                      {{ assignment.person.display_name }}
+                    {% endif %}
+                    {% if assignment.note %} ({{ assignment.note }}){% endif %}
+                  {% endfor %}
+                </div>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if node.prefetched_children %}
+          {% render_board_nodes node.prefetched_children %}
+        {% endif %}
+      </section>
+    </li>
+  {% endfor %}
+</ul>
