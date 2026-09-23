@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "9b3dbb5d1bc1c7d6dc8b6ac4b66d5e7ed9f8d8f2ce2a3bb9f2ec7c4c0c8c9e0a"
+            "sha256": "107484d5bc97797cc9f9eb285c66b45a60c4277ab3d3739851655022ea126626"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -17,19 +17,35 @@
     },
     "default": {
         "asgiref": {
-            "version": "==3.9.1"
-        },
-        "django": {
-            "version": "==4.2.23"
-        },
-        "django-import-export": {
-            "version": "==4.4.0"
+            "hashes": [
+                "sha256:59dcb51c272ad209d59bed5708a64a333083e86017d7fcdd67498eeab7784340",
+                "sha256:fe386d1c2bff7259ea95929266d12a8cf9a8b5a1c2598402967d8792e7a7c094"
+            ],
+            "markers": "python_version >= '3.10'",
+            "version": "==3.12.1"
         },
         "diff-match-patch": {
             "version": "==20241021"
         },
+        "django": {
+            "hashes": [
+                "sha256:04f354bf9d807a86ad1a8392fe3808d362358a8eafc322848e0e43e59b24371d",
+                "sha256:59ea02020c3136fce14bef0bbece21a10a4febef5eed1c51c22ae468efa22200"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.10'",
+            "version": "==5.2.16"
+        },
+        "django-import-export": {
+            "version": "==4.4.0"
+        },
         "sqlparse": {
-            "version": "==0.5.3"
+            "hashes": [
+                "sha256:113c35c75365ab9cc9c7231d68c6428fb11c085fc8e9eb1ad659b7ddbf6cd2b9",
+                "sha256:b861c0288ce2fa56209a9a6412d2e066ac664b3873b89c26c9d8415e8e32996f"
+            ],
+            "markers": "python_version >= '3.10'",
+            "version": "==0.6.0"
         },
         "tablib": {
             "version": "==3.9.0"
