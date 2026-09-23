@@ -48,7 +48,13 @@
             "version": "==0.6.0"
         },
         "tablib": {
-            "version": "==3.9.0"
+            "hashes": [
+                "sha256:5721bf3a52d491f8f843628a3a3200db164f6ad9e92fb6eaa64dc3f945f30ad9",
+                "sha256:781cfa9a42de8f33c52aff857fd0a04e483de4fd1c53eaaa9a6aeac62bad11de"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.10'",
+            "version": "==3.10.0"
         },
         "tzdata": {
             "version": "==2025.2"
