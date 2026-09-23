@@ -1,0 +1,45 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "9b3dbb5d1bc1c7d6dc8b6ac4b66d5e7ed9f8d8f2ce2a3bb9f2ec7c4c0c8c9e0a"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.12"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "asgiref": {
+            "version": "==3.9.1"
+        },
+        "django": {
+            "version": "==4.2.23"
+        },
+        "django-import-export": {
+            "version": "==4.4.0"
+        },
+        "diff-match-patch": {
+            "version": "==20241021"
+        },
+        "sqlparse": {
+            "version": "==0.5.3"
+        },
+        "tablib": {
+            "version": "==3.9.0"
+        },
+        "tzdata": {
+            "version": "==2025.2"
+        },
+        "whitenoise": {
+            "version": "==6.12.0"
+        }
+    },
+    "develop": {}
+}
