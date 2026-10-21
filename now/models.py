@@ -19,6 +19,23 @@ class Alert(models.Model):
         return self.title
 
 
+class Notice(models.Model):
+    heading = models.CharField(max_length=255)
+    text = models.TextField()
+    priority = models.PositiveIntegerField(default=0, help_text="Higher values are shown first.")
+    active = models.BooleanField(default=True)
+    starts_at = models.DateTimeField(blank=True, null=True)
+    ends_at = models.DateTimeField(blank=True, null=True)
+    link_url = models.URLField(blank=True)
+    link_text = models.CharField(max_length=100, blank=True)
+
+    class Meta:
+        ordering = ["-priority", "starts_at", "heading", "id"]
+
+    def __str__(self) -> str:  # pragma: no cover - trivial
+        return self.heading
+
+
 class Person(models.Model):
     surname = models.CharField(max_length=255)
     first_name = models.CharField(max_length=255, blank=True)

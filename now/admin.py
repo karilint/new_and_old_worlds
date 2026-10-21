@@ -3,7 +3,7 @@ from import_export import fields, resources
 from import_export.admin import ImportExportModelAdmin
 from import_export.widgets import ForeignKeyWidget
 
-from .models import Alert, BoardAssignment, BoardNode, Person, Publication, RoleType
+from .models import Alert, BoardAssignment, BoardNode, Notice, Person, Publication, RoleType
 
 
 class AlertResource(resources.ModelResource):
@@ -25,6 +25,15 @@ class AlertAdmin(ImportExportModelAdmin):
     list_display = ("title", "start", "end", "duration_estimate")
     list_filter = ("start", "end")
     search_fields = ("title", "description", "duration_estimate")
+
+
+@admin.register(Notice)
+class NoticeAdmin(ImportExportModelAdmin):
+    list_display = ("heading", "priority", "active", "starts_at", "ends_at")
+    list_editable = ("priority", "active")
+    list_filter = ("active", "priority")
+    search_fields = ("heading", "text", "link_text", "link_url")
+    ordering = ("-priority", "starts_at", "heading", "id")
 
 
 class BoardAssignmentInline(admin.TabularInline):
