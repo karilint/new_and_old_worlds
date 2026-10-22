@@ -1,10 +1,29 @@
+import os
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from dotenv import load_dotenv
 
-SECRET_KEY = 'django-insecure-test-key'
-DEBUG = True
-ALLOWED_HOSTS = []
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
+
+DEBUG = os.environ.get("DJANGO_DEBUG", "False").lower() in {"1", "true", "yes", "on"}
+
+SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
+if not SECRET_KEY:
+    if DEBUG:
+        SECRET_KEY = "django-insecure-test-key"
+    else:
+        raise RuntimeError("DJANGO_SECRET_KEY must be set when DEBUG is disabled")
+
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.environ.get(
+        "DJANGO_ALLOWED_HOSTS",
+        "nowdatabase.org,www.nowdatabase.org,localhost,127.0.0.1",
+    ).split(",")
+    if host.strip()
+]
 
 TEMPLATE_URL = 'templates'
 

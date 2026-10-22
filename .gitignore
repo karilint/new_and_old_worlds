@@ -10,6 +10,9 @@ __pycache__
 
 # Settings
 # Project settings are tracked for testing
+.env
+.env.*
+!.env.example
 
 # Virtual environment
 venv/
