@@ -1,3 +1,11 @@
+# Use a modern SQLite library with Django on AlmaLinux 8
+import sys
+import pysqlite3
+import pysqlite3.dbapi2
+
+sys.modules["sqlite3"] = pysqlite3
+sys.modules["sqlite3.dbapi2"] = pysqlite3.dbapi2
+
 import os
 from pathlib import Path
 
